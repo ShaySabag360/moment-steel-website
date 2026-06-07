@@ -63,15 +63,15 @@ export default function HomePage() {
             className="mx-auto mb-10 opacity-95"
             priority
           />
-          <h1 data-animate className="text-4xl md:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
+          <h1 className="text-4xl md:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
             Engineering Steel.
             <br />
             Precision Built.
           </h1>
-          <p data-animate className="text-lg md:text-xl text-gray-300 mb-10 max-w-xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-xl mx-auto leading-relaxed">
             Every project reaches its moment of truth. This is our moment.
           </p>
-          <div data-animate className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
               className="bg-[#fd008d] text-white px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-[#e0007c] transition-colors"
