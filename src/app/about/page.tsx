@@ -253,19 +253,19 @@ export default function AboutPage() {
       <section className="relative overflow-hidden py-20 bg-[#fd008d]">
         <span
           aria-hidden="true"
-          className="pointer-events-none select-none absolute inset-0 flex items-center justify-center font-display font-bold text-white opacity-[0.06] text-[200px] md:text-[340px] leading-none whitespace-nowrap"
+          className="pointer-events-none select-none absolute inset-0 flex items-center justify-center font-display font-bold text-white opacity-[0.04] text-[200px] md:text-[340px] leading-none whitespace-nowrap"
         >
           MOMENT
         </span>
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-          <h2 data-animate className="font-display font-bold text-white text-5xl md:text-6xl mb-4">
+          <h2 className="font-display font-bold text-white text-5xl md:text-6xl mb-4">
             Tell us what you&apos;re building.
           </h2>
-          <p data-animate className="text-white/80 text-base md:text-lg mb-10 max-w-xl mx-auto">
+          <p className="text-white/80 text-base md:text-lg mb-10 max-w-xl mx-auto">
             Share your project scope and we&apos;ll get back to you within one
             business day.
           </p>
-          <div data-animate className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
               className="bg-white text-[#fd008d] px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-gray-100 transition-colors"
