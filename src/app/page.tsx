@@ -87,35 +87,34 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/40 animate-bounce">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/40">
+          <svg className="animate-float" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
             <path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
       </section>
 
       {/* ─── Stats strip ─── */}
-      <section className="bg-[#1a1a1a] border-y border-[#2d2d2d] py-8">
+      <section className="bg-[#0a0a0a] border-t border-b border-white/10 py-16">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-            <div>
-              <p className="text-white font-semibold text-lg">Edge to Edge Steel Solutions</p>
-              <p className="text-gray-400 text-sm mt-1">
-                One team managing the full steel lifecycle — design through delivery
-              </p>
-            </div>
-            <div className="flex gap-10 text-center">
-              {[
-                { value: "100%", label: "In-House Engineering" },
-                { value: "3", label: "Senior Engineers" },
-                { value: "15+", label: "Years Combined Experience" },
-              ].map((stat) => (
-                <div key={stat.label}>
-                  <p className="text-[#fd008d] text-2xl font-bold font-display">{stat.value}</p>
-                  <p className="text-gray-400 text-xs mt-1 max-w-[100px]">{stat.label}</p>
-                </div>
-              ))}
-            </div>
+          <div className="grid grid-cols-3">
+            {[
+              { value: "100%", label: "In-House Engineering" },
+              { value: "3", label: "Senior Engineers" },
+              { value: "15+", label: "Years Combined Experience" },
+            ].map((stat, i) => (
+              <div
+                key={stat.label}
+                className={`text-center px-4 ${i < 2 ? "border-r border-white/10" : ""}`}
+              >
+                <p className="font-display font-bold text-white text-6xl md:text-8xl leading-none">
+                  {stat.value}
+                </p>
+                <p className="font-body text-white/40 text-xs tracking-[0.15em] uppercase mt-4">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
