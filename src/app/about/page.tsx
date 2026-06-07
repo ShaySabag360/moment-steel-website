@@ -78,17 +78,17 @@ export default function AboutPage() {
       <section className="relative pt-40 pb-24 bg-[#0f0f0f] overflow-hidden">
         <div className="absolute top-0 left-0 w-1 h-full bg-[#fd008d]" />
         <div className="max-w-7xl mx-auto px-6">
-          <p data-animate className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-5">
+          <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-5">
             About Moment Steel
           </p>
-          <h1 data-animate className="text-4xl md:text-7xl font-bold text-white leading-tight max-w-3xl">
+          <h1 className="text-4xl md:text-7xl font-bold text-white leading-tight max-w-3xl">
             Steel projects fail
             <br />
             at handoffs.
             <br />
             <span className="text-[#fd008d]">We eliminated them.</span>
           </h1>
-          <p data-animate className="text-gray-400 text-lg mt-8 max-w-2xl leading-relaxed">
+          <p className="text-gray-400 text-lg mt-8 max-w-2xl leading-relaxed">
             We started Moment Steel on a single conviction: one team should
             carry a project from the first structural calculation to the last
             bolt on site. Not a relay race — a continuous sprint with full

@@ -63,7 +63,7 @@ export default function ProjectsPage() {
       {/* ─── Page Header ─── */}
       <section className="pt-40 pb-20 bg-[#0f0f0f]">
         <div className="max-w-7xl mx-auto px-6">
-          <div data-animate className="border-l-4 border-[#fd008d] pl-6">
+          <div className="border-l-4 border-[#fd008d] pl-6">
             <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-4">
               Our Work
             </p>
