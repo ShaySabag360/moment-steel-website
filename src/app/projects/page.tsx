@@ -1,6 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Projects — Moment Steel",
+  description:
+    "Steel projects by Moment Steel — excavation support, complex-geometry assemblies, and structural support systems engineered and erected across Israel.",
+};
+
 const projects = [
   {
     title: "BarLev Center",

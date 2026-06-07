@@ -108,7 +108,7 @@ export default function HomePage() {
                 data-animate
                 className={`text-center px-4 ${i < 2 ? "border-r border-white/10" : ""}`}
               >
-                <p className="font-display font-bold text-white text-6xl md:text-8xl leading-none">
+                <p className="font-display font-bold text-white text-5xl md:text-8xl leading-none">
                   {stat.value}
                 </p>
                 <p className="font-body text-white/40 text-xs tracking-[0.15em] uppercase mt-4">

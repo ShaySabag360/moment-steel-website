@@ -26,6 +26,25 @@ body {
   h6 {
     font-family: var(--font-display);
   }
+
+  /* Interactive elements always show a pointer cursor */
+  a,
+  button,
+  [role="button"],
+  summary {
+    cursor: pointer;
+  }
+
+  /* Visible keyboard focus ring on every interactive element */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+  }
 }
 
 @keyframes float {
