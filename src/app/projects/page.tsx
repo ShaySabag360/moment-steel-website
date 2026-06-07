@@ -1,59 +1,77 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const projects = [
+const categories = [
   {
-    title: "BarLev Center",
-    location: "Israel",
-    category: "Struts & Walers",
+    name: "Excavation Support",
     description:
-      "Steel strut and waler system designed to support the excavation retaining walls during deep foundation work. Engineered for the specific load conditions of the site, fabricated, and installed by our team.",
-    images: ["/images/barlev-center/barlev-1.jpg"],
-  },
-  {
-    title: "Composite Column Spiral",
-    location: "Israel",
-    category: "Complex Geometry",
-    description:
-      "A geometrically complex spiral steel assembly demanding advanced parametric modeling in Tekla and Grasshopper, precision 3D scanning, and tightly controlled factory production.",
-    images: [
-      "/images/composite-spiral/spiral-1.jpg",
-      "/images/composite-spiral/spiral-2.jpg",
-      "/images/composite-spiral/spiral-3.jpg",
+      "Temporary steel bracing systems designed to retain earth and carry lateral loads during deep excavation — engineered for the specific soil, depth, and load conditions of each site.",
+    projects: [
+      {
+        title: "BarLev Center",
+        location: "Israel",
+        description:
+          "Steel strut and waler system designed to brace the retaining walls during deep foundation excavation. Engineered for the site's lateral earth loads, fabricated, and installed end-to-end by the Moment Steel team.",
+        images: ["/images/barlev-center/barlev-1.jpg"],
+      },
+      {
+        title: "Migrash 11",
+        location: "Beit Shemesh",
+        description:
+          "Temporary excavation bracing for a deep cut in Beit Shemesh. Struts and walers sized and detailed to carry full lateral loads through all excavation stages, with installation coordinated on site.",
+        images: [
+          "/images/migrash-11/migrash-1.jpg",
+          "/images/migrash-11/migrash-2.jpg",
+        ],
+      },
     ],
   },
   {
-    title: "Azrieli Columns Support",
-    location: "Israel",
-    category: "Structural Support",
+    name: "Complex Geometry",
     description:
-      "Custom column support system engineered to fit a complex architectural form. Tight tolerances required point-cloud scanning of the existing structure before a single component was fabricated.",
-    images: [
-      "/images/azrieli-columns/azrieli-1.jpg",
-      "/images/azrieli-columns/azrieli-2.jpg",
+      "Structures that fall outside standard templates — spiral forms, parametric assemblies, and one-of-a-kind geometries requiring advanced modeling and tightly controlled fabrication.",
+    projects: [
+      {
+        title: "Composite Column Spiral",
+        location: "Israel",
+        description:
+          "A geometrically complex spiral steel assembly demanding advanced parametric modeling in Tekla and Grasshopper, precision 3D scanning of the existing structure, and tightly controlled factory production.",
+        images: [
+          "/images/composite-spiral/spiral-1.jpg",
+          "/images/composite-spiral/spiral-2.jpg",
+          "/images/composite-spiral/spiral-3.jpg",
+        ],
+      },
     ],
   },
   {
-    title: "Migrash 11",
-    location: "Beit Shemesh",
-    category: "Struts & Walers",
+    name: "Structural Support",
     description:
-      "Temporary steel shoring system for a deep excavation in Beit Shemesh. Struts and walers designed and detailed to hold the retaining wall under full excavation loads, with installation managed on site.",
-    images: [
-      "/images/migrash-11/migrash-1.jpg",
-      "/images/migrash-11/migrash-2.jpg",
+      "Custom steel support systems engineered to fit complex existing conditions — where precise geometry, tight tolerances, and reliable load transfer are non-negotiable.",
+    projects: [
+      {
+        title: "Azrieli Columns Support",
+        location: "Israel",
+        description:
+          "Custom column support system engineered to fit a complex architectural form. Point-cloud scanning of the existing structure ensured every fabricated component landed exactly where it needed to.",
+        images: [
+          "/images/azrieli-columns/azrieli-1.jpg",
+          "/images/azrieli-columns/azrieli-2.jpg",
+        ],
+      },
+      {
+        title: "Wall Support System",
+        location: "Israel",
+        description:
+          "Steel wall support structure designed to carry significant lateral and vertical loads against an existing wall. Engineered, detailed, and erected by our team with in-house survey verification throughout.",
+        images: [
+          "/images/wall-support/wall-1.jpg",
+          "/images/wall-support/wall-2.jpg",
+        ],
+      },
     ],
   },
 ];
-
-const categoryColors: Record<string, string> = {
-  "Complex Geometry": "bg-[#fd008d]/20 text-[#fd008d] border-[#fd008d]/30",
-  "Struts & Walers": "bg-amber-900/30 text-amber-300 border-amber-700/30",
-  "Structural Support": "bg-purple-900/30 text-purple-300 border-purple-700/30",
-  Commercial: "bg-blue-900/30 text-blue-300 border-blue-700/30",
-  Residential: "bg-green-900/30 text-green-300 border-green-700/30",
-  Industrial: "bg-orange-900/30 text-orange-300 border-orange-700/30",
-};
 
 export default function ProjectsPage() {
   return (
@@ -70,99 +88,108 @@ export default function ProjectsPage() {
           </h1>
           <p className="text-gray-400 text-lg mt-5 max-w-xl leading-relaxed">
             A selection of steel structures we&apos;ve engineered, detailed, and
-            erected — from straightforward frames to complex one-of-a-kind
+            erected — from excavation bracing to complex one-of-a-kind
             assemblies.
           </p>
         </div>
       </section>
 
-      {/* ─── Projects ─── */}
+      {/* ─── Categories ─── */}
       <section className="py-16 bg-[#111111]">
-        <div className="max-w-7xl mx-auto px-6 space-y-24">
-          {projects.map((project, index) => (
-            <div key={project.title}>
-              {/* Project header */}
-              <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-6 gap-3">
-                <div>
-                  <span
-                    className={`inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 border mb-3 ${
-                      categoryColors[project.category]
-                    }`}
-                  >
-                    {project.category}
-                  </span>
-                  <h2 className="text-2xl md:text-3xl font-bold text-white">
-                    {project.title}
-                  </h2>
-                  <p className="text-gray-500 text-sm mt-1">{project.location}</p>
-                </div>
-                <p className="text-gray-400 text-sm leading-relaxed max-w-md text-right hidden sm:block">
-                  {project.description}
+        <div className="max-w-7xl mx-auto px-6 space-y-28">
+          {categories.map((category) => (
+            <div key={category.name}>
+              {/* Category header */}
+              <div className="mb-12 pb-6 border-b border-[#2d2d2d]">
+                <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] mb-3">
+                  Category
+                </p>
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                  {category.name}
+                </h2>
+                <p className="text-gray-400 text-sm leading-relaxed max-w-2xl">
+                  {category.description}
                 </p>
               </div>
 
-              {/* Mobile description */}
-              <p className="text-gray-400 text-sm leading-relaxed mb-6 sm:hidden">
-                {project.description}
-              </p>
-
-              {/* Images grid */}
-              {project.images.length === 1 && (
-                <div className="relative w-full h-72 md:h-96 overflow-hidden">
-                  <Image
-                    src={project.images[0]}
-                    alt={project.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              )}
-
-              {project.images.length === 2 && (
-                <div className="grid grid-cols-2 gap-3">
-                  {project.images.map((img, i) => (
-                    <div key={i} className="relative h-64 md:h-80 overflow-hidden">
-                      <Image
-                        src={img}
-                        alt={`${project.title} ${i + 1}`}
-                        fill
-                        className="object-cover"
-                      />
+              {/* Projects in this category */}
+              <div className="space-y-16">
+                {category.projects.map((project, index) => (
+                  <div key={project.title}>
+                    {/* Project header */}
+                    <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-5 gap-3">
+                      <div>
+                        <h3 className="text-xl font-bold text-white">
+                          {project.title}
+                        </h3>
+                        <p className="text-gray-500 text-sm mt-0.5">
+                          {project.location}
+                        </p>
+                      </div>
+                      <p className="text-gray-400 text-sm leading-relaxed max-w-md sm:text-right">
+                        {project.description}
+                      </p>
                     </div>
-                  ))}
-                </div>
-              )}
 
-              {project.images.length === 3 && (
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                  {/* First image larger */}
-                  <div className="col-span-2 md:col-span-2 relative h-64 md:h-80 overflow-hidden">
-                    <Image
-                      src={project.images[0]}
-                      alt={`${project.title} 1`}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="col-span-2 md:col-span-1 grid grid-cols-2 md:grid-cols-1 gap-3">
-                    {project.images.slice(1).map((img, i) => (
-                      <div key={i} className="relative h-32 md:h-[154px] overflow-hidden">
+                    {/* Images */}
+                    {project.images.length === 1 && (
+                      <div className="relative w-full h-72 md:h-[420px] overflow-hidden">
                         <Image
-                          src={img}
-                          alt={`${project.title} ${i + 2}`}
+                          src={project.images[0]}
+                          alt={project.title}
                           fill
                           className="object-cover"
                         />
                       </div>
-                    ))}
-                  </div>
-                </div>
-              )}
+                    )}
 
-              {/* Divider (not on last item) */}
-              {index < projects.length - 1 && (
-                <div className="mt-24 border-t border-[#2d2d2d]" />
-              )}
+                    {project.images.length === 2 && (
+                      <div className="grid grid-cols-2 gap-3">
+                        {project.images.map((img, i) => (
+                          <div key={i} className="relative h-64 md:h-80 overflow-hidden">
+                            <Image
+                              src={img}
+                              alt={`${project.title} ${i + 1}`}
+                              fill
+                              className="object-cover"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    {project.images.length === 3 && (
+                      <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                        <div className="col-span-2 relative h-64 md:h-80 overflow-hidden">
+                          <Image
+                            src={project.images[0]}
+                            alt={`${project.title} 1`}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                        <div className="col-span-2 md:col-span-1 grid grid-cols-2 md:grid-cols-1 gap-3">
+                          {project.images.slice(1).map((img, i) => (
+                            <div key={i} className="relative h-32 md:h-[154px] overflow-hidden">
+                              <Image
+                                src={img}
+                                alt={`${project.title} ${i + 2}`}
+                                fill
+                                className="object-cover"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Divider between projects in same category */}
+                    {index < category.projects.length - 1 && (
+                      <div className="mt-16 border-t border-[#1e1e1e]" />
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>
