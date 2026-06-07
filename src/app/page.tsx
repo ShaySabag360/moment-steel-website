@@ -8,19 +8,14 @@ const services = [
       "Full structural engineering by licensed professionals. We run calculations in Dlubal, IdeaStatica, and Strap — selecting the right tool for the structural system at hand.",
   },
   {
-    title: "Shop Drawings",
+    title: "Shop Drawings & Detailing",
     description:
-      "Fabrication-ready shop drawings produced in Tekla Structures, with Grasshopper handling parametric workflows for complex elements. Drawings that go straight to the factory floor.",
+      "Fabrication-ready shop drawings produced in Tekla Structures, with parametric modeling for complex and non-standard elements — spiral forms, curved members, dense connection clusters. Every joint modeled before it's made, every drawing goes straight to the factory floor.",
   },
   {
     title: "3D Laser Scanning",
     description:
       "We scan the site before anything is fabricated. Point cloud data captures exact as-built geometry, so components arrive ready to install — not ready to be reworked.",
-  },
-  {
-    title: "Detailing",
-    description:
-      "Parametric modeling for structures that don't fit standard templates. Spiral forms, curved members, dense connection clusters — we model every joint before it's made.",
   },
   {
     title: "Fabrication Management",
