@@ -65,9 +65,9 @@ const services = [
 ];
 
 const projectPreviews = [
-  { src: "/images/project-1.jpg", title: "Berlav Center", location: "Mazkeret Batya" },
-  { src: "/images/project-3.jpg", title: "Spiral Composite", location: "Complex Geometry" },
-  { src: "/images/project-5.jpg", title: "Mizrahi 24", location: "Rehovot" },
+  { src: "/images/barlev-center/barlev-1.jpg", title: "BarLev Center", location: "Commercial" },
+  { src: "/images/composite-spiral/spiral-1.jpg", title: "Composite Column Spiral", location: "Complex Geometry" },
+  { src: "/images/azrieli-columns/azrieli-1.jpg", title: "Azrieli Columns Support", location: "Structural Support" },
 ];
 
 export default function HomePage() {
@@ -76,7 +76,7 @@ export default function HomePage() {
       {/* ─── Hero ─── */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <Image
-          src="/images/project-2.jpg"
+          src="/images/migrash-11/migrash-1.jpg"
           alt="Steel construction project"
           fill
           className="object-cover"

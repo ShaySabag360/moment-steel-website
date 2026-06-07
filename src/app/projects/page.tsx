@@ -3,86 +3,56 @@ import Link from "next/link";
 
 const projects = [
   {
-    title: "Berlav Center",
-    location: "Mazkeret Batya",
-    category: "Commercial",
+    title: "BarLev Center",
+    location: "Israel",
+    category: "Struts & Walers",
     description:
-      "Multi-story commercial complex requiring a full structural steel package — from stability calculations and shop drawings through fabrication oversight and site erection.",
-    image: "/images/project-1.jpg",
-    size: "large", // spans 2 rows
+      "Steel strut and waler system designed to support the excavation retaining walls during deep foundation work. Engineered for the specific load conditions of the site, fabricated, and installed by our team.",
+    images: ["/images/barlev-center/barlev-1.jpg"],
   },
   {
-    title: "Spiral Composite",
+    title: "Composite Column Spiral",
     location: "Israel",
     category: "Complex Geometry",
     description:
-      "A geometrically complex spiral steel assembly demanding advanced parametric modeling in Tekla and Grasshopper, precision 3D scanning, and controlled factory production.",
-    image: "/images/project-3.jpg",
-    size: "normal",
+      "A geometrically complex spiral steel assembly demanding advanced parametric modeling in Tekla and Grasshopper, precision 3D scanning, and tightly controlled factory production.",
+    images: [
+      "/images/composite-spiral/spiral-1.jpg",
+      "/images/composite-spiral/spiral-2.jpg",
+      "/images/composite-spiral/spiral-3.jpg",
+    ],
   },
   {
-    title: "Spiral Column Supports",
+    title: "Azrieli Columns Support",
     location: "Israel",
     category: "Structural Support",
     description:
-      "Custom column support system engineered to fit a spiral architectural form. Tight tolerances required point-cloud scanning of the existing structure before a single component was cut.",
-    image: "/images/project-5.jpg",
-    size: "normal",
+      "Custom column support system engineered to fit a complex architectural form. Tight tolerances required point-cloud scanning of the existing structure before a single component was fabricated.",
+    images: [
+      "/images/azrieli-columns/azrieli-1.jpg",
+      "/images/azrieli-columns/azrieli-2.jpg",
+    ],
   },
   {
-    title: "Mizrahi 24",
-    location: "Rehovot",
-    category: "Residential",
+    title: "Migrash 11",
+    location: "Beit Shemesh",
+    category: "Struts & Walers",
     description:
-      "Steel structural frame for a multi-story residential building. Tight urban site with limited crane access — erection sequencing and logistics planning were as critical as the engineering.",
-    image: "/images/project-4.jpg",
-    size: "large",
-  },
-  {
-    title: "Steel Framework",
-    location: "Central Israel",
-    category: "Industrial",
-    description: null,
-    image: "/images/project-6.jpg",
-    size: "normal",
-  },
-  {
-    title: "Complex Installation",
-    location: "Israel",
-    category: "Complex Geometry",
-    description: null,
-    image: "/images/project-7.jpg",
-    size: "normal",
-  },
-  {
-    title: "Structural Addition",
-    location: "Israel",
-    category: "Addition",
-    description: null,
-    image: "/images/project-2.jpg",
-    size: "normal",
-  },
-  {
-    title: "Site Erection",
-    location: "Israel",
-    category: "Installation",
-    description: null,
-    image: "/images/project-8.jpg",
-    size: "normal",
+      "Temporary steel shoring system for a deep excavation in Beit Shemesh. Struts and walers designed and detailed to hold the retaining wall under full excavation loads, with installation managed on site.",
+    images: [
+      "/images/migrash-11/migrash-1.jpg",
+      "/images/migrash-11/migrash-2.jpg",
+    ],
   },
 ];
 
-const featured = projects.filter((p) => p.description);
-const additional = projects.filter((p) => !p.description);
-
 const categoryColors: Record<string, string> = {
-  "Complex Geometry": "bg-[#fd008d]/20 text-[#fd008d]",
-  Commercial: "bg-blue-900/30 text-blue-300",
-  Residential: "bg-green-900/30 text-green-300",
-  Industrial: "bg-orange-900/30 text-orange-300",
-  "Structural Support": "bg-purple-900/30 text-purple-300",
-  Addition: "bg-yellow-900/30 text-yellow-300",
-  Installation: "bg-gray-700/40 text-gray-300",
+  "Complex Geometry": "bg-[#fd008d]/20 text-[#fd008d] border-[#fd008d]/30",
+  "Struts & Walers": "bg-amber-900/30 text-amber-300 border-amber-700/30",
+  "Structural Support": "bg-purple-900/30 text-purple-300 border-purple-700/30",
+  Commercial: "bg-blue-900/30 text-blue-300 border-blue-700/30",
+  Residential: "bg-green-900/30 text-green-300 border-green-700/30",
+  Industrial: "bg-orange-900/30 text-orange-300 border-orange-700/30",
 };
 
 export default function ProjectsPage() {
@@ -106,149 +76,95 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* ─── Featured Projects ─── */}
+      {/* ─── Projects ─── */}
       <section className="py-16 bg-[#111111]">
-        <div className="max-w-7xl mx-auto px-6">
-          <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] mb-10">
-            Featured
-          </p>
-
-          {/* Asymmetric grid: large left + 2 stacked right, then large right + 2 stacked left */}
-          <div className="space-y-4">
-            {/* Row 1: Berlav (large) + Spiral Composite + Spiral Columns */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-              {/* Large card */}
-              <div className="lg:col-span-2 lg:row-span-2 relative h-72 lg:h-auto min-h-[320px] overflow-hidden group">
-                <Image
-                  src={featured[0].image}
-                  alt={featured[0].title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-8">
+        <div className="max-w-7xl mx-auto px-6 space-y-24">
+          {projects.map((project, index) => (
+            <div key={project.title}>
+              {/* Project header */}
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-6 gap-3">
+                <div>
                   <span
-                    className={`text-xs font-semibold uppercase tracking-widest px-3 py-1 ${
-                      categoryColors[featured[0].category]
-                    }`}
-                  >
-                    {featured[0].category}
-                  </span>
-                  <h3 className="text-white text-2xl font-bold mt-3">
-                    {featured[0].title}
-                  </h3>
-                  <p className="text-gray-400 text-xs mt-1">
-                    {featured[0].location}
-                  </p>
-                  <p className="text-gray-300 text-sm mt-3 leading-relaxed max-w-lg">
-                    {featured[0].description}
-                  </p>
-                </div>
-              </div>
-
-              {/* Two stacked cards */}
-              <div className="flex flex-col gap-4">
-                {featured.slice(1, 3).map((project) => (
-                  <div
-                    key={project.title}
-                    className="relative h-56 overflow-hidden group"
-                  >
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-5">
-                      <span
-                        className={`text-xs font-semibold uppercase tracking-widest px-2.5 py-1 ${
-                          categoryColors[project.category]
-                        }`}
-                      >
-                        {project.category}
-                      </span>
-                      <h3 className="text-white font-bold mt-2">
-                        {project.title}
-                      </h3>
-                      <p className="text-gray-400 text-xs mt-0.5">
-                        {project.location}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Row 2: Mizrahi (large, reversed) */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-              {/* Large card on the right */}
-              <div className="lg:col-start-2 lg:col-span-2 relative h-72 lg:h-[360px] overflow-hidden group">
-                <Image
-                  src={featured[3].image}
-                  alt={featured[3].title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <span
-                    className={`text-xs font-semibold uppercase tracking-widest px-3 py-1 ${
-                      categoryColors[featured[3].category]
-                    }`}
-                  >
-                    {featured[3].category}
-                  </span>
-                  <h3 className="text-white text-2xl font-bold mt-3">
-                    {featured[3].title}
-                  </h3>
-                  <p className="text-gray-400 text-xs mt-1">
-                    {featured[3].location}
-                  </p>
-                  <p className="text-gray-300 text-sm mt-3 leading-relaxed max-w-lg">
-                    {featured[3].description}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── Additional Work ─── */}
-      <section className="pb-20 bg-[#111111]">
-        <div className="max-w-7xl mx-auto px-6">
-          <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] mb-10">
-            Additional Work
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {additional.map((project) => (
-              <div
-                key={project.title}
-                className="relative h-48 md:h-56 overflow-hidden group"
-              >
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/25 transition-colors duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <span
-                    className={`text-xs font-medium px-2 py-0.5 ${
+                    className={`inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 border mb-3 ${
                       categoryColors[project.category]
                     }`}
                   >
                     {project.category}
                   </span>
-                  <p className="text-white text-sm font-semibold mt-1.5">
+                  <h2 className="text-2xl md:text-3xl font-bold text-white">
                     {project.title}
-                  </p>
+                  </h2>
+                  <p className="text-gray-500 text-sm mt-1">{project.location}</p>
                 </div>
+                <p className="text-gray-400 text-sm leading-relaxed max-w-md text-right hidden sm:block">
+                  {project.description}
+                </p>
               </div>
-            ))}
-          </div>
+
+              {/* Mobile description */}
+              <p className="text-gray-400 text-sm leading-relaxed mb-6 sm:hidden">
+                {project.description}
+              </p>
+
+              {/* Images grid */}
+              {project.images.length === 1 && (
+                <div className="relative w-full h-72 md:h-96 overflow-hidden">
+                  <Image
+                    src={project.images[0]}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              )}
+
+              {project.images.length === 2 && (
+                <div className="grid grid-cols-2 gap-3">
+                  {project.images.map((img, i) => (
+                    <div key={i} className="relative h-64 md:h-80 overflow-hidden">
+                      <Image
+                        src={img}
+                        alt={`${project.title} ${i + 1}`}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {project.images.length === 3 && (
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                  {/* First image larger */}
+                  <div className="col-span-2 md:col-span-2 relative h-64 md:h-80 overflow-hidden">
+                    <Image
+                      src={project.images[0]}
+                      alt={`${project.title} 1`}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="col-span-2 md:col-span-1 grid grid-cols-2 md:grid-cols-1 gap-3">
+                    {project.images.slice(1).map((img, i) => (
+                      <div key={i} className="relative h-32 md:h-[154px] overflow-hidden">
+                        <Image
+                          src={img}
+                          alt={`${project.title} ${i + 2}`}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Divider (not on last item) */}
+              {index < projects.length - 1 && (
+                <div className="mt-24 border-t border-[#2d2d2d]" />
+              )}
+            </div>
+          ))}
         </div>
       </section>
 

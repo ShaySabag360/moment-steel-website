@@ -149,8 +149,8 @@ export default function AboutPage() {
             <div className="relative">
               <div className="relative h-80 lg:h-[480px] overflow-hidden">
                 <Image
-                  src="/images/project-3.jpg"
-                  alt="Spiral Composite steel project"
+                  src="/images/composite-spiral/spiral-2.jpg"
+                  alt="Composite Column Spiral steel project"
                   fill
                   className="object-cover"
                 />
