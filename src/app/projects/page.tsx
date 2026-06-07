@@ -182,9 +182,15 @@ export default function ProjectsPage() {
       </section>
 
       {/* ─── CTA ─── */}
-      <section className="py-20 bg-[#fd008d]">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 data-animate className="text-3xl md:text-4xl font-bold text-white mb-4">
+      <section className="relative overflow-hidden py-20 bg-[#fd008d]">
+        <span
+          aria-hidden="true"
+          className="pointer-events-none select-none absolute inset-0 flex items-center justify-center font-display font-bold text-white opacity-[0.06] text-[200px] md:text-[340px] leading-none whitespace-nowrap"
+        >
+          MOMENT
+        </span>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
+          <h2 data-animate className="font-display font-bold text-white text-5xl md:text-6xl mb-4">
             Have a Project in Mind?
           </h2>
           <p data-animate className="text-white/80 text-base md:text-lg mb-10 max-w-xl mx-auto">

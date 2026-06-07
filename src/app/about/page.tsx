@@ -250,25 +250,31 @@ export default function AboutPage() {
       </section>
 
       {/* ─── CTA ─── */}
-      <section className="py-20 bg-[#1a1a1a] border-t border-[#2d2d2d]">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 data-animate className="text-3xl font-bold text-white mb-4">
+      <section className="relative overflow-hidden py-20 bg-[#fd008d]">
+        <span
+          aria-hidden="true"
+          className="pointer-events-none select-none absolute inset-0 flex items-center justify-center font-display font-bold text-white opacity-[0.06] text-[200px] md:text-[340px] leading-none whitespace-nowrap"
+        >
+          MOMENT
+        </span>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
+          <h2 data-animate className="font-display font-bold text-white text-5xl md:text-6xl mb-4">
             Tell us what you&apos;re building.
           </h2>
-          <p data-animate className="text-gray-400 mb-8 max-w-md mx-auto text-sm leading-relaxed">
+          <p data-animate className="text-white/80 text-base md:text-lg mb-10 max-w-xl mx-auto">
             Share your project scope and we&apos;ll get back to you within one
             business day.
           </p>
           <div data-animate className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="bg-[#fd008d] text-white px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-[#e0007c] transition-colors"
+              className="bg-white text-[#fd008d] px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-gray-100 transition-colors"
             >
               Get in Touch
             </Link>
             <Link
               href="/projects"
-              className="border border-[#2d2d2d] text-gray-300 px-8 py-4 text-sm font-bold uppercase tracking-widest hover:border-white hover:text-white transition-colors"
+              className="border-2 border-white text-white px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-white/10 transition-colors"
             >
               See Our Work
             </Link>
