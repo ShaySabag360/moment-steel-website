@@ -11,15 +11,15 @@ export default function ContactPage() {
       <section className="relative pt-40 pb-16 bg-[#0f0f0f] overflow-hidden">
         <div className="absolute top-0 left-0 w-1 h-full bg-[#fd008d]" />
         <div className="max-w-7xl mx-auto px-6">
-          <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-5">
+          <p data-animate className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-5">
             Get in Touch
           </p>
-          <h1 className="text-4xl md:text-7xl font-bold text-white leading-tight">
+          <h1 data-animate className="text-4xl md:text-7xl font-bold text-white leading-tight">
             Let&apos;s Talk
             <br />
             Steel.
           </h1>
-          <p className="text-gray-400 text-lg mt-5 max-w-xl leading-relaxed">
+          <p data-animate className="text-gray-400 text-lg mt-5 max-w-xl leading-relaxed">
             Share what you&apos;re building and we&apos;ll get back to you within one
             business day. No commitment, no sales pitch — just a straight
             conversation about your project.
@@ -33,7 +33,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
 
             {/* ─── Form ─── */}
-            <div className="lg:col-span-3">
+            <div data-animate className="lg:col-span-3">
               <form className="space-y-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
@@ -109,7 +109,7 @@ export default function ContactPage() {
             </div>
 
             {/* ─── Contact Details ─── */}
-            <div className="lg:col-span-2 space-y-10">
+            <div data-animate className="lg:col-span-2 space-y-10">
 
               {/* Direct contacts */}
               <div>

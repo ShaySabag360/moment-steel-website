@@ -63,15 +63,15 @@ export default function HomePage() {
             className="mx-auto mb-10 opacity-95"
             priority
           />
-          <h1 className="text-4xl md:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
+          <h1 data-animate className="text-4xl md:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
             Engineering Steel.
             <br />
             Precision Built.
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-xl mx-auto leading-relaxed">
+          <p data-animate className="text-lg md:text-xl text-gray-300 mb-10 max-w-xl mx-auto leading-relaxed">
             Every project reaches its moment of truth. This is our moment.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div data-animate className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
               className="bg-[#fd008d] text-white px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-[#e0007c] transition-colors"
@@ -105,6 +105,7 @@ export default function HomePage() {
             ].map((stat, i) => (
               <div
                 key={stat.label}
+                data-animate
                 className={`text-center px-4 ${i < 2 ? "border-r border-white/10" : ""}`}
               >
                 <p className="font-display font-bold text-white text-6xl md:text-8xl leading-none">
@@ -122,7 +123,7 @@ export default function HomePage() {
       {/* ─── Services ─── */}
       <section className="pt-24 pb-16 bg-[#111111]" id="services">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-14">
+          <div data-animate className="mb-14">
             <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-4">
               What We Do
             </p>
@@ -133,7 +134,7 @@ export default function HomePage() {
 
           <div className="border-b border-white/10">
             {services.map((service, i) => (
-              <div key={service.title} className="group border-t border-white/10">
+              <div key={service.title} data-animate className="group border-t border-white/10">
                 <div className="relative flex items-center py-8">
                   {/* Watermark number — absolute, bleeds behind the title */}
                   <span className="absolute -top-4 left-0 z-0 font-display font-bold text-white text-7xl md:text-8xl opacity-[0.08] leading-none select-none pointer-events-none">
@@ -164,7 +165,7 @@ export default function HomePage() {
       {/* ─── Projects Preview ─── */}
       <section className="py-24 bg-[#111111]" id="projects">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-end justify-between mb-12">
+          <div data-animate className="flex items-end justify-between mb-12">
             <div>
               <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-4">
                 Our Work
@@ -188,6 +189,7 @@ export default function HomePage() {
             {projectPreviews.map((project) => (
               <Link
                 key={project.src}
+                data-animate
                 href="/projects"
                 className="relative h-80 overflow-hidden group block"
               >
@@ -220,14 +222,14 @@ export default function HomePage() {
       {/* ─── CTA Strip ─── */}
       <section className="py-20 bg-[#fd008d]">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
+          <h2 data-animate className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
             Ready to Build?
           </h2>
-          <p className="text-white/80 text-base md:text-lg mb-10 max-w-xl mx-auto">
+          <p data-animate className="text-white/80 text-base md:text-lg mb-10 max-w-xl mx-auto">
             Tell us what you&apos;re building. We&apos;ll handle the steel — from
             structural design through final erection.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div data-animate className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="tel:0508464851"
               className="bg-white text-[#fd008d] px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-gray-100 transition-colors"

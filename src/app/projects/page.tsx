@@ -80,13 +80,13 @@ export default function ProjectsPage() {
       <section className="relative pt-40 pb-16 bg-[#0f0f0f] overflow-hidden">
         <div className="absolute top-0 left-0 w-1 h-full bg-[#fd008d]" />
         <div className="max-w-7xl mx-auto px-6">
-          <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-5">
+          <p data-animate className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-5">
             Our Work
           </p>
-          <h1 className="text-4xl md:text-7xl font-bold text-white leading-tight">
+          <h1 data-animate className="text-4xl md:text-7xl font-bold text-white leading-tight">
             Projects
           </h1>
-          <p className="text-gray-400 text-lg mt-5 max-w-xl leading-relaxed">
+          <p data-animate className="text-gray-400 text-lg mt-5 max-w-xl leading-relaxed">
             A selection of steel structures we&apos;ve engineered, detailed, and
             erected — from excavation bracing to complex one-of-a-kind
             assemblies.
@@ -100,7 +100,7 @@ export default function ProjectsPage() {
           {categories.map((category) => (
             <div key={category.name}>
               {/* Category header */}
-              <div className="mb-12 pb-6 border-b border-[#2d2d2d]">
+              <div data-animate className="mb-12 pb-6 border-b border-[#2d2d2d]">
                 <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-3">
                   Category
                 </p>
@@ -115,7 +115,7 @@ export default function ProjectsPage() {
               {/* Projects in this category */}
               <div className="space-y-16">
                 {category.projects.map((project, index) => (
-                  <div key={project.title}>
+                  <div key={project.title} data-animate>
                     {/* Project header */}
                     <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-5 gap-3">
                       <div>
@@ -198,14 +198,14 @@ export default function ProjectsPage() {
       {/* ─── CTA ─── */}
       <section className="py-20 bg-[#fd008d]">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 data-animate className="text-3xl md:text-4xl font-bold text-white mb-4">
             Have a Project in Mind?
           </h2>
-          <p className="text-white/80 text-base md:text-lg mb-10 max-w-xl mx-auto">
+          <p data-animate className="text-white/80 text-base md:text-lg mb-10 max-w-xl mx-auto">
             Whether it&apos;s a standard frame or something no one&apos;s built
             before — we&apos;re the right call.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div data-animate className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
               className="bg-white text-[#fd008d] px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-gray-100 transition-colors"

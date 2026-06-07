@@ -3,6 +3,7 @@ import { Barlow_Condensed, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ScrollAnimator from "@/components/ScrollAnimator";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
@@ -33,6 +34,7 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <ScrollAnimator />
       </body>
     </html>
   );

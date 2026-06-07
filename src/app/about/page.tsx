@@ -78,17 +78,17 @@ export default function AboutPage() {
       <section className="relative pt-40 pb-24 bg-[#0f0f0f] overflow-hidden">
         <div className="absolute top-0 left-0 w-1 h-full bg-[#fd008d]" />
         <div className="max-w-7xl mx-auto px-6">
-          <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-5">
+          <p data-animate className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-5">
             About Moment Steel
           </p>
-          <h1 className="text-4xl md:text-7xl font-bold text-white leading-tight max-w-3xl">
+          <h1 data-animate className="text-4xl md:text-7xl font-bold text-white leading-tight max-w-3xl">
             Steel projects fail
             <br />
             at handoffs.
             <br />
             <span className="text-[#fd008d]">We eliminated them.</span>
           </h1>
-          <p className="text-gray-400 text-lg mt-8 max-w-2xl leading-relaxed">
+          <p data-animate className="text-gray-400 text-lg mt-8 max-w-2xl leading-relaxed">
             We started Moment Steel on a single conviction: one team should
             carry a project from the first structural calculation to the last
             bolt on site. Not a relay race — a continuous sprint with full
@@ -101,7 +101,7 @@ export default function AboutPage() {
       <section className="py-20 bg-[#111111]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
+            <div data-animate>
               <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-5">
                 Our Story
               </p>
@@ -146,7 +146,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="relative">
+            <div data-animate className="relative">
               <div className="relative h-80 lg:h-[480px] overflow-hidden">
                 <Image
                   src="/images/composite-spiral/spiral-2.jpg"
@@ -165,7 +165,7 @@ export default function AboutPage() {
       {/* ─── Differentiators ─── */}
       <section className="py-20 bg-[#0f0f0f]">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-14">
+          <div data-animate className="text-center mb-14">
             <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-4">
               Why Choose Us
             </p>
@@ -178,6 +178,7 @@ export default function AboutPage() {
             {differentiators.map((item) => (
               <div
                 key={item.title}
+                data-animate
                 className="flex gap-5 p-7 bg-[#1a1a1a] border border-[#2d2d2d] hover:border-[#fd008d]/40 transition-colors group"
               >
                 <div className="text-[#fd008d] shrink-0 mt-1">{item.icon}</div>
@@ -198,7 +199,7 @@ export default function AboutPage() {
       {/* ─── Team ─── */}
       <section className="py-20 bg-[#111111]">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-14">
+          <div data-animate className="text-center mb-14">
             <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-4">
               The Team
             </p>
@@ -215,6 +216,7 @@ export default function AboutPage() {
             {team.map((member) => (
               <div
                 key={member.name}
+                data-animate
                 className="bg-[#1a1a1a] border border-[#2d2d2d] p-8 hover:border-[#fd008d]/40 transition-colors group"
               >
                 <div className="w-16 h-16 bg-[#fd008d]/10 border border-[#fd008d]/30 flex items-center justify-center mb-6 group-hover:bg-[#fd008d]/20 transition-colors">
@@ -250,14 +252,14 @@ export default function AboutPage() {
       {/* ─── CTA ─── */}
       <section className="py-20 bg-[#1a1a1a] border-t border-[#2d2d2d]">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
+          <h2 data-animate className="text-3xl font-bold text-white mb-4">
             Tell us what you&apos;re building.
           </h2>
-          <p className="text-gray-400 mb-8 max-w-md mx-auto text-sm leading-relaxed">
+          <p data-animate className="text-gray-400 mb-8 max-w-md mx-auto text-sm leading-relaxed">
             Share your project scope and we&apos;ll get back to you within one
             business day.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div data-animate className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
               className="bg-[#fd008d] text-white px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-[#e0007c] transition-colors"

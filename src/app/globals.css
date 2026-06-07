@@ -41,3 +41,25 @@ body {
 .animate-float {
   animation: float 2s ease-in-out infinite;
 }
+
+/* ── Scroll-entrance animations (data-animate system) ── */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  will-change: opacity, transform;
+}
+
+[data-animate].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-animate],
+  [data-animate].is-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
