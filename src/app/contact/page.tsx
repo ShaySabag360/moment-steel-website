@@ -11,10 +11,10 @@ export default function ContactPage() {
       <section className="relative pt-40 pb-16 bg-[#0f0f0f] overflow-hidden">
         <div className="absolute top-0 left-0 w-1 h-full bg-[#fd008d]" />
         <div className="max-w-7xl mx-auto px-6">
-          <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] mb-5">
+          <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-5">
             Get in Touch
           </p>
-          <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
+          <h1 className="text-4xl md:text-7xl font-bold text-white leading-tight">
             Let&apos;s Talk
             <br />
             Steel.

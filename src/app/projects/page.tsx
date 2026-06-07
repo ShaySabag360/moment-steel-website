@@ -80,10 +80,10 @@ export default function ProjectsPage() {
       <section className="relative pt-40 pb-16 bg-[#0f0f0f] overflow-hidden">
         <div className="absolute top-0 left-0 w-1 h-full bg-[#fd008d]" />
         <div className="max-w-7xl mx-auto px-6">
-          <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] mb-5">
+          <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-5">
             Our Work
           </p>
-          <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
+          <h1 className="text-4xl md:text-7xl font-bold text-white leading-tight">
             Projects
           </h1>
           <p className="text-gray-400 text-lg mt-5 max-w-xl leading-relaxed">
@@ -101,7 +101,7 @@ export default function ProjectsPage() {
             <div key={category.name}>
               {/* Category header */}
               <div className="mb-12 pb-6 border-b border-[#2d2d2d]">
-                <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] mb-3">
+                <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-3">
                   Category
                 </p>
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">

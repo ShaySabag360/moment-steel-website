@@ -6,61 +6,31 @@ const services = [
     title: "Structural Design",
     description:
       "Full structural engineering by licensed professionals. We run calculations in Dlubal, IdeaStatica, and Strap — selecting the right tool for the structural system at hand.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-8 h-8">
-        <path d="M3 21h18M9 21V7l3-4 3 4v14M3 21V11l3-2M21 21V11l-3-2" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
   },
   {
     title: "Shop Drawings",
     description:
       "Fabrication-ready shop drawings produced in Tekla Structures, with Grasshopper handling parametric workflows for complex elements. Drawings that go straight to the factory floor.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-8 h-8">
-        <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
   },
   {
     title: "3D Laser Scanning",
     description:
       "We scan the site before anything is fabricated. Point cloud data captures exact as-built geometry, so components arrive ready to install — not ready to be reworked.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-8 h-8">
-        <path d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
   },
   {
     title: "Detailing",
     description:
       "Parametric modeling for structures that don't fit standard templates. Spiral forms, curved members, dense connection clusters — we model every joint before it's made.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-8 h-8">
-        <path d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
   },
   {
     title: "Fabrication Management",
     description:
       "We manage production at trusted fabrication partners in Israel and overseas — regular factory visits, quality tracking, and delivery coordination so the steel shows up ready to install.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-8 h-8">
-        <path d="M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077l1.41-.513m14.095-5.13l1.41-.513M5.106 17.785l1.15-.964m11.49-9.642l1.149-.964M7.501 19.795l.75-1.3m7.5-12.99l.75-1.3m-6.063 16.658l.26-1.477m2.605-14.772l.26-1.477m0 17.726l-.26-1.477M10.698 4.614l-.26-1.477M16.5 19.794l-.75-1.299M7.5 4.205L12 12m6.894 5.785l-1.149-.964M6.256 7.178l-1.15-.964m15.352 8.864l-1.41-.513M4.954 9.435l-1.41-.514M12.002 12l-3.75 6.495" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
   },
   {
     title: "Site Erection",
     description:
       "Our team oversees erection from mobilization to final bolt torque. With in-house survey capability, we verify alignment at every stage — not just at the end.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-8 h-8">
-        <path d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
   },
 ];
 
@@ -93,7 +63,7 @@ export default function HomePage() {
             className="mx-auto mb-10 opacity-95"
             priority
           />
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight tracking-tight">
+          <h1 className="text-4xl md:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
             Engineering Steel.
             <br />
             Precision Built.
@@ -141,7 +111,7 @@ export default function HomePage() {
                 { value: "15+", label: "Years Combined Experience" },
               ].map((stat) => (
                 <div key={stat.label}>
-                  <p className="text-[#fd008d] text-2xl font-bold">{stat.value}</p>
+                  <p className="text-[#fd008d] text-2xl font-bold font-display">{stat.value}</p>
                   <p className="text-gray-400 text-xs mt-1 max-w-[100px]">{stat.label}</p>
                 </div>
               ))}
@@ -151,32 +121,41 @@ export default function HomePage() {
       </section>
 
       {/* ─── Services ─── */}
-      <section className="py-24 bg-[#0f0f0f]" id="services">
+      <section className="py-24 bg-[#111111]" id="services">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] mb-4">
+          <div className="mb-14">
+            <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-4">
               What We Do
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
+            <h2 className="font-display font-extrabold text-white text-4xl md:text-6xl leading-none">
               End-to-End Steel Solutions
             </h2>
-            <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-sm leading-relaxed">
-              All engineering done in-house — from the first load combination to the last connection detail.
-              No outsourcing, no surprises.
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#2d2d2d]">
-            {services.map((service) => (
-              <div
-                key={service.title}
-                className="bg-[#111111] p-8 hover:bg-[#1a1a1a] transition-colors group"
-              >
-                <div className="text-[#fd008d] mb-5">{service.icon}</div>
-                <h3 className="text-white font-semibold text-base mb-3 group-hover:text-[#fd008d] transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{service.description}</p>
+          <div className="border-b border-white/10">
+            {services.map((service, i) => (
+              <div key={service.title} className="group border-t border-white/10">
+                <div className="relative flex items-center gap-4 md:gap-10 py-8">
+                  {/* Watermark number */}
+                  <span className="font-display font-bold text-white text-7xl md:text-8xl opacity-10 leading-none select-none shrink-0 w-20 md:w-36">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+
+                  {/* Name + description — overlaps the number for depth */}
+                  <div className="relative flex-1 -ml-8 md:-ml-16">
+                    <h3 className="font-display font-bold text-white text-2xl md:text-4xl group-hover:text-[#fd008d] transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-400 text-sm leading-relaxed mt-2 max-w-2xl">
+                      {service.description}
+                    </p>
+                  </div>
+
+                  {/* Arrow */}
+                  <span className="text-[#fd008d] text-xl md:text-2xl shrink-0 transition-transform duration-300 group-hover:translate-x-1">
+                    →
+                  </span>
+                </div>
               </div>
             ))}
           </div>
@@ -188,7 +167,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-end justify-between mb-12">
             <div>
-              <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] mb-4">
+              <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-4">
                 Our Work
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-white">

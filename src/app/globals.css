@@ -5,7 +5,9 @@
   --color-surface: #1a1a1a;
   --color-card: #222222;
   --color-border-dark: #2d2d2d;
-  --font-sans: var(--font-inter);
+  --font-display: var(--font-barlow), "Barlow Condensed", sans-serif;
+  --font-body: var(--font-dm-sans), "DM Sans", sans-serif;
+  --font-sans: var(--font-dm-sans), "DM Sans", sans-serif;
 }
 
 body {
@@ -13,4 +15,15 @@ body {
   color: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+  }
 }

@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Barlow_Condensed, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const inter = Inter({
+const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["600", "700", "800"],
+  variable: "--font-barlow",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-dm-sans",
 });
 
 export const metadata: Metadata = {
@@ -21,8 +28,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className="bg-[#111111] text-white antialiased">
+    <html lang="en" className={`${barlowCondensed.variable} ${dmSans.variable}`}>
+      <body className={`${dmSans.className} bg-[#111111] text-white antialiased`}>
         <Navbar />
         <main>{children}</main>
         <Footer />
