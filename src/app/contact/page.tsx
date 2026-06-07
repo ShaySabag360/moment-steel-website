@@ -1,3 +1,5 @@
+import ContactForm from "@/components/ContactForm";
+
 export const metadata = {
   title: "Contact — Moment Steel",
   description:
@@ -34,78 +36,7 @@ export default function ContactPage() {
 
             {/* ─── Form ─── */}
             <div data-animate className="lg:col-span-3">
-              <form className="space-y-5">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div>
-                    <label className="block text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="Your name"
-                      className="w-full bg-[#1a1a1a] border border-[#2d2d2d] text-white text-sm px-4 py-3 placeholder-gray-600 focus:outline-none focus:border-[#fd008d] transition-colors"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">
-                      Company
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Your company (optional)"
-                      className="w-full bg-[#1a1a1a] border border-[#2d2d2d] text-white text-sm px-4 py-3 placeholder-gray-600 focus:outline-none focus:border-[#fd008d] transition-colors"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div>
-                    <label className="block text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">
-                      Phone *
-                    </label>
-                    <input
-                      type="tel"
-                      required
-                      placeholder="050-000-0000"
-                      className="w-full bg-[#1a1a1a] border border-[#2d2d2d] text-white text-sm px-4 py-3 placeholder-gray-600 focus:outline-none focus:border-[#fd008d] transition-colors"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      placeholder="you@company.com"
-                      className="w-full bg-[#1a1a1a] border border-[#2d2d2d] text-white text-sm px-4 py-3 placeholder-gray-600 focus:outline-none focus:border-[#fd008d] transition-colors"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">
-                    Project Description *
-                  </label>
-                  <textarea
-                    required
-                    rows={6}
-                    placeholder="Tell us about your project — structure type, location, scope, timeline, any special requirements..."
-                    className="w-full bg-[#1a1a1a] border border-[#2d2d2d] text-white text-sm px-4 py-3 placeholder-gray-600 focus:outline-none focus:border-[#fd008d] transition-colors resize-none"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-[#fd008d] text-white py-4 text-sm font-bold uppercase tracking-widest hover:bg-[#e0007c] transition-colors"
-                >
-                  Send Message
-                </button>
-
-                <p className="text-gray-600 text-xs text-center">
-                  We respond within one business day. Or call us directly if it&apos;s urgent.
-                </p>
-              </form>
+              <ContactForm />
             </div>
 
             {/* ─── Contact Details ─── */}
