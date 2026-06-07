@@ -1,5 +1,72 @@
 import Image from "next/image";
 import Link from "next/link";
+import Faq from "@/components/Faq";
+
+const clientLogos = [
+  "Tidhar",
+  "Levinstein Netiv",
+  "Gazit Engineering",
+  "Shikun & Binui",
+];
+
+const testimonials = [
+  {
+    quote: (
+      <>
+        Working with Moment gives you peace of mind —{" "}
+        <strong className="text-white font-semibold">
+          solid engineering, quality execution, and results that hold up over
+          time.
+        </strong>
+      </>
+    ),
+    name: "Yaakov Livni",
+    company: "Livni Engineers",
+  },
+  {
+    quote: (
+      <>
+        Moment brings together engineering expertise and rigorous execution —{" "}
+        <strong className="text-white font-semibold">
+          reliable at every stage of the steel project.
+        </strong>
+      </>
+    ),
+    name: "Ben Shugol",
+    company: "Shikun & Binui",
+  },
+  {
+    quote: (
+      <>
+        Excellent partners.{" "}
+        <strong className="text-white font-semibold">
+          High-level design, execution, and installation
+        </strong>{" "}
+        — and outstanding coordination with every party involved.
+      </>
+    ),
+    name: "Daniel Parsha",
+    company: "David Engineers",
+  },
+];
+
+const processSteps = [
+  {
+    title: "Engineering & Design",
+    description:
+      "Structural calculations, parametric modeling, and fabrication-ready shop drawings. Every connection detailed before a single piece is cut.",
+  },
+  {
+    title: "Fabrication",
+    description:
+      "Production managed at trusted partner facilities in Israel and overseas. Regular factory visits, quality tracking, and delivery coordination.",
+  },
+  {
+    title: "Site Erection",
+    description:
+      "Installation from mobilization to final bolt torque. In-house survey capability verifies alignment at every stage — not just at the end.",
+  },
+];
 
 const services = [
   {
@@ -210,6 +277,111 @@ export default function HomePage() {
             >
               View All Projects →
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Client Logos ─── */}
+      <section className="bg-[#0a0a0a] border-t border-b border-white/10 py-10">
+        <div className="max-w-7xl mx-auto px-6">
+          <p
+            data-animate
+            className="text-[#fd008d] text-xs font-bold uppercase tracking-wide font-display text-center mb-6"
+          >
+            Trusted By
+          </p>
+          <div
+            data-animate
+            className="flex flex-wrap items-center justify-center md:justify-between gap-x-10 gap-y-4"
+          >
+            {clientLogos.map((logo) => (
+              <span
+                key={logo}
+                className="font-display text-xl font-bold text-white/30"
+              >
+                {logo}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Testimonials ─── */}
+      <section className="py-24 bg-[#111111]">
+        <div className="max-w-7xl mx-auto px-6">
+          <div data-animate className="text-center mb-14">
+            <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-4">
+              What Clients Say
+            </p>
+            <h2 className="font-display font-bold text-white text-4xl md:text-5xl">
+              Trusted by Engineers &amp; Contractors
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {testimonials.map((t) => (
+              <div
+                key={t.name}
+                data-animate
+                className="bg-[#1a1a1a] border border-white/10 rounded-none p-8"
+              >
+                <p className="font-body italic text-white/80 text-sm leading-relaxed mb-6">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+                <p className="text-white font-bold text-sm">{t.name}</p>
+                <p className="text-white/40 text-xs uppercase tracking-widest mt-1">
+                  {t.company}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Process ─── */}
+      <section className="py-24 bg-[#0f0f0f]">
+        <div className="max-w-7xl mx-auto px-6">
+          <div data-animate className="text-center mb-14">
+            <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-4">
+              How We Work
+            </p>
+            <h2 className="font-display font-bold text-white text-4xl md:text-5xl">
+              From First Calculation to Last Bolt
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {processSteps.map((step, i) => (
+              <div key={step.title} data-animate>
+                <span className="font-display font-bold text-white/10 text-7xl leading-none block">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div className="border-t-2 border-[#fd008d] w-12 mb-4 mt-4" />
+                <h3 className="font-display font-bold text-white text-2xl mb-3">
+                  {step.title}
+                </h3>
+                <p className="font-body text-sm text-white/60 leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── FAQ ─── */}
+      <section className="py-24 bg-[#111111]">
+        <div className="max-w-4xl mx-auto px-6">
+          <div data-animate className="text-center mb-14">
+            <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-4">
+              FAQ
+            </p>
+            <h2 className="font-display font-bold text-white text-4xl md:text-5xl">
+              Common Questions
+            </h2>
+          </div>
+          <div data-animate>
+            <Faq />
           </div>
         </div>
       </section>
