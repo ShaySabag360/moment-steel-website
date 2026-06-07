@@ -84,7 +84,7 @@ export default function ProjectsPage() {
         {projects.map((project) => {
           const extra = project.images.slice(1);
           return (
-            <article key={project.title} data-animate className="mb-32">
+            <article key={project.title} className="mb-16">
               {/* Full-bleed hero photo with overlay */}
               <div className="relative w-full h-[60vh]">
                 <Image
@@ -95,7 +95,7 @@ export default function ProjectsPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 inset-x-0 pb-10">
-                  <div className="max-w-7xl mx-auto px-6">
+                  <div data-animate className="max-w-7xl mx-auto px-6">
                     <span className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display">
                       {project.category}
                     </span>
@@ -112,7 +112,7 @@ export default function ProjectsPage() {
               {/* Description row with pink accent line */}
               <div className="max-w-7xl mx-auto px-6 mt-10">
                 <div className="flex items-stretch justify-between gap-8">
-                  <p className="text-gray-400 text-base leading-relaxed max-w-2xl">
+                  <p data-animate className="text-gray-400 text-base leading-relaxed max-w-2xl">
                     {project.description}
                   </p>
                   <div className="hidden md:block w-px bg-[#fd008d] self-stretch shrink-0" />
