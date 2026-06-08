@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Faq from "@/components/Faq";
+import PlanningLoop from "@/components/PlanningLoop";
 
 const clientLogos = [
   {
@@ -194,63 +195,7 @@ export default function HomePage() {
             </h2>
           </div>
 
-          {/* Integrated planning core — replaces sequential rows 01–03 */}
-          <div className="my-12">
-            <svg width="100%" viewBox="0 0 680 500" role="img" aria-label="Integrated planning core diagram">
-              <defs>
-                <marker id="svc-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                  <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </marker>
-              </defs>
-
-              {/* Eyebrow */}
-              <text x="40" y="30" fill="#fd008d" fontSize="11" fontWeight="700" letterSpacing="3" fontFamily="'Barlow Condensed', sans-serif">THE INTEGRATED CORE</text>
-
-              {/* Heading */}
-              <text x="40" y="58" fill="#ffffff" fontSize="22" fontWeight="800" fontFamily="'Barlow Condensed', sans-serif">Three tools. One continuous loop.</text>
-
-              {/* Subtitle */}
-              <text x="40" y="80" fill="#a0a0a0" fontSize="13" fontFamily="'DM Sans', sans-serif">Every update propagates instantly across all three disciplines.</text>
-
-              {/* Orbit ring */}
-              <circle cx="340" cy="270" r="130" fill="none" stroke="#333" strokeWidth="0.5" strokeDasharray="4 4"/>
-
-              {/* Arc arrows clockwise */}
-              <path d="M 270 148 A 130 130 0 0 1 462 225" fill="none" stroke="#fd008d" strokeWidth="1.5" opacity="0.7" markerEnd="url(#svc-arrow)"/>
-              <path d="M 455 315 A 130 130 0 0 1 255 385" fill="none" stroke="#fd008d" strokeWidth="1.5" opacity="0.7" markerEnd="url(#svc-arrow)"/>
-              <path d="M 218 315 A 130 130 0 0 1 218 218" fill="none" stroke="#fd008d" strokeWidth="1.5" opacity="0.7" markerEnd="url(#svc-arrow)"/>
-
-              {/* Center hub */}
-              <circle cx="340" cy="270" r="42" fill="#111" stroke="#fd008d" strokeWidth="1"/>
-              <text x="340" y="263" textAnchor="middle" fill="#fd008d" fontSize="10" fontWeight="700" letterSpacing="2" fontFamily="'Barlow Condensed', sans-serif">REAL-TIME</text>
-              <text x="340" y="278" textAnchor="middle" fill="#fd008d" fontSize="10" fontWeight="700" letterSpacing="2" fontFamily="'Barlow Condensed', sans-serif">SYNC</text>
-
-              {/* Node 01 — Structural Design (top) */}
-              <rect x="255" y="108" width="170" height="58" rx="2" fill="#0d0d0d" stroke="#fd008d" strokeWidth="1.5"/>
-              <rect x="255" y="108" width="3" height="58" fill="#fd008d"/>
-              <text x="274" y="131" fill="#ffffff" fontSize="13" fontWeight="700" fontFamily="'Barlow Condensed', sans-serif">Structural Design</text>
-              <text x="274" y="149" fill="#666" fontSize="11" fontFamily="'DM Sans', sans-serif">Dlubal · IdeaStatica · EN 1993</text>
-              <text x="415" y="134" fill="#1a1a1a" fontSize="20" fontWeight="900" fontFamily="'Barlow Condensed', sans-serif">01</text>
-
-              {/* Node 02 — Shop Drawings (bottom left) */}
-              <rect x="90" y="362" width="170" height="58" rx="2" fill="#0d0d0d" stroke="#555" strokeWidth="1"/>
-              <rect x="90" y="362" width="3" height="58" fill="#555"/>
-              <text x="109" y="385" fill="#ffffff" fontSize="13" fontWeight="700" fontFamily="'Barlow Condensed', sans-serif">Shop Drawings</text>
-              <text x="109" y="403" fill="#666" fontSize="11" fontFamily="'DM Sans', sans-serif">Tekla · Detailing · Fabrication</text>
-              <text x="251" y="388" fill="#1a1a1a" fontSize="20" fontWeight="900" fontFamily="'Barlow Condensed', sans-serif">02</text>
-
-              {/* Node 03 — Laser Scanning (bottom right) */}
-              <rect x="420" y="362" width="170" height="58" rx="2" fill="#0d0d0d" stroke="#555" strokeWidth="1"/>
-              <rect x="420" y="362" width="3" height="58" fill="#555"/>
-              <text x="439" y="385" fill="#ffffff" fontSize="13" fontWeight="700" fontFamily="'Barlow Condensed', sans-serif">3D Laser Scanning</text>
-              <text x="439" y="403" fill="#666" fontSize="11" fontFamily="'DM Sans', sans-serif">Point cloud · As-built · Fit check</text>
-              <text x="581" y="388" fill="#1a1a1a" fontSize="20" fontWeight="900" fontFamily="'Barlow Condensed', sans-serif">03</text>
-
-              {/* Result bar */}
-              <rect x="40" y="452" width="600" height="36" rx="2" fill="#0a0a0a" stroke="#2a2a2a" strokeWidth="0.5"/>
-              <text x="340" y="475" textAnchor="middle" fill="#a0a0a0" fontSize="12" letterSpacing="1" fontFamily="'DM Sans', sans-serif">Result: zero rework · precise fabrication · fast on-site installation</text>
-            </svg>
-          </div>
+          <PlanningLoop />
 
           <div className="border-b border-white/10">
             {services.slice(3).map((service, i) => (
