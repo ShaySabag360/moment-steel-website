@@ -84,7 +84,7 @@ export default function AboutPage() {
       <section className="relative pt-40 pb-24 bg-[#0f0f0f] overflow-hidden">
         <div className="absolute top-0 left-0 w-1 h-full bg-[#fd008d]" />
         <div className="max-w-7xl mx-auto px-6">
-          <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-5">
+          <p className="text-[#fd008d] text-sm font-bold uppercase tracking-[0.25em] font-display mb-5">
             About Moment Steel
           </p>
           <h1 className="text-4xl md:text-7xl font-bold text-white leading-tight max-w-3xl">
@@ -108,7 +108,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div data-animate>
-              <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-5">
+              <p className="text-[#fd008d] text-sm font-bold uppercase tracking-[0.25em] font-display mb-5">
                 Our Story
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
@@ -172,7 +172,7 @@ export default function AboutPage() {
       <section className="py-20 bg-[#0f0f0f]">
         <div className="max-w-7xl mx-auto px-6">
           <div data-animate className="text-center mb-14">
-            <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-4">
+            <p className="text-[#fd008d] text-sm font-bold uppercase tracking-[0.25em] font-display mb-4">
               Why Choose Us
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-white">
@@ -206,7 +206,7 @@ export default function AboutPage() {
       <section className="py-20 bg-[#111111]">
         <div className="max-w-7xl mx-auto px-6">
           <div data-animate className="text-center mb-14">
-            <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-4">
+            <p className="text-[#fd008d] text-sm font-bold uppercase tracking-[0.25em] font-display mb-4">
               The Team
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-white">

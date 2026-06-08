@@ -22,6 +22,7 @@ const testimonials = [
     ),
     name: "Yaakov Livni",
     company: "Livni Engineers",
+    logo: "https://moment-steel.com/wp-content/uploads/2026/02/לבני-מהנדסים-לוגו-רק-אייקון-1.webp",
   },
   {
     quote: (
@@ -34,6 +35,7 @@ const testimonials = [
     ),
     name: "Ben Shugol",
     company: "Shikun & Binui",
+    logo: "https://moment-steel.com/wp-content/uploads/2026/02/image-1-1.webp",
   },
   {
     quote: (
@@ -47,24 +49,7 @@ const testimonials = [
     ),
     name: "Daniel Parsha",
     company: "David Engineers",
-  },
-];
-
-const processSteps = [
-  {
-    title: "Engineering & Design",
-    description:
-      "Structural calculations, parametric modeling, and fabrication-ready shop drawings. Every connection detailed before a single piece is cut.",
-  },
-  {
-    title: "Fabrication",
-    description:
-      "Production managed at trusted partner facilities in Israel and overseas. Regular factory visits, quality tracking, and delivery coordination.",
-  },
-  {
-    title: "Site Erection",
-    description:
-      "Installation from mobilization to final bolt torque. In-house survey capability verifies alignment at every stage — not just at the end.",
+    logo: "https://moment-steel.com/wp-content/uploads/2026/02/דוד-מהנדסים-לוגו-רק-אייקון-1.png",
   },
 ];
 
@@ -162,7 +147,7 @@ export default function HomePage() {
           <div className="grid grid-cols-3">
             {[
               { value: "100%", label: "In-House Engineering" },
-              { value: "3", label: "Senior Engineers" },
+              { value: "50+", label: "Projects Delivered" },
               { value: "15+", label: "Years Combined Experience" },
             ].map((stat, i) => (
               <div
@@ -186,7 +171,7 @@ export default function HomePage() {
       <section className="pt-24 pb-16 bg-[#111111]" id="services">
         <div className="max-w-7xl mx-auto px-6">
           <div data-animate className="mb-14">
-            <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-4">
+            <p className="text-[#fd008d] text-sm font-bold uppercase tracking-[0.25em] font-display mb-4">
               What We Do
             </p>
             <h2 className="font-display font-extrabold text-white text-4xl md:text-6xl leading-none">
@@ -229,7 +214,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <div data-animate className="flex items-end justify-between mb-12">
             <div>
-              <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-4">
+              <p className="text-[#fd008d] text-sm font-bold uppercase tracking-[0.25em] font-display mb-4">
                 Our Work
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-white">
@@ -284,7 +269,7 @@ export default function HomePage() {
       {/* ─── Client Logos ─── */}
       <section className="bg-[#0a0a0a] border-t border-b border-white/10 py-10">
         <div className="max-w-7xl mx-auto px-6">
-          <p className="text-[#fd008d] text-xs font-bold uppercase tracking-wide font-display text-center mb-6">
+          <p className="text-[#fd008d] text-sm font-bold uppercase tracking-[0.25em] font-display text-center mb-6">
             Trusted By
           </p>
           <div className="flex flex-wrap items-center justify-center md:justify-between gap-x-10 gap-y-4">
@@ -304,7 +289,7 @@ export default function HomePage() {
       <section className="py-24 bg-[#111111]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14">
-            <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-4">
+            <p className="text-[#fd008d] text-sm font-bold uppercase tracking-[0.25em] font-display mb-4">
               What Clients Say
             </p>
             <h2 className="font-display font-bold text-white text-4xl md:text-5xl">
@@ -316,7 +301,7 @@ export default function HomePage() {
             {testimonials.map((t) => (
               <div
                 key={t.name}
-                className="bg-[#1a1a1a] border border-white/10 rounded-none p-8"
+                className="relative bg-[#1a1a1a] border border-white/10 rounded-none p-8"
               >
                 <p className="font-body italic text-white/80 text-sm leading-relaxed mb-6">
                   &ldquo;{t.quote}&rdquo;
@@ -325,37 +310,14 @@ export default function HomePage() {
                 <p className="text-white/40 text-xs uppercase tracking-widest mt-1">
                   {t.company}
                 </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ─── Process ─── */}
-      <section className="py-24 bg-[#0f0f0f]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-14">
-            <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-4">
-              How We Work
-            </p>
-            <h2 className="font-display font-bold text-white text-4xl md:text-5xl">
-              From First Calculation to Last Bolt
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {processSteps.map((step, i) => (
-              <div key={step.title}>
-                <span className="font-display font-bold text-white/10 text-7xl leading-none block">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <div className="border-t-2 border-[#fd008d] w-12 mb-4 mt-4" />
-                <h3 className="font-display font-bold text-white text-2xl mb-3">
-                  {step.title}
-                </h3>
-                <p className="font-body text-sm text-white/60 leading-relaxed">
-                  {step.description}
-                </p>
+                <Image
+                  src={t.logo}
+                  alt={t.company}
+                  width={40}
+                  height={40}
+                  unoptimized
+                  className="absolute bottom-8 right-8 w-10 h-10 object-contain"
+                />
               </div>
             ))}
           </div>
@@ -366,7 +328,7 @@ export default function HomePage() {
       <section className="py-24 bg-[#111111]">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-14">
-            <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-4">
+            <p className="text-[#fd008d] text-sm font-bold uppercase tracking-[0.25em] font-display mb-4">
               FAQ
             </p>
             <h2 className="font-display font-bold text-white text-4xl md:text-5xl">

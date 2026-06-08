@@ -70,7 +70,7 @@ export default function ProjectsPage() {
       <section className="pt-40 pb-20 bg-[#0f0f0f]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="border-l-4 border-[#fd008d] pl-6">
-            <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-4">
+            <p className="text-[#fd008d] text-sm font-bold uppercase tracking-[0.25em] font-display mb-4">
               Our Work
             </p>
             <h1 className="text-4xl md:text-7xl font-bold text-white leading-tight">
@@ -102,7 +102,7 @@ export default function ProjectsPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 inset-x-0 pb-10">
                   <div data-animate className="max-w-7xl mx-auto px-6">
-                    <span className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display">
+                    <span className="text-[#fd008d] text-sm font-bold uppercase tracking-[0.25em] font-display">
                       {project.category}
                     </span>
                     <h2 className="font-display font-bold text-white text-5xl leading-none mt-3">
