@@ -284,16 +284,10 @@ export default function HomePage() {
       {/* ─── Client Logos ─── */}
       <section className="bg-[#0a0a0a] border-t border-b border-white/10 py-10">
         <div className="max-w-7xl mx-auto px-6">
-          <p
-            data-animate
-            className="text-[#fd008d] text-xs font-bold uppercase tracking-wide font-display text-center mb-6"
-          >
+          <p className="text-[#fd008d] text-xs font-bold uppercase tracking-wide font-display text-center mb-6">
             Trusted By
           </p>
-          <div
-            data-animate
-            className="flex flex-wrap items-center justify-center md:justify-between gap-x-10 gap-y-4"
-          >
+          <div className="flex flex-wrap items-center justify-center md:justify-between gap-x-10 gap-y-4">
             {clientLogos.map((logo) => (
               <span
                 key={logo}
@@ -309,7 +303,7 @@ export default function HomePage() {
       {/* ─── Testimonials ─── */}
       <section className="py-24 bg-[#111111]">
         <div className="max-w-7xl mx-auto px-6">
-          <div data-animate className="text-center mb-14">
+          <div className="text-center mb-14">
             <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-4">
               What Clients Say
             </p>
@@ -322,7 +316,6 @@ export default function HomePage() {
             {testimonials.map((t) => (
               <div
                 key={t.name}
-                data-animate
                 className="bg-[#1a1a1a] border border-white/10 rounded-none p-8"
               >
                 <p className="font-body italic text-white/80 text-sm leading-relaxed mb-6">
@@ -341,7 +334,7 @@ export default function HomePage() {
       {/* ─── Process ─── */}
       <section className="py-24 bg-[#0f0f0f]">
         <div className="max-w-7xl mx-auto px-6">
-          <div data-animate className="text-center mb-14">
+          <div className="text-center mb-14">
             <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-4">
               How We Work
             </p>
@@ -352,7 +345,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {processSteps.map((step, i) => (
-              <div key={step.title} data-animate>
+              <div key={step.title}>
                 <span className="font-display font-bold text-white/10 text-7xl leading-none block">
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -372,7 +365,7 @@ export default function HomePage() {
       {/* ─── FAQ ─── */}
       <section className="py-24 bg-[#111111]">
         <div className="max-w-4xl mx-auto px-6">
-          <div data-animate className="text-center mb-14">
+          <div className="text-center mb-14">
             <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display mb-4">
               FAQ
             </p>
@@ -380,7 +373,7 @@ export default function HomePage() {
               Common Questions
             </h2>
           </div>
-          <div data-animate>
+          <div>
             <Faq />
           </div>
         </div>
