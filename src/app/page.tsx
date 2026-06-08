@@ -3,10 +3,22 @@ import Link from "next/link";
 import Faq from "@/components/Faq";
 
 const clientLogos = [
-  "Tidhar",
-  "Levinstein Netiv",
-  "Gazit Engineering",
-  "Shikun & Binui",
+  {
+    alt: "Tidhar",
+    src: "https://moment-steel.com/wp-content/uploads/2026/02/%D7%AA%D7%93%D7%94%D7%A8-%D7%90%D7%A4%D7%95%D7%A8-1.webp",
+  },
+  {
+    alt: "Levinstein Netiv",
+    src: "https://moment-steel.com/wp-content/uploads/2026/02/%D7%9C%D7%95%D7%99%D7%A0%D7%A9%D7%98%D7%99%D7%9F-%D7%A0%D7%AA%D7%99%D7%91-%D7%90%D7%A4%D7%95%D7%A8-1.webp",
+  },
+  {
+    alt: "Gazit Engineering",
+    src: "https://moment-steel.com/wp-content/uploads/2026/02/%D7%92%D7%96%D7%99%D7%AA-%D7%94%D7%A0%D7%93%D7%A1%D7%94-%D7%90%D7%A4%D7%95%D7%A8-1.webp",
+  },
+  {
+    alt: "Shikun & Binui",
+    src: "https://moment-steel.com/wp-content/uploads/2026/02/%D7%A9%D7%99%D7%9B%D7%95%D7%9F-%D7%95%D7%91%D7%99%D7%A0%D7%95%D7%99-%D7%90%D7%A4%D7%95%D7%A8-1.webp",
+  },
 ];
 
 const testimonials = [
@@ -22,7 +34,8 @@ const testimonials = [
     ),
     name: "Yaakov Livni",
     company: "Livni Engineers",
-    logo: "https://moment-steel.com/wp-content/uploads/2026/02/לבני-מהנדסים-לוגו-רק-אייקון-1.webp",
+    logo: "https://livnieng.com/wp-content/uploads/2021/03/livni-logo.png",
+    invert: true,
   },
   {
     quote: (
@@ -35,7 +48,8 @@ const testimonials = [
     ),
     name: "Ben Shugol",
     company: "Shikun & Binui",
-    logo: "https://moment-steel.com/wp-content/uploads/2026/02/image-1-1.webp",
+    logo: "https://moment-steel.com/wp-content/uploads/2026/02/%D7%A9%D7%99%D7%9B%D7%95%D7%9F-%D7%95%D7%91%D7%99%D7%A0%D7%95%D7%99-%D7%90%D7%A4%D7%95%D7%A8-1.webp",
+    invert: true,
   },
   {
     quote: (
@@ -49,7 +63,8 @@ const testimonials = [
     ),
     name: "Daniel Parsha",
     company: "David Engineers",
-    logo: "https://moment-steel.com/wp-content/uploads/2026/02/דוד-מהנדסים-לוגו-רק-אייקון-1.png",
+    logo: "https://www.davideng.co.il/wp-content/uploads/2018/12/logo-white.png",
+    invert: false,
   },
 ];
 
@@ -274,12 +289,13 @@ export default function HomePage() {
           </p>
           <div className="flex flex-wrap items-center justify-center md:justify-between gap-x-10 gap-y-4">
             {clientLogos.map((logo) => (
-              <span
-                key={logo}
-                className="font-display text-xl font-bold text-white/30"
-              >
-                {logo}
-              </span>
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                key={logo.alt}
+                src={logo.src}
+                alt={logo.alt}
+                style={{ height: "36px", width: "auto", filter: "brightness(0) invert(1)", opacity: 0.55 }}
+              />
             ))}
           </div>
         </div>
@@ -310,13 +326,17 @@ export default function HomePage() {
                 <p className="text-white/40 text-xs uppercase tracking-widest mt-1">
                   {t.company}
                 </p>
-                <Image
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src={t.logo}
                   alt={t.company}
-                  width={40}
-                  height={40}
-                  unoptimized
-                  className="absolute bottom-8 right-8 w-10 h-10 object-contain"
+                  className="absolute bottom-8 right-8"
+                  style={{
+                    height: "32px",
+                    width: "auto",
+                    opacity: 0.65,
+                    ...(t.invert ? { filter: "brightness(0) invert(1)" } : {}),
+                  }}
                 />
               </div>
             ))}
