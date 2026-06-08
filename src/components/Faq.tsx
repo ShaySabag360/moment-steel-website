@@ -44,7 +44,7 @@ export default function Faq() {
               </span>
             </button>
             {isOpen && (
-              <p className="font-body text-sm text-white/60 leading-relaxed pb-6 max-w-3xl">
+              <p className="font-body text-base text-white/60 leading-relaxed pb-6 max-w-3xl">
                 {item.a}
               </p>
             )}

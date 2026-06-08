@@ -7,9 +7,9 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/mwvjljyp";
 type Status = "idle" | "submitting" | "success" | "error";
 
 const inputClass =
-  "w-full bg-[#1a1a1a] border border-[#2d2d2d] text-white text-sm px-4 py-3 placeholder-gray-600 focus:outline-none focus:border-[#fd008d] transition-colors";
+  "w-full bg-[#1a1a1a] border border-[#2d2d2d] text-white text-base px-4 py-3 placeholder-gray-600 focus:outline-none focus:border-[#fd008d] transition-colors";
 const labelClass =
-  "block text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2";
+  "block text-sm font-semibold uppercase tracking-widest text-gray-400 mb-2";
 
 export default function ContactForm() {
   const [values, setValues] = useState({
@@ -162,12 +162,12 @@ export default function ContactForm() {
       </button>
 
       {status === "error" && (
-        <p className="text-red-400 text-xs text-center">
+        <p className="text-red-400 text-sm text-center">
           Something went wrong. Please try again or call us directly.
         </p>
       )}
 
-      <p className="text-gray-600 text-xs text-center">
+      <p className="text-gray-600 text-sm text-center">
         We respond within one business day. Or call us directly if it&apos;s urgent.
       </p>
     </form>

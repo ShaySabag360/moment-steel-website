@@ -14,7 +14,7 @@ export default function Footer() {
               height={43}
               className="mb-5"
             />
-            <p className="text-gray-400 text-sm leading-relaxed">
+            <p className="text-gray-400 text-base leading-relaxed">
               Edge to Edge Steel Solutions — from engineering and planning to
               fabrication and on-site erection.
             </p>
@@ -34,7 +34,7 @@ export default function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-gray-400 hover:text-white text-sm transition-colors"
+                    className="text-gray-400 hover:text-white text-base transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -47,7 +47,7 @@ export default function Footer() {
             <h3 className="text-white font-semibold uppercase tracking-widest text-sm mb-5">
               Contact
             </h3>
-            <ul className="space-y-3 text-gray-400 text-sm">
+            <ul className="space-y-3 text-gray-400 text-base">
               <li>Yoni Netanyahu 8, Petach Tikva</li>
               <li>
                 <a href="tel:0508464851" className="hover:text-white transition-colors">
@@ -81,7 +81,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-[#2d2d2d] text-center text-gray-500 text-xs">
+        <div className="mt-12 pt-8 border-t border-[#2d2d2d] text-center text-gray-500 text-sm">
           © {new Date().getFullYear()} Moment Steel. All rights reserved.
         </div>
       </div>

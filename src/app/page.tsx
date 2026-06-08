@@ -173,7 +173,7 @@ export default function HomePage() {
                 <p className="font-display font-bold text-white text-5xl md:text-8xl leading-none">
                   {stat.value}
                 </p>
-                <p className="font-body text-white/40 text-xs tracking-[0.15em] uppercase mt-4">
+                <p className="font-body text-white/40 text-sm tracking-[0.15em] uppercase mt-4">
                   {stat.label}
                 </p>
               </div>
@@ -208,7 +208,7 @@ export default function HomePage() {
                     <h3 className="font-display font-bold text-white text-2xl md:text-4xl group-hover:text-[#fd008d] transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-gray-400 text-sm leading-relaxed mt-2 max-w-2xl">
+                    <p className="text-gray-400 text-base leading-relaxed mt-2 max-w-2xl">
                       {service.description}
                     </p>
                   </div>
@@ -319,11 +319,11 @@ export default function HomePage() {
                 key={t.name}
                 className="relative bg-[#1a1a1a] border border-white/10 rounded-none p-8"
               >
-                <p className="font-body italic text-white/80 text-sm leading-relaxed mb-6">
+                <p className="font-body italic text-white/80 text-base leading-relaxed mb-6">
                   &ldquo;{t.quote}&rdquo;
                 </p>
-                <p className="text-white font-bold text-sm">{t.name}</p>
-                <p className="text-white/40 text-xs uppercase tracking-widest mt-1">
+                <p className="text-white font-bold text-base">{t.name}</p>
+                <p className="text-white/40 text-sm uppercase tracking-widest mt-1">
                   {t.company}
                 </p>
                 {/* eslint-disable-next-line @next/next/no-img-element */}

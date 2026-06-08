@@ -144,7 +144,7 @@ export default function AboutPage() {
                 ].map((type) => (
                   <span
                     key={type}
-                    className="border border-[#2d2d2d] text-gray-300 text-xs px-4 py-2 uppercase tracking-widest"
+                    className="border border-[#2d2d2d] text-gray-300 text-sm px-4 py-2 uppercase tracking-widest"
                   >
                     {type}
                   </span>
@@ -192,7 +192,7 @@ export default function AboutPage() {
                   <h3 className="text-white font-semibold text-base mb-2 group-hover:text-[#fd008d] transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">
+                  <p className="text-gray-400 text-base leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -212,7 +212,7 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-white">
               Three Engineers. One Vision.
             </h2>
-            <p className="text-gray-400 mt-4 max-w-xl mx-auto text-sm leading-relaxed">
+            <p className="text-gray-400 mt-4 max-w-xl mx-auto text-base leading-relaxed">
               Every project is handled by a senior engineer — no project
               managers in the middle, no junior handoffs.
             </p>
@@ -232,10 +232,10 @@ export default function AboutPage() {
                 </div>
 
                 <h3 className="text-white font-bold text-lg mb-1">{member.name}</h3>
-                <p className="text-[#fd008d] text-xs font-semibold uppercase tracking-[0.2em] mb-4 font-display">
+                <p className="text-[#fd008d] text-sm font-semibold uppercase tracking-[0.2em] mb-4 font-display">
                   {member.role}
                 </p>
-                <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                <p className="text-gray-400 text-base leading-relaxed mb-6">
                   {member.description}
                 </p>
 
@@ -243,7 +243,7 @@ export default function AboutPage() {
                   {member.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-xs text-gray-500 border border-[#2d2d2d] px-2.5 py-1"
+                      className="text-sm text-gray-500 border border-[#2d2d2d] px-2.5 py-1"
                     >
                       {tag}
                     </span>

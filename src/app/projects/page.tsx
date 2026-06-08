@@ -102,13 +102,13 @@ export default function ProjectsPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 inset-x-0 pb-10">
                   <div data-animate className="max-w-7xl mx-auto px-6">
-                    <span className="text-[#fd008d] text-base font-bold uppercase tracking-[0.2em] font-display">
+                    <span className="text-[#fd008d] text-xl font-bold uppercase tracking-[0.2em] font-display">
                       {project.category}
                     </span>
                     <h2 className="font-display font-bold text-white text-5xl leading-none mt-3">
                       {project.title}
                     </h2>
-                    <p className="text-white/60 text-sm mt-2">
+                    <p className="text-white/60 text-base mt-2">
                       {project.location}
                     </p>
                   </div>
