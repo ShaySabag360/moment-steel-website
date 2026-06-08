@@ -35,7 +35,7 @@ const testimonials = [
     name: "Yaakov Livni",
     company: "Livni Engineers",
     logo: "https://livnieng.com/wp-content/uploads/2021/03/livni-logo.png",
-    invert: true,
+    logoOpacity: 0.7,
   },
   {
     quote: (
@@ -49,7 +49,7 @@ const testimonials = [
     name: "Ben Shugol",
     company: "Shikun & Binui",
     logo: "https://moment-steel.com/wp-content/uploads/2026/02/%D7%A9%D7%99%D7%9B%D7%95%D7%9F-%D7%95%D7%91%D7%99%D7%A0%D7%95%D7%99-%D7%90%D7%A4%D7%95%D7%A8-1.webp",
-    invert: true,
+    logoOpacity: 0.7,
   },
   {
     quote: (
@@ -64,7 +64,7 @@ const testimonials = [
     name: "Daniel Parsha",
     company: "David Engineers",
     logo: "https://www.davideng.co.il/wp-content/uploads/2018/12/logo-white.png",
-    invert: false,
+    logoOpacity: 0.65,
   },
 ];
 
@@ -294,7 +294,7 @@ export default function HomePage() {
                 key={logo.alt}
                 src={logo.src}
                 alt={logo.alt}
-                style={{ height: "36px", width: "auto", filter: "brightness(0) invert(1)", opacity: 0.55 }}
+                style={{ height: "36px", width: "auto", filter: "none", opacity: 0.65 }}
               />
             ))}
           </div>
@@ -334,8 +334,8 @@ export default function HomePage() {
                   style={{
                     height: "32px",
                     width: "auto",
-                    opacity: 0.65,
-                    ...(t.invert ? { filter: "brightness(0) invert(1)" } : {}),
+                    filter: "none",
+                    opacity: t.logoOpacity,
                   }}
                 />
               </div>
