@@ -70,7 +70,7 @@ export default function ProjectsPage() {
       <section className="pt-40 pb-20 bg-[#0f0f0f]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="border-l-4 border-[#fd008d] pl-6">
-            <p className="text-[#fd008d] text-sm font-bold uppercase tracking-[0.25em] font-display mb-4">
+            <p className="text-[#fd008d] text-xl font-bold uppercase tracking-[0.25em] font-display mb-4">
               Our Work
             </p>
             <h1 className="text-4xl md:text-7xl font-bold text-white leading-tight">
