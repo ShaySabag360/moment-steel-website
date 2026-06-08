@@ -3,22 +3,10 @@ import Link from "next/link";
 import Faq from "@/components/Faq";
 
 const clientLogos = [
-  {
-    alt: "Tidhar",
-    src: "https://moment-steel.com/wp-content/uploads/2026/02/%D7%AA%D7%93%D7%94%D7%A8-%D7%90%D7%A4%D7%95%D7%A8-1.webp",
-  },
-  {
-    alt: "Levinstein Netiv",
-    src: "https://moment-steel.com/wp-content/uploads/2026/02/%D7%9C%D7%95%D7%99%D7%A0%D7%A9%D7%98%D7%99%D7%9F-%D7%A0%D7%AA%D7%99%D7%91-%D7%90%D7%A4%D7%95%D7%A8-1.webp",
-  },
-  {
-    alt: "Gazit Engineering",
-    src: "https://moment-steel.com/wp-content/uploads/2026/02/%D7%92%D7%96%D7%99%D7%AA-%D7%94%D7%A0%D7%93%D7%A1%D7%94-%D7%90%D7%A4%D7%95%D7%A8-1.webp",
-  },
-  {
-    alt: "Shikun & Binui",
-    src: "https://moment-steel.com/wp-content/uploads/2026/02/%D7%A9%D7%99%D7%9B%D7%95%D7%9F-%D7%95%D7%91%D7%99%D7%A0%D7%95%D7%99-%D7%90%D7%A4%D7%95%D7%A8-1.webp",
-  },
+  { alt: "Tidhar", src: "/logos/tidhar.png" },
+  { alt: "Levinstein Netiv", src: "/logos/levinshtein.png" },
+  { alt: "Gazit Engineering", src: "/logos/gazit.png" },
+  { alt: "Shikun & Binui", src: "/logos/shikun.png" },
 ];
 
 const testimonials = [
@@ -34,8 +22,7 @@ const testimonials = [
     ),
     name: "Yaakov Livni",
     company: "Livni Engineers",
-    logo: "https://livnieng.com/wp-content/uploads/2021/03/livni-logo.png",
-    logoOpacity: 0.7,
+    logo: "/logos/livni.png",
   },
   {
     quote: (
@@ -48,8 +35,7 @@ const testimonials = [
     ),
     name: "Ben Shugol",
     company: "Shikun & Binui",
-    logo: "https://moment-steel.com/wp-content/uploads/2026/02/%D7%A9%D7%99%D7%9B%D7%95%D7%9F-%D7%95%D7%91%D7%99%D7%A0%D7%95%D7%99-%D7%90%D7%A4%D7%95%D7%A8-1.webp",
-    logoOpacity: 0.7,
+    logo: "/logos/shikun.png",
   },
   {
     quote: (
@@ -63,8 +49,7 @@ const testimonials = [
     ),
     name: "Daniel Parsha",
     company: "David Engineers",
-    logo: "https://www.davideng.co.il/wp-content/uploads/2018/12/logo-white.png",
-    logoOpacity: 0.65,
+    logo: "/logos/david.png",
   },
 ];
 
@@ -294,7 +279,7 @@ export default function HomePage() {
                 key={logo.alt}
                 src={logo.src}
                 alt={logo.alt}
-                style={{ height: "36px", width: "auto", filter: "brightness(0) invert(1)", opacity: 0.7 }}
+                style={{ height: "40px", width: "auto", opacity: 0.9 }}
               />
             ))}
           </div>
@@ -334,8 +319,7 @@ export default function HomePage() {
                   style={{
                     height: "32px",
                     width: "auto",
-                    filter: "none",
-                    opacity: t.logoOpacity,
+                    opacity: 0.9,
                   }}
                 />
               </div>
