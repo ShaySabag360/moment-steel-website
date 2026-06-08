@@ -294,7 +294,7 @@ export default function HomePage() {
                 key={logo.alt}
                 src={logo.src}
                 alt={logo.alt}
-                style={{ height: "36px", width: "auto", filter: "none", opacity: 0.65 }}
+                style={{ height: "36px", width: "auto", filter: "brightness(0) invert(1)", opacity: 0.7 }}
               />
             ))}
           </div>
