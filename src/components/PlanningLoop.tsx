@@ -102,7 +102,6 @@ export default function PlanningLoop() {
           {NODES.map((n) => (
             <foreignObject key={n.num} x={n.x} y={n.y} width={n.w} height={n.h}>
               <div
-                xmlns="http://www.w3.org/1999/xhtml"
                 style={{
                   boxSizing: "border-box",
                   height: "100%",
