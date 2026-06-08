@@ -21,7 +21,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-semibold uppercase tracking-widest text-xs mb-5">
+            <h3 className="text-white font-semibold uppercase tracking-widest text-sm mb-5">
               Navigation
             </h3>
             <ul className="space-y-3">
@@ -44,7 +44,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-semibold uppercase tracking-widest text-xs mb-5">
+            <h3 className="text-white font-semibold uppercase tracking-widest text-sm mb-5">
               Contact
             </h3>
             <ul className="space-y-3 text-gray-400 text-sm">

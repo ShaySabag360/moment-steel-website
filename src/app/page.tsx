@@ -186,7 +186,7 @@ export default function HomePage() {
       <section className="pt-24 pb-16 bg-[#111111]" id="services">
         <div className="max-w-7xl mx-auto px-6">
           <div data-animate className="mb-14">
-            <p className="text-[#fd008d] text-sm font-bold uppercase tracking-[0.25em] font-display mb-4">
+            <p className="text-[#fd008d] text-base font-bold uppercase tracking-[0.25em] font-display mb-4">
               What We Do
             </p>
             <h2 className="font-display font-extrabold text-white text-4xl md:text-6xl leading-none">
@@ -229,7 +229,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <div data-animate className="flex items-end justify-between mb-12">
             <div>
-              <p className="text-[#fd008d] text-sm font-bold uppercase tracking-[0.25em] font-display mb-4">
+              <p className="text-[#fd008d] text-base font-bold uppercase tracking-[0.25em] font-display mb-4">
                 Our Work
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-white">
@@ -284,7 +284,7 @@ export default function HomePage() {
       {/* ─── Client Logos ─── */}
       <section className="bg-[#0a0a0a] border-t border-b border-white/10 py-10">
         <div className="max-w-7xl mx-auto px-6">
-          <p className="text-[#fd008d] text-sm font-bold uppercase tracking-[0.25em] font-display text-center mb-6">
+          <p className="text-[#fd008d] text-base font-bold uppercase tracking-[0.25em] font-display text-center mb-6">
             Trusted By
           </p>
           <div className="flex flex-wrap items-center justify-center md:justify-between gap-x-10 gap-y-4">
@@ -305,7 +305,7 @@ export default function HomePage() {
       <section className="py-24 bg-[#111111]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14">
-            <p className="text-[#fd008d] text-sm font-bold uppercase tracking-[0.25em] font-display mb-4">
+            <p className="text-[#fd008d] text-base font-bold uppercase tracking-[0.25em] font-display mb-4">
               What Clients Say
             </p>
             <h2 className="font-display font-bold text-white text-4xl md:text-5xl">
@@ -348,7 +348,7 @@ export default function HomePage() {
       <section className="py-24 bg-[#111111]">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-14">
-            <p className="text-[#fd008d] text-sm font-bold uppercase tracking-[0.25em] font-display mb-4">
+            <p className="text-[#fd008d] text-base font-bold uppercase tracking-[0.25em] font-display mb-4">
               FAQ
             </p>
             <h2 className="font-display font-bold text-white text-4xl md:text-5xl">
