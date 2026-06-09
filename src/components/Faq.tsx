@@ -4,20 +4,20 @@ import { useState } from "react";
 
 const faqs = [
   {
-    q: "What sets you apart from other steel contractors?",
-    a: "One team. One address. From structural calculation to final bolt — no handoffs, no coordination gaps, no surprises.",
+    q: "What makes Moment Steel different?",
+    a: "One accountable team from structural calculation to final erection. Instead of managing separate designers, detailers, fabricators and installers, clients work with one technical partner responsible for the full steel chain.",
   },
   {
     q: "Do you perform 3D laser scanning on site?",
-    a: "Yes. Our in-house geodesy team performs laser scans that feed directly into our modeling software, allowing us to fabricate components that fit existing conditions to the millimeter.",
+    a: "Yes. Our in-house survey team performs 3D laser scanning and brings verified site conditions into the model. This helps us fabricate steel components that account for real site deviations and reduces delays caused by concrete tolerances or changing field conditions.",
   },
   {
-    q: "Can you handle tight timelines?",
-    a: "Yes. Our lean structure lets us mobilize quickly and deliver engineering and detailing fast — without the overhead of large firms.",
+    q: "Can you work with ready drawings and tight timelines?",
+    a: "Yes. Moment Steel is built to enter projects quickly, even when drawings already exist and the schedule is tight. Our lean structure allows fast engineering and detailing response without the overhead of larger firms.",
   },
   {
     q: "What project sizes do you work on?",
-    a: "From 30-ton structures to large-scale complex assemblies. We match each project to the right fabrication partner — local or overseas — based on scope, timeline, and budget.",
+    a: "From 30-ton structures to large-scale complex steel projects. Through strategic fabrication partners in Israel and overseas, we match each project to the right production route based on scope, timeline, budget and required quality standards.",
   },
 ];
 
