@@ -81,7 +81,7 @@ export default function AboutPage() {
   return (
     <>
       {/* ─── Page Hero ─── */}
-      <section className="relative pt-40 pb-24 bg-[#0f0f0f] overflow-hidden">
+      <section className="relative pt-28 pb-16 md:pt-40 md:pb-24 bg-[#0f0f0f] overflow-hidden">
         <div className="absolute top-0 left-0 w-1 h-full bg-[#fd008d]" />
         <div className="max-w-7xl mx-auto px-6">
           <p className="text-[#fd008d] text-xl font-bold uppercase tracking-[0.25em] font-display mb-5">
@@ -104,7 +104,7 @@ export default function AboutPage() {
       </section>
 
       {/* ─── Company Story ─── */}
-      <section className="py-20 bg-[#111111]">
+      <section className="py-14 md:py-20 bg-[#111111]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div data-animate>
@@ -160,6 +160,7 @@ export default function AboutPage() {
                   src="/images/composite-spiral/spiral-2.jpg"
                   alt="Composite Column Spiral steel project"
                   fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-black/20" />
@@ -171,9 +172,9 @@ export default function AboutPage() {
       </section>
 
       {/* ─── Differentiators ─── */}
-      <section className="py-20 bg-[#0f0f0f]">
+      <section className="py-14 md:py-20 bg-[#0f0f0f]">
         <div className="max-w-7xl mx-auto px-6">
-          <div data-animate className="text-center mb-14">
+          <div data-animate className="text-center mb-10 md:mb-14">
             <p className="text-[#fd008d] text-xl font-bold uppercase tracking-[0.25em] font-display mb-4">
               Why Choose Us
             </p>
@@ -187,7 +188,7 @@ export default function AboutPage() {
               <div
                 key={item.title}
                 data-animate
-                className="flex gap-5 p-7 bg-[#1a1a1a] border border-[#2d2d2d] hover:border-[#fd008d]/40 transition-colors group"
+                className="flex gap-4 md:gap-5 p-5 md:p-7 bg-[#1a1a1a] border border-[#2d2d2d] hover:border-[#fd008d]/40 transition-colors group"
               >
                 <div className="text-[#fd008d] shrink-0 mt-1">{item.icon}</div>
                 <div>
@@ -205,9 +206,9 @@ export default function AboutPage() {
       </section>
 
       {/* ─── Team ─── */}
-      <section className="py-20 bg-[#111111]">
+      <section className="py-14 md:py-20 bg-[#111111]">
         <div className="max-w-7xl mx-auto px-6">
-          <div data-animate className="text-center mb-14">
+          <div data-animate className="text-center mb-10 md:mb-14">
             <p className="text-[#fd008d] text-xl font-bold uppercase tracking-[0.25em] font-display mb-4">
               The Team
             </p>
@@ -258,7 +259,7 @@ export default function AboutPage() {
       </section>
 
       {/* ─── CTA ─── */}
-      <section className="relative overflow-hidden py-20 bg-[#fd008d]">
+      <section className="relative overflow-hidden py-16 md:py-20 bg-[#fd008d]">
         <span
           aria-hidden="true"
           className="pointer-events-none select-none absolute inset-0 flex items-center justify-center font-display font-bold text-white opacity-[0.04] text-[200px] md:text-[340px] leading-none whitespace-nowrap"

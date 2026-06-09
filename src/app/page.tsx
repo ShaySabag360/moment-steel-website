@@ -107,11 +107,12 @@ export default function HomePage() {
   return (
     <>
       {/* ─── Hero ─── */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[100svh] md:h-screen flex items-center justify-center overflow-hidden">
         <Image
           src="/images/migrash-11/migrash-1.jpg"
           alt="Steel construction project"
           fill
+          sizes="100vw"
           className="object-cover"
           priority
         />
@@ -152,7 +153,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/40">
+        <div className="hidden md:block absolute bottom-8 left-1/2 -translate-x-1/2 text-white/40">
           <svg className="animate-float" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
             <path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
@@ -162,7 +163,7 @@ export default function HomePage() {
       {/* ─── Stats strip ─── */}
       <section className="bg-[#0a0a0a] border-t border-b border-white/10 py-16">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-3">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-y-10 sm:gap-y-0">
             {[
               { value: "100%", label: "In-House Engineering" },
               { value: "50+", label: "Projects Delivered" },
@@ -171,7 +172,7 @@ export default function HomePage() {
               <div
                 key={stat.label}
                 data-animate
-                className={`text-center px-4 ${i < 2 ? "border-r border-white/10" : ""}`}
+                className={`text-center px-4 ${i < 2 ? "sm:border-r border-white/10" : ""}`}
               >
                 <p className="font-display font-bold text-white text-5xl md:text-8xl leading-none">
                   {stat.value}
@@ -186,9 +187,9 @@ export default function HomePage() {
       </section>
 
       {/* ─── Services ─── */}
-      <section className="pt-24 pb-16 bg-[#111111]" id="services">
+      <section className="pt-16 pb-12 md:pt-24 md:pb-16 bg-[#111111]" id="services">
         <div className="max-w-7xl mx-auto px-6">
-          <div data-animate className="mb-14">
+          <div data-animate className="mb-10 md:mb-14">
             <p className="text-[#fd008d] text-xl font-bold uppercase tracking-[0.25em] font-display mb-4">
               What We Do
             </p>
@@ -202,9 +203,9 @@ export default function HomePage() {
       </section>
 
       {/* ─── Projects Preview ─── */}
-      <section className="py-24 bg-[#111111]" id="projects">
+      <section className="py-16 md:py-24 bg-[#111111]" id="projects">
         <div className="max-w-7xl mx-auto px-6">
-          <div data-animate className="flex items-end justify-between mb-12">
+          <div data-animate className="flex items-end justify-between mb-8 md:mb-12">
             <div>
               <p className="text-[#fd008d] text-xl font-bold uppercase tracking-[0.25em] font-display mb-4">
                 Our Work
@@ -236,6 +237,7 @@ export default function HomePage() {
                   src={project.src}
                   alt={project.title}
                   fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300" />
@@ -259,7 +261,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── Client Logos ─── */}
-      <section className="bg-[#0a0a0a] border-t border-b border-white/10 py-10">
+      <section className="bg-[#0a0a0a] border-t border-b border-white/10 py-8 md:py-10">
         <div className="max-w-7xl mx-auto px-6">
           <p className="text-[#fd008d] text-xl font-bold uppercase tracking-[0.25em] font-display text-center mb-6">
             Trusted By
@@ -279,9 +281,9 @@ export default function HomePage() {
       </section>
 
       {/* ─── Testimonials ─── */}
-      <section className="py-24 bg-[#111111]">
+      <section className="py-16 md:py-24 bg-[#111111]">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10 md:mb-14">
             <p className="text-[#fd008d] text-xl font-bold uppercase tracking-[0.25em] font-display mb-4">
               What Clients Say
             </p>
@@ -294,7 +296,7 @@ export default function HomePage() {
             {testimonials.map((t) => (
               <div
                 key={t.name}
-                className="relative bg-[#1a1a1a] border border-white/10 rounded-none p-8"
+                className="relative bg-[#1a1a1a] border border-white/10 rounded-none p-6 md:p-8"
               >
                 <p className="font-body italic text-white/80 text-base leading-relaxed mb-6">
                   &ldquo;{t.quote}&rdquo;
@@ -307,7 +309,7 @@ export default function HomePage() {
                 <img
                   src={t.logo}
                   alt={t.company}
-                  className="absolute bottom-8 right-8"
+                  className="mt-6 md:mt-0 md:absolute md:bottom-8 md:right-8"
                   style={{
                     height: "32px",
                     width: "auto",
@@ -322,9 +324,9 @@ export default function HomePage() {
       </section>
 
       {/* ─── FAQ ─── */}
-      <section className="py-24 bg-[#111111]">
+      <section className="py-16 md:py-24 bg-[#111111]">
         <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10 md:mb-14">
             <p className="text-[#fd008d] text-xl font-bold uppercase tracking-[0.25em] font-display mb-4">
               FAQ
             </p>
@@ -339,7 +341,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── CTA Strip ─── */}
-      <section className="relative overflow-hidden py-20 bg-[#fd008d]">
+      <section className="relative overflow-hidden py-16 md:py-20 bg-[#fd008d]">
         <span
           aria-hidden="true"
           className="pointer-events-none select-none absolute inset-0 flex items-center justify-center font-display font-bold text-white opacity-[0.04] text-[200px] md:text-[340px] leading-none whitespace-nowrap"

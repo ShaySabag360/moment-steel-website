@@ -60,7 +60,7 @@ export default function Navbar() {
         </ul>
 
         <button
-          className="md:hidden text-white p-2 flex flex-col gap-1.5"
+          className="md:hidden text-white p-2 flex flex-col items-center justify-center gap-1.5 min-h-11 min-w-11"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >

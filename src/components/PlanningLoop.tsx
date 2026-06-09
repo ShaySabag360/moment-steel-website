@@ -8,14 +8,14 @@ function RowInner({ num, service }: { num: number; service: Service }) {
   return (
     <>
       {/* Watermark number — absolute, bleeds behind the title */}
-      <span className="absolute -top-4 left-0 z-0 font-display font-bold text-white text-7xl md:text-8xl opacity-[0.08] leading-none select-none pointer-events-none">
+      <span className="absolute -top-4 left-0 z-0 font-display font-bold text-white text-5xl md:text-8xl opacity-[0.05] md:opacity-[0.08] leading-none select-none pointer-events-none">
         {String(num).padStart(2, "0")}
       </span>
-      <div className="relative z-10 flex-1 pl-4 md:pl-10">
+      <div className="relative z-10 flex-1 pl-6 md:pl-10">
         <h3 className="font-display font-bold text-white text-2xl md:text-4xl">
           {service.title}
         </h3>
-        <p className="text-gray-400 text-base leading-relaxed mt-2 max-w-[400px]">
+        <p className="text-gray-400 text-sm md:text-base leading-relaxed mt-2 max-w-[400px]">
           {service.description}
         </p>
       </div>

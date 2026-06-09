@@ -10,7 +10,7 @@ export default function ContactPage() {
   return (
     <>
       {/* ─── Header ─── */}
-      <section className="relative pt-40 pb-16 bg-[#0f0f0f] overflow-hidden">
+      <section className="relative pt-28 pb-12 md:pt-40 md:pb-16 bg-[#0f0f0f] overflow-hidden">
         <div className="absolute top-0 left-0 w-1 h-full bg-[#fd008d]" />
         <div className="max-w-7xl mx-auto px-6">
           <p className="text-[#fd008d] text-xl font-bold uppercase tracking-[0.25em] font-display mb-5">
@@ -30,7 +30,7 @@ export default function ContactPage() {
       </section>
 
       {/* ─── Contact Layout ─── */}
-      <section className="py-16 bg-[#111111]">
+      <section className="py-12 md:py-16 bg-[#111111]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
 

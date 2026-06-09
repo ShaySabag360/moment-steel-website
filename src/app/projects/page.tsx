@@ -67,7 +67,7 @@ export default function ProjectsPage() {
   return (
     <>
       {/* ─── Page Header ─── */}
-      <section className="pt-40 pb-20 bg-[#0f0f0f]">
+      <section className="pt-28 pb-14 md:pt-40 md:pb-20 bg-[#0f0f0f]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="border-l-4 border-[#fd008d] pl-6">
             <p className="text-[#fd008d] text-xl font-bold uppercase tracking-[0.25em] font-display mb-4">
@@ -90,13 +90,14 @@ export default function ProjectsPage() {
         {projects.map((project) => {
           const extra = project.images.slice(1);
           return (
-            <article key={project.title} className="mb-16">
+            <article key={project.title} className="mb-12 md:mb-16">
               {/* Full-bleed hero photo with overlay */}
               <div className="relative w-full h-[60vh]">
                 <Image
                   src={project.images[0]}
                   alt={project.title}
                   fill
+                  sizes="100vw"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
@@ -105,7 +106,7 @@ export default function ProjectsPage() {
                     <span className="text-[#fd008d] text-xl font-bold uppercase tracking-[0.2em] font-display">
                       {project.category}
                     </span>
-                    <h2 className="font-display font-bold text-white text-5xl leading-none mt-3">
+                    <h2 className="font-display font-bold text-white text-4xl md:text-5xl leading-none mt-3">
                       {project.title}
                     </h2>
                     <p className="text-white/60 text-base mt-2">
@@ -116,7 +117,7 @@ export default function ProjectsPage() {
               </div>
 
               {/* Description row with pink accent line */}
-              <div className="max-w-7xl mx-auto px-6 mt-10">
+              <div className="max-w-7xl mx-auto px-6 mt-8 md:mt-10">
                 <div className="flex items-stretch justify-between gap-8">
                   <p data-animate className="text-gray-400 text-base leading-relaxed max-w-2xl">
                     {project.description}
@@ -131,6 +132,7 @@ export default function ProjectsPage() {
                       src={extra[0]}
                       alt={`${project.title} detail`}
                       fill
+                      sizes="100vw"
                       className="object-cover"
                     />
                   </div>
@@ -147,6 +149,7 @@ export default function ProjectsPage() {
                           src={img}
                           alt={`${project.title} detail ${i + 1}`}
                           fill
+                          sizes="50vw"
                           className="object-cover"
                         />
                       </div>
@@ -161,6 +164,7 @@ export default function ProjectsPage() {
                         src={extra[0]}
                         alt={`${project.title} detail 1`}
                         fill
+                        sizes="(min-width: 768px) 66vw, 100vw"
                         className="object-cover"
                       />
                     </div>
@@ -174,6 +178,7 @@ export default function ProjectsPage() {
                             src={img}
                             alt={`${project.title} detail ${i + 2}`}
                             fill
+                            sizes="(min-width: 768px) 22vw, 50vw"
                             className="object-cover"
                           />
                         </div>
@@ -188,7 +193,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* ─── CTA ─── */}
-      <section className="relative overflow-hidden py-20 bg-[#fd008d]">
+      <section className="relative overflow-hidden py-16 md:py-20 bg-[#fd008d]">
         <span
           aria-hidden="true"
           className="pointer-events-none select-none absolute inset-0 flex items-center justify-center font-display font-bold text-white opacity-[0.04] text-[200px] md:text-[340px] leading-none whitespace-nowrap"
