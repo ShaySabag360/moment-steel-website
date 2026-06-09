@@ -129,10 +129,12 @@ export default function HomePage() {
           <h1 className="text-4xl md:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
             Steel Engineering.
             <br />
-            Fabrication Control. Site Execution.
+            Fabrication Control.
+            <br />
+            Site Execution.
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-xl mx-auto leading-relaxed">
-            Every project reaches its moment of truth. This is our moment.
+          <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+            Every project reaches its moment of truth, this is our moment.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
