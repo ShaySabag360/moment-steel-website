@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import MobileReveal from "@/components/MobileReveal";
 
 export const metadata = {
   title: "Projects — Moment Steel",
@@ -119,9 +120,16 @@ export default function ProjectsPage() {
               {/* Description row with pink accent line */}
               <div className="max-w-7xl mx-auto px-6 mt-8 md:mt-10">
                 <div className="flex items-stretch justify-between gap-8">
-                  <p data-animate className="text-gray-400 text-base leading-relaxed max-w-2xl">
-                    {project.description}
-                  </p>
+                  <div data-animate className="max-w-2xl">
+                    <MobileReveal
+                      lines={2}
+                      moreLabel="View details"
+                      lessLabel="Hide details"
+                      className="text-gray-400 text-base leading-relaxed"
+                    >
+                      {project.description}
+                    </MobileReveal>
+                  </div>
                   <div className="hidden md:block w-px bg-[#fd008d] self-stretch shrink-0" />
                 </div>
 
@@ -139,7 +147,7 @@ export default function ProjectsPage() {
                 )}
 
                 {extra.length === 2 && (
-                  <div className="grid grid-cols-2 gap-3 mt-10">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-10">
                     {extra.map((img, i) => (
                       <div
                         key={i}
