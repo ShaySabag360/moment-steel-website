@@ -1,3 +1,5 @@
+import MobileReveal from "@/components/MobileReveal";
+
 type Service = {
   title: string;
   description: string;
@@ -15,9 +17,12 @@ function RowInner({ num, service }: { num: number; service: Service }) {
         <h3 className="font-display font-bold text-white text-2xl md:text-4xl">
           {service.title}
         </h3>
-        <p className="text-gray-400 text-sm md:text-base leading-relaxed mt-2 max-w-[400px]">
+        <MobileReveal
+          lines={3}
+          className="text-gray-400 text-sm md:text-base leading-relaxed mt-2 max-w-[400px]"
+        >
           {service.description}
-        </p>
+        </MobileReveal>
       </div>
     </>
   );

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import MobileReveal from "@/components/MobileReveal";
 
 export const metadata = {
   title: "About — Moment Steel",
@@ -122,19 +123,21 @@ export default function AboutPage() {
                   coordinated, or when the steel arrives to conditions that no
                   longer match the drawings.
                 </p>
-                <p>
-                  We built Moment Steel to close those gaps before they become
-                  project delays. By keeping structural engineering, shop
-                  drawings, 3D scanning, fabrication coordination and site
-                  erection under one roof, we reduce the coordination failures
-                  that derail projects on cost and schedule.
-                </p>
-                <p>
-                  Today we deliver complex steel structures for developers,
-                  contractors and engineering teams across Israel — on schedule
-                  and to specification, from the first calculation to the final
-                  torque check.
-                </p>
+                <MobileReveal variant="collapse" className="space-y-4">
+                  <p>
+                    We built Moment Steel to close those gaps before they become
+                    project delays. By keeping structural engineering, shop
+                    drawings, 3D scanning, fabrication coordination and site
+                    erection under one roof, we reduce the coordination failures
+                    that derail projects on cost and schedule.
+                  </p>
+                  <p>
+                    Today we deliver complex steel structures for developers,
+                    contractors and engineering teams across Israel — on schedule
+                    and to specification, from the first calculation to the final
+                    torque check.
+                  </p>
+                </MobileReveal>
               </div>
 
               <div className="mt-8 flex flex-wrap gap-3">
@@ -238,9 +241,12 @@ export default function AboutPage() {
                 <p className="text-[#fd008d] text-sm font-semibold uppercase tracking-[0.2em] mb-4 font-display">
                   {member.role}
                 </p>
-                <p className="text-gray-400 text-base leading-relaxed mb-6">
+                <MobileReveal
+                  lines={3}
+                  className="text-gray-400 text-base leading-relaxed mb-6"
+                >
                   {member.description}
-                </p>
+                </MobileReveal>
 
                 <div className="flex flex-wrap gap-2">
                   {member.tags.map((tag) => (
