@@ -195,35 +195,7 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <PlanningLoop />
-
-          <div className="border-b border-white/10">
-            {services.slice(3).map((service, i) => (
-              <div key={service.title} data-animate className="group border-t border-white/10">
-                <div className="relative flex items-center py-8">
-                  {/* Watermark number — absolute, bleeds behind the title */}
-                  <span className="absolute -top-4 left-0 z-0 font-display font-bold text-white text-7xl md:text-8xl opacity-[0.08] leading-none select-none pointer-events-none">
-                    {String(i + 4).padStart(2, "0")}
-                  </span>
-
-                  {/* Name + description sits on top of the number */}
-                  <div className="relative z-10 flex-1 pl-4 md:pl-10">
-                    <h3 className="font-display font-bold text-white text-2xl md:text-4xl group-hover:text-[#fd008d] transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-400 text-base leading-relaxed mt-2 max-w-2xl">
-                      {service.description}
-                    </p>
-                  </div>
-
-                  {/* Arrow */}
-                  <span className="text-[#fd008d] text-xl md:text-2xl shrink-0 transition-transform duration-300 group-hover:translate-x-1">
-                    →
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
+          <PlanningLoop services={services} />
         </div>
       </section>
 

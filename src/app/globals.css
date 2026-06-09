@@ -82,3 +82,145 @@ body {
     transition: none !important;
   }
 }
+
+/* ── Integrated planning loop interaction (services 01–03) ── */
+/* DEFAULT = clean unified list (04/05 smaller/calmer, desktop). On hover (or
+   .is-active) — wide desktop + motion only — the 01–03 stage EXPANDS (height
+   transition) pushing 04/05 down, and the three rows translate (no shrink —
+   full-size text) into a BIG balanced clockwise ring around a "REAL-TIME SYNC"
+   hub. Responsive centering: full-width .loop-card wrapper + translateX(50%);
+   fixed-width .card-box is the visible card; centered fixed-size SVG ring. */
+
+/* Mobile-first: plain auto-height rows */
+.loop-card,
+.card-box,
+.svc-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.card-box {
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.loop-arrows {
+  display: none;
+  opacity: 0;
+}
+
+@media (min-width: 1152px) {
+  /* Collapsed stage = clean list; expands on hover */
+  .loop-stage {
+    height: 600px;
+    transition: height 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .loop-row {
+    min-height: 200px;
+  }
+  .loop-card {
+    width: 100%;
+    min-height: 200px;
+    padding-top: 0;
+    padding-bottom: 0;
+    justify-content: flex-start;
+    transform-origin: center center;
+  }
+  .card-box {
+    width: 460px;
+    max-width: 100%;
+    min-height: 160px;
+    padding: 4px 0;
+    border: 1px solid transparent;
+    background-color: transparent;
+  }
+
+  /* 04/05 calmer + smaller at rest; hovered row jumps to full size + opacity */
+  .svc-row {
+    min-height: 200px;
+    padding-top: 0;
+    padding-bottom: 0;
+    transform-origin: left center;
+    transition: transform 0.4s ease, opacity 0.4s ease, background-color 0.4s ease;
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  .svc-row:hover,
+  .svc-row.is-active {
+    transform: scale(1);
+    opacity: 1;
+    background-color: #161616;
+  }
+}
+
+@media (min-width: 1152px) and (prefers-reduced-motion: no-preference) {
+  .loop-row {
+    transition: border-color 0.4s ease;
+  }
+  .loop-card {
+    transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+  .card-box {
+    transition: background-color 0.45s ease, border-color 0.45s ease;
+  }
+  .loop-arrows {
+    display: block;
+    transition: opacity 0.45s ease 0.12s;
+  }
+  .loop-arc {
+    stroke-dasharray: 13 10;
+  }
+
+  /* ── Loop-active: hover anywhere on 01–03, or forced .is-active ── */
+  .loop-group:hover .loop-stage,
+  .loop-group.is-active .loop-stage {
+    height: 860px; /* expand → pushes 04/05 down */
+  }
+  .loop-group:hover .loop-row,
+  .loop-group.is-active .loop-row {
+    border-color: transparent; /* hide intra-group dividers in loop mode */
+  }
+  .loop-group:hover .card-box,
+  .loop-group.is-active .card-box {
+    background-color: #1a1a1a;
+    border-color: rgba(253, 0, 141, 0.55);
+  }
+  .loop-group:hover .loop-arrows,
+  .loop-group.is-active .loop-arrows {
+    opacity: 1;
+  }
+  /* Big balanced triangle (full-size text, translate only). 50% = content-center.
+     card-box is 460 wide → its center sits 230px from the loop-card left. */
+  /* Boxes rotated counter-clockwise ~90° on the same circle (loop nudged
+     ~30px right so the left box never overflows). X offset sets the anchor,
+     Y offset = anchor target − the card's own row center (01=row0/100,
+     02=row1/300, 03=row2/500). */
+  .loop-group:hover .loop-card[data-pos="ur"],
+  .loop-group.is-active .loop-card[data-pos="ur"] {
+    transform: translate(calc(50% - 30px), 61px); /* card 01 (row 0) → upper-right */
+  }
+  .loop-group:hover .loop-card[data-pos="lr"],
+  .loop-group.is-active .loop-card[data-pos="lr"] {
+    transform: translate(calc(50% - 30px), 449px); /* card 02 (row 1) → lower-right */
+  }
+  .loop-group:hover .loop-card[data-pos="left"],
+  .loop-group.is-active .loop-card[data-pos="left"] {
+    transform: translate(calc(50% - 540px), -45px); /* card 03 (row 2) → left */
+  }
+  /* Marching dashes — clockwise (01→02→03→01) */
+  .loop-group:hover .loop-arc,
+  .loop-group.is-active .loop-arc {
+    animation: loop-march 0.9s linear infinite;
+  }
+}
+
+@keyframes loop-march {
+  to {
+    stroke-dashoffset: -46;
+  }
+}
