@@ -35,12 +35,12 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
 
             {/* ─── Form ─── */}
-            <div data-animate className="lg:col-span-3">
+            <div data-animate className="lg:col-span-3 max-md:order-2">
               <ContactForm />
             </div>
 
             {/* ─── Contact Details ─── */}
-            <div data-animate className="lg:col-span-2 space-y-10">
+            <div data-animate className="lg:col-span-2 space-y-10 max-md:order-1">
 
               {/* Direct contacts */}
               <div>
@@ -57,13 +57,13 @@ export default function ContactPage() {
                       <p className="text-gray-500 text-sm mb-2">Structural Engineering</p>
                       <a
                         href="tel:0508464851"
-                        className="block text-gray-300 hover:text-white text-base transition-colors"
+                        className="block text-gray-300 hover:text-white text-base transition-colors max-md:py-2.5"
                       >
                         050-846-4851
                       </a>
                       <a
                         href="mailto:Shay@moment-steel.com"
-                        className="block text-gray-300 hover:text-white text-base transition-colors"
+                        className="block text-gray-300 hover:text-white text-base transition-colors max-md:py-2.5"
                       >
                         Shay@moment-steel.com
                       </a>
@@ -79,13 +79,13 @@ export default function ContactPage() {
                       <p className="text-gray-500 text-sm mb-2">Project Management & Fabrication</p>
                       <a
                         href="tel:0545367242"
-                        className="block text-gray-300 hover:text-white text-base transition-colors"
+                        className="block text-gray-300 hover:text-white text-base transition-colors max-md:py-2.5"
                       >
                         054-536-7242
                       </a>
                       <a
                         href="mailto:Yoel@moment-steel.com"
-                        className="block text-gray-300 hover:text-white text-base transition-colors"
+                        className="block text-gray-300 hover:text-white text-base transition-colors max-md:py-2.5"
                       >
                         Yoel@moment-steel.com
                       </a>
