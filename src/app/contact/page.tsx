@@ -17,14 +17,14 @@ export default function ContactPage() {
             Get in Touch
           </p>
           <h1 className="text-4xl md:text-7xl font-bold text-white leading-tight">
-            Let&apos;s Talk
+            Let&apos;s Talk About
             <br />
-            Steel.
+            Your Steel Project.
           </h1>
           <p className="text-gray-400 text-lg mt-5 max-w-xl leading-relaxed">
-            Share what you&apos;re building and we&apos;ll get back to you within one
-            business day. No commitment, no sales pitch — just a straight
-            conversation about your project.
+            Send us your scope, drawings or site challenge, and we’ll get back
+            to you within one business day. No commitment, no sales pitch — just
+            a clear, practical conversation about your project.
           </p>
         </div>
       </section>

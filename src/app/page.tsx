@@ -26,7 +26,7 @@ const testimonials = [
   {
     quote: (
       <>
-        Working with Moment gives you peace of mind —{" "}
+        Working with Moment gives you confidence —{" "}
         <strong className="text-white font-semibold">
           solid engineering, quality execution, and results that hold up over
           time.
@@ -41,13 +41,13 @@ const testimonials = [
   {
     quote: (
       <>
-        Moment brings together engineering expertise and rigorous execution —{" "}
+        Moment combines strong engineering expertise with meticulous execution and{" "}
         <strong className="text-white font-semibold">
-          reliable at every stage of the steel project.
+          reliability at every stage of the steel project.
         </strong>
       </>
     ),
-    name: "Ben Shugol",
+    name: "Ben Shogel",
     company: "Shikun & Binui",
     logo: "https://moment-steel.com/wp-content/uploads/2026/02/%D7%A9%D7%99%D7%9B%D7%95%D7%9F-%D7%95%D7%91%D7%99%D7%A0%D7%95%D7%99-%D7%90%D7%A4%D7%95%D7%A8-1.webp",
     logoOpacity: 0.7,
@@ -55,11 +55,11 @@ const testimonials = [
   {
     quote: (
       <>
-        Excellent partners.{" "}
+        Excellent partners to work with.{" "}
         <strong className="text-white font-semibold">
-          High-level design, execution, and installation
+          High-quality engineering, execution and erection
         </strong>{" "}
-        — and outstanding coordination with every party involved.
+        — and outstanding coordination across all project stakeholders.
       </>
     ),
     name: "Daniel Parsha",
@@ -73,27 +73,27 @@ const services = [
   {
     title: "Structural Design",
     description:
-      "Full structural engineering by licensed professionals. We run calculations in Dlubal, IdeaStatica, and Strap — selecting the right tool for the structural system at hand.",
+      "Structural engineering for steel projects, from member sizing to connection design. We use advanced engineering software to select the right calculation approach for each structural system.",
   },
   {
     title: "Shop Drawings & Detailing",
     description:
-      "Fabrication-ready shop drawings produced in Tekla Structures, with parametric modeling for complex and non-standard elements — spiral forms, curved members, dense connection clusters. Every joint modeled before it's made, every drawing goes straight to the factory floor.",
+      "Fabrication-ready shop drawings and 3D models produced with advanced detailing software. We turn complex steel elements into clear, buildable information for the workshop.",
   },
   {
     title: "3D Laser Scanning",
     description:
-      "We scan the site before anything is fabricated. Point cloud data captures exact as-built geometry, so components arrive ready to install — not ready to be reworked.",
+      "Before steel goes into production, we bring the real site conditions into the model. Point cloud data captures verified as-built geometry, helping components arrive ready to fit — not waiting for field fixes.",
   },
   {
     title: "Fabrication Management",
     description:
-      "We manage production at trusted fabrication partners in Israel and overseas — regular factory visits, quality tracking, and delivery coordination so the steel shows up ready to install.",
+      "We coordinate production with trusted fabrication partners in Israel and overseas, tracking quality, schedule, documentation and delivery. so fabricated steel arrives documented, coordinated and ready for erection.",
   },
   {
     title: "Site Erection",
     description:
-      "Our team oversees erection from mobilization to final bolt torque. With in-house survey capability, we verify alignment at every stage — not just at the end.",
+      "We execute steel erection with a planned installation sequence, in-house survey tools and continuous alignment control — from mobilization to final bolt torque. With in-house survey capability, we verify alignment throughout the erection process — not only at final inspection.",
   },
 ];
 
@@ -127,9 +127,9 @@ export default function HomePage() {
             priority
           />
           <h1 className="text-4xl md:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
-            Engineering Steel.
+            Steel Engineering.
             <br />
-            Precision Built.
+            Fabrication Control. Site Execution.
           </h1>
           <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-xl mx-auto leading-relaxed">
             Every project reaches its moment of truth. This is our moment.
@@ -191,7 +191,7 @@ export default function HomePage() {
               What We Do
             </p>
             <h2 className="font-display font-extrabold text-white text-4xl md:text-6xl leading-none">
-              End-to-End Steel Solutions
+              End-to-End Control for Structural Steel Projects
             </h2>
           </div>
 
@@ -349,7 +349,7 @@ export default function HomePage() {
             Ready to Build?
           </h2>
           <p className="text-white/80 text-base md:text-lg mb-10 max-w-xl mx-auto">
-            Tell us what you&apos;re building. We&apos;ll handle the steel — from
+            Tell Us About Your Steel Project. We&apos;ll handle the steel — from
             structural design through final erection.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

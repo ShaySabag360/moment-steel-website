@@ -13,7 +13,7 @@ const projects = [
     location: "Israel",
     category: "Excavation Support",
     description:
-      "Steel strut and waler system designed to brace the retaining walls during deep foundation excavation. Engineered for the site's lateral earth loads, fabricated, and installed end-to-end by the Moment Steel team.",
+      "A 120-ton, three-level retaining wall support system delivered as a full design-build project. Moment Steel performed the structural design, scanned the pile wall, and fabricated the steel to match real site deviations — all under a challenging project schedule.",
     images: ["/images/barlev-center/barlev-1.jpg"],
   },
   {
@@ -21,7 +21,7 @@ const projects = [
     location: "Beit Shemesh",
     category: "Excavation Support",
     description:
-      "Temporary excavation bracing for a deep cut in Beit Shemesh. Struts and walers sized and detailed to carry full lateral loads through every excavation stage, with installation coordinated on site.",
+      "A design-build retaining wall support system installed against the building core during staged construction. By rethinking the structural scheme, Moment Steel reduced the steel weight by more than 60% while maintaining the required support capacity throughout the works.",
     images: [
       "/images/migrash-11/migrash-1.jpg",
       "/images/migrash-11/migrash-2.jpg",
@@ -32,7 +32,7 @@ const projects = [
     location: "Israel",
     category: "Complex Geometry",
     description:
-      "A geometrically complex spiral steel assembly demanding advanced parametric modeling in Tekla and Grasshopper, precision 3D scanning of the existing structure, and tightly controlled factory production.",
+      "Design and detailing of prestressed composite columns for a 91-story tower, including post-tensioning elements connected to the concrete core and steel columns fabricated at varying angles. The project was developed through advanced code-based parametric modeling.",
     images: [
       "/images/composite-spiral/spiral-1.jpg",
       "/images/composite-spiral/spiral-2.jpg",
@@ -44,7 +44,7 @@ const projects = [
     location: "Israel",
     category: "Structural Support",
     description:
-      "Custom column support system engineered to fit a complex architectural form. Point-cloud scanning of the existing structure ensured every fabricated component landed exactly where it needed to.",
+      "Horizontal support system for existing round columns during foundation strengthening works at the Azrieli Towers in Tel Aviv, where slabs were cut down to level -4. Each floor was scanned separately, allowing Moment Steel to develop a repeatable collar system adapted to site deviations and suitable for fast fabrication.",
     images: [
       "/images/azrieli-columns/azrieli-1.jpg",
       "/images/azrieli-columns/azrieli-2.jpg",
@@ -55,7 +55,7 @@ const projects = [
     location: "Israel",
     category: "Structural Support",
     description:
-      "Steel wall support structure designed to carry significant lateral and vertical loads against an existing wall. Engineered, detailed, and erected by our team with in-house survey verification throughout.",
+      "A modular climbing wall support system designed for slab construction stages in double-height areas of the Spiral Tower. The system was engineered to support an 11-meter-high wall and be reused across multiple floors with controlled installation geometry.",
     images: [
       "/images/wall-support/wall-1.jpg",
       "/images/wall-support/wall-2.jpg",
@@ -200,8 +200,8 @@ export default function ProjectsPage() {
             Have a Project in Mind?
           </h2>
           <p className="text-white/80 text-base md:text-lg mb-10 max-w-xl mx-auto">
-            Whether it&apos;s a standard frame or something no one&apos;s built
-            before — we&apos;re the right call.
+            From standard frames to one-off steel assemblies, we bring the
+            engineering and execution control needed to get it built right.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

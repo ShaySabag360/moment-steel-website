@@ -10,25 +10,25 @@ export const metadata = {
 const team = [
   {
     name: "Shay Sabag",
-    role: "Structural Engineer & Constructor",
+    role: "Structural Engineer & Execution Lead",
     description:
-      "Shay holds a master's degree focused on steel seismic behavior and brings licensed structural engineer credentials to every project. He leads the engineering phase from initial load models through final stamped calculations, with deep experience in high-demand seismic design.",
+      "Shay is a licensed structural engineer with a master’s degree in structural engineering and broad experience in steel structures. He leads the engineering process from member design through connection coordination and final signed calculations, with a focus on practical, buildable and responsible design.",
     tags: ["Dlubal", "IdeaStatica", "Strap", "Seismic Design"],
     initials: "SS",
   },
   {
     name: "Yoel Greiner",
-    role: "Project Manager & Geodesy Lead",
+    role: "Project Manager & Survey Lead",
     description:
-      "With 12 years managing production environments, Yoel bridges the gap between design intent and manufacturing reality. He coordinates fabrication across partner facilities, manages delivery logistics, and personally leads 3D scanning operations to ensure field conditions match the model.",
+      "Yoel brings 12 years of experience managing production environments and coordinating steel projects from design intent to site execution. He leads fabrication coordination, delivery logistics and 3D scanning operations, helping align engineering requirements, workshop production and real site conditions throughout the project with clear responsibility for practical execution.",
     tags: ["3D Laser Scanning", "Fabrication", "Logistics", "Geodesy"],
     initials: "YG",
   },
   {
-    name: "Arthur Kutsrov",
-    role: "Senior Detailer & Mechanical Engineer",
+    name: "Arthur Kocherov",
+    role: "Senior Steel Detailer & Mechanical Engineer",
     description:
-      "Arthur's fluency in Tekla Structures and parametric design tools makes him invaluable on projects with complex or repetitive geometry. He turns engineering models into shop drawing packages that go straight to the factory floor — no interpretation required.",
+      "Arthur brings advanced steel detailing experience and parametric modeling tools for complex and repetitive steel geometry. He develops clear, fabrication-ready shop drawing packages that translate engineering requirements into practical workshop information, supporting efficient production and reducing interpretation during fabrication.",
     tags: ["Tekla Structures", "Grasshopper", "Parametric Modeling", "Detailing"],
     initials: "AK",
   },
@@ -36,9 +36,9 @@ const team = [
 
 const differentiators = [
   {
-    title: "All Engineering In-House",
+    title: "Engineering, Detailing and Site Control In-House",
     description:
-      "When design and fabrication management sit in the same office, problems get solved before they become problems. Our engineering team owns the entire technical chain — there's no vendor to blame and no communication breakdown to explain.",
+      "When engineering, detailing and fabrication management work as one team, issues are resolved before they reach the workshop or the site. One technical team owns the chain of responsibility, reducing handoff risks and keeping decisions clear.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-7 h-7">
         <path d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" strokeLinecap="round" strokeLinejoin="round" />
@@ -48,7 +48,7 @@ const differentiators = [
   {
     title: "One Team, Full Accountability",
     description:
-      "We take responsibility for every phase: structural analysis, shop drawings, factory oversight, and field installation. One contract, one team, one point of contact. If something needs to change mid-project, we adapt — without passing it off.",
+      "We take responsibility for every phase: structural analysis, shop drawings, fabrication oversight and site erection. One team, one point of contact and clear accountability when the project needs to adapt.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-7 h-7">
         <path d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" strokeLinecap="round" strokeLinejoin="round" />
@@ -56,9 +56,9 @@ const differentiators = [
     ),
   },
   {
-    title: "Scan First, Fabricate Second",
+    title: "Scan Early. Fabricate With Confidence.",
     description:
-      "Before a component is fabricated, we scan the site. Point cloud data gives us the exact as-built geometry — so connections land where they're supposed to, the first time. No rework, no delays waiting for field fixes.",
+      "When site conditions are critical, we scan early and bring verified as-built geometry into the model — helping connections fit as planned and reducing field adjustments.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-7 h-7">
         <path d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" strokeLinecap="round" strokeLinejoin="round" />
@@ -66,9 +66,9 @@ const differentiators = [
     ),
   },
   {
-    title: "Complex Projects Welcome",
+    title: "Built for Complex Steel Projects",
     description:
-      "Spiral geometries. Additions onto occupied structures. Tight sites with no margin for error. We've built our workflows specifically around the projects that stress-test a team's capability. The harder the job, the more it plays to our strengths.",
+      "Spiral geometries. Additions onto occupied structures. Tight sites with no margin for error. Our workflows are built for projects that require tight coordination, precise detailing and controlled execution from start to finish.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-7 h-7">
         <path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" strokeLinecap="round" strokeLinejoin="round" />
@@ -95,10 +95,10 @@ export default function AboutPage() {
             <span className="text-[#fd008d]">We eliminated them.</span>
           </h1>
           <p className="text-gray-400 text-lg mt-8 max-w-2xl leading-relaxed">
-            We started Moment Steel on a single conviction: one team should
-            carry a project from the first structural calculation to the last
-            bolt on site. Not a relay race — a continuous sprint with full
-            accountability at every stage.
+            Moment Steel was built around one principle: one accountable team
+            should carry a steel project from the first structural calculation
+            to the last bolt on site. Not a relay race between separate firms —
+            one controlled process with accountability at every stage.
           </p>
         </div>
       </section>
@@ -112,26 +112,28 @@ export default function AboutPage() {
                 Our Story
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                One Roof. Full Control.
+                One Steel Team. Full Project Control.
               </h2>
               <div className="space-y-4 text-gray-400 text-base leading-relaxed">
                 <p>
-                  Most structural failures aren&apos;t structural at all. They happen
-                  in the gaps between firms — when the engineer doesn&apos;t know what
-                  the fabricator changed, or when the installation crew shows up
-                  to a site that doesn&apos;t match the drawings.
+                  Most steel project failures are not caused by the steel
+                  itself. They happen in the gaps between engineering,
+                  fabrication and site — when design changes are not
+                  coordinated, or when the steel arrives to conditions that no
+                  longer match the drawings.
                 </p>
                 <p>
-                  We built Moment Steel to close those gaps permanently. By
-                  keeping structural engineering, shop drawing production, 3D
-                  scanning, and site management under one roof, we eliminated
-                  the coordination failures that derail projects on cost and
-                  schedule.
+                  We built Moment Steel to close those gaps before they become
+                  project delays. By keeping structural engineering, shop
+                  drawings, 3D scanning, fabrication coordination and site
+                  erection under one roof, we reduce the coordination failures
+                  that derail projects on cost and schedule.
                 </p>
                 <p>
                   Today we deliver complex steel structures for developers,
-                  contractors, and planners across Israel — on schedule and to
-                  spec, from the first load combination to the last torque check.
+                  contractors and engineering teams across Israel — on schedule
+                  and to specification, from the first calculation to the final
+                  torque check.
                 </p>
               </div>
 
@@ -176,7 +178,7 @@ export default function AboutPage() {
               Why Choose Us
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-white">
-              The Moment Difference
+              Why Contractors Work With Moment Steel
             </h2>
           </div>
 
@@ -210,7 +212,7 @@ export default function AboutPage() {
               The Team
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-white">
-              Three Engineers. One Vision.
+              Senior Steel Professionals. One Accountable Team.
             </h2>
             <p className="text-gray-400 mt-4 max-w-xl mx-auto text-base leading-relaxed">
               Every project is handled by a senior engineer — no project
@@ -265,7 +267,7 @@ export default function AboutPage() {
         </span>
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
           <h2 className="font-display font-bold text-white text-5xl md:text-6xl mb-4">
-            Tell us what you&apos;re building.
+            Tell Us About Your Steel Project.
           </h2>
           <p className="text-white/80 text-base md:text-lg mb-10 max-w-xl mx-auto">
             Share your project scope and we&apos;ll get back to you within one

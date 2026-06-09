@@ -15,8 +15,8 @@ export default function Footer() {
               className="mb-5"
             />
             <p className="text-gray-400 text-base leading-relaxed">
-              Edge to Edge Steel Solutions — from engineering and planning to
-              fabrication and on-site erection.
+              End-to-End Structural Steel Solutions — from engineering and
+              detailing to fabrication management and site erection.
             </p>
           </div>
 
