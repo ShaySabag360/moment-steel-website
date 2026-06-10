@@ -41,7 +41,85 @@ export interface FooterDictionary {
   copyright: string;
 }
 
+export interface StatItem {
+  value: string;
+  label: string;
+}
+
+export interface ServiceItem {
+  title: string;
+  description: string;
+}
+
+export interface FeaturedItem {
+  /** Project card title. */
+  title: string;
+  /** Pink category/label shown above the title (e.g. "Complex Geometry"). */
+  location: string;
+}
+
+/**
+ * A testimonial quote split into segments so the bold emphasis (rendered as
+ * <strong>) is preserved without storing JSX in the dictionary:
+ * `“{prefix}<strong>{bold}</strong>{suffix}”`.
+ */
+export interface TestimonialItem {
+  prefix: string;
+  bold: string;
+  suffix: string;
+  name: string;
+  company: string;
+}
+
+export interface FaqItem {
+  q: string;
+  a: string;
+}
+
+export interface HomeDictionary {
+  hero: {
+    /** Three headline lines separated by <br/>. */
+    headline: [string, string, string];
+    tagline: string;
+    ctaContact: string;
+    ctaProjects: string;
+  };
+  stats: StatItem[];
+  services: {
+    eyebrow: string;
+    heading: string;
+    items: ServiceItem[];
+  };
+  featured: {
+    eyebrow: string;
+    heading: string;
+    viewAll: string;
+    viewAllMobile: string;
+    items: FeaturedItem[];
+  };
+  clients: {
+    eyebrow: string;
+  };
+  testimonials: {
+    eyebrow: string;
+    heading: string;
+    items: TestimonialItem[];
+  };
+  faq: {
+    eyebrow: string;
+    heading: string;
+    items: FaqItem[];
+  };
+  cta: {
+    heading: string;
+    body: string;
+    call: string;
+    whatsapp: string;
+  };
+}
+
 export interface Dictionary {
   nav: NavDictionary;
   footer: FooterDictionary;
+  home: HomeDictionary;
 }

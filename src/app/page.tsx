@@ -2,6 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import Faq from "@/components/Faq";
 import PlanningLoop from "@/components/PlanningLoop";
+import { getDictionary } from "@/content";
+
+const { home } = getDictionary();
 
 const clientLogos = [
   {
@@ -22,85 +25,21 @@ const clientLogos = [
   },
 ];
 
-const testimonials = [
+// Featured-project images (data); titles/locations are user-facing copy and
+// live in the dictionary (home.featured.items), matched here by index.
+const featuredImages = [
+  "/images/barlev-center/barlev-1.jpg",
+  "/images/composite-spiral/spiral-1.jpg",
+  "/images/azrieli-columns/azrieli-1.jpg",
+];
+
+const testimonialLogos = [
+  { logo: "https://livnieng.com/wp-content/uploads/2021/03/livni-logo.png", logoOpacity: 0.7 },
   {
-    quote: (
-      <>
-        Working with Moment gives you confidence —{" "}
-        <strong className="text-white font-semibold">
-          solid engineering, quality execution, and results that hold up over
-          time.
-        </strong>
-      </>
-    ),
-    name: "Yaakov Livni",
-    company: "Livni Engineers",
-    logo: "https://livnieng.com/wp-content/uploads/2021/03/livni-logo.png",
-    logoOpacity: 0.7,
-  },
-  {
-    quote: (
-      <>
-        Moment combines strong engineering expertise with meticulous execution and{" "}
-        <strong className="text-white font-semibold">
-          reliability at every stage of the steel project.
-        </strong>
-      </>
-    ),
-    name: "Ben Shogel",
-    company: "Shikun & Binui",
     logo: "https://moment-steel.com/wp-content/uploads/2026/02/%D7%A9%D7%99%D7%9B%D7%95%D7%9F-%D7%95%D7%91%D7%99%D7%A0%D7%95%D7%99-%D7%90%D7%A4%D7%95%D7%A8-1.webp",
     logoOpacity: 0.7,
   },
-  {
-    quote: (
-      <>
-        Excellent partners to work with.{" "}
-        <strong className="text-white font-semibold">
-          High-quality engineering, execution and erection
-        </strong>{" "}
-        — and outstanding coordination across all project stakeholders.
-      </>
-    ),
-    name: "Daniel Parsha",
-    company: "David Engineers",
-    logo: "https://www.davideng.co.il/wp-content/uploads/2018/12/logo-white.png",
-    logoOpacity: 0.65,
-  },
-];
-
-const services = [
-  {
-    title: "Structural Design",
-    description:
-      "Structural engineering for steel projects, from member sizing to connection design. We use advanced engineering software to select the right calculation approach for each structural system.",
-  },
-  {
-    title: "Shop Drawings & Detailing",
-    description:
-      "Fabrication-ready shop drawings and 3D models produced with advanced detailing software. We turn complex steel elements into clear, buildable information for the workshop.",
-  },
-  {
-    title: "3D Laser Scanning",
-    description:
-      "Before steel goes into production, we bring the real site conditions into the model. Point cloud data captures verified as-built geometry, helping components arrive ready to fit — not waiting for field fixes.",
-  },
-  {
-    title: "Fabrication Management",
-    description:
-      "We coordinate production with trusted fabrication partners in Israel and overseas, tracking quality, schedule, documentation and delivery. so fabricated steel arrives documented, coordinated and ready for erection.",
-  },
-  {
-    title: "Site Erection",
-    description:
-      "We execute steel erection with a planned installation sequence, in-house survey tools and continuous alignment control — from mobilization to final bolt torque. With in-house survey capability, we verify alignment throughout the erection process — not only at final inspection.",
-  },
-];
-
-const projectPreviews = [
-  { src: "/images/barlev-center/barlev-1.jpg", title: "BarLev Center", location: "Commercial" },
-  { src: "/images/composite-spiral/spiral-1.jpg", title: "Composite Column Spiral", location: "Complex Geometry" },
-  { src: "/images/azrieli-columns/azrieli-1.jpg", title: "Azrieli Columns Support", location: "Structural Support" },
+  { logo: "https://www.davideng.co.il/wp-content/uploads/2018/12/logo-white.png", logoOpacity: 0.65 },
 ];
 
 export default function HomePage() {
@@ -128,27 +67,27 @@ export default function HomePage() {
             priority
           />
           <h1 className="text-4xl md:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
-            Steel Engineering.
+            {home.hero.headline[0]}
             <br />
-            Fabrication Control.
+            {home.hero.headline[1]}
             <br />
-            Site Execution.
+            {home.hero.headline[2]}
           </h1>
           <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Every project reaches its moment of truth, this is our moment.
+            {home.hero.tagline}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
               className="bg-[#fd008d] text-white px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-[#e0007c] transition-colors"
             >
-              Get in Touch
+              {home.hero.ctaContact}
             </Link>
             <Link
               href="/projects"
               className="border border-white/60 text-white px-8 py-4 text-sm font-bold uppercase tracking-widest hover:border-white hover:bg-white/10 transition-colors"
             >
-              View Projects
+              {home.hero.ctaProjects}
             </Link>
           </div>
         </div>
@@ -164,11 +103,7 @@ export default function HomePage() {
       <section className="bg-[#0a0a0a] border-t border-b border-white/10 py-16">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-y-10 sm:gap-y-0">
-            {[
-              { value: "100%", label: "In-House Engineering" },
-              { value: "50+", label: "Projects Delivered" },
-              { value: "15+", label: "Years Combined Experience" },
-            ].map((stat, i) => (
+            {home.stats.map((stat, i) => (
               <div
                 key={stat.label}
                 data-animate
@@ -191,14 +126,14 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <div data-animate className="mb-10 md:mb-14">
             <p className="text-[#fd008d] text-xl font-bold uppercase tracking-[0.25em] font-display mb-4">
-              What We Do
+              {home.services.eyebrow}
             </p>
             <h2 className="font-display font-extrabold text-white text-4xl md:text-6xl leading-none">
-              End-to-End Control for Structural Steel Projects
+              {home.services.heading}
             </h2>
           </div>
 
-          <PlanningLoop services={services} />
+          <PlanningLoop services={home.services.items} />
         </div>
       </section>
 
@@ -208,17 +143,17 @@ export default function HomePage() {
           <div data-animate className="flex items-end justify-between mb-8 md:mb-12">
             <div>
               <p className="text-[#fd008d] text-xl font-bold uppercase tracking-[0.25em] font-display mb-4">
-                Our Work
+                {home.featured.eyebrow}
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-white">
-                Featured Projects
+                {home.featured.heading}
               </h2>
             </div>
             <Link
               href="/projects"
               className="hidden sm:flex items-center gap-2 text-gray-400 hover:text-white text-sm font-semibold uppercase tracking-widest transition-colors"
             >
-              View All
+              {home.featured.viewAll}
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
                 <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -226,15 +161,15 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {projectPreviews.map((project) => (
+            {home.featured.items.map((project, i) => (
               <Link
-                key={project.src}
+                key={featuredImages[i]}
                 data-animate
                 href="/projects"
                 className="relative h-80 overflow-hidden group block"
               >
                 <Image
-                  src={project.src}
+                  src={featuredImages[i]}
                   alt={project.title}
                   fill
                   sizes="(min-width: 768px) 33vw, 100vw"
@@ -254,7 +189,7 @@ export default function HomePage() {
               href="/projects"
               className="text-[#fd008d] text-sm font-semibold uppercase tracking-widest"
             >
-              View All Projects →
+              {home.featured.viewAllMobile}
             </Link>
           </div>
         </div>
@@ -264,7 +199,7 @@ export default function HomePage() {
       <section className="bg-[#0a0a0a] border-t border-b border-white/10 py-8 md:py-10">
         <div className="max-w-7xl mx-auto px-6">
           <p className="text-[#fd008d] text-xl font-bold uppercase tracking-[0.25em] font-display text-center mb-6">
-            Trusted By
+            {home.clients.eyebrow}
           </p>
           <div className="flex flex-wrap items-center justify-center md:justify-between gap-x-10 gap-y-4">
             {clientLogos.map((logo) => (
@@ -285,21 +220,21 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-10 md:mb-14">
             <p className="text-[#fd008d] text-xl font-bold uppercase tracking-[0.25em] font-display mb-4">
-              What Clients Say
+              {home.testimonials.eyebrow}
             </p>
             <h2 className="font-display font-bold text-white text-4xl md:text-5xl">
-              Trusted by Engineers &amp; Contractors
+              {home.testimonials.heading}
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((t) => (
+            {home.testimonials.items.map((t, i) => (
               <div
                 key={t.name}
                 className="relative bg-[#1a1a1a] border border-white/10 rounded-none p-6 md:p-8"
               >
                 <p className="font-body italic text-white/80 text-base leading-relaxed mb-6">
-                  &ldquo;{t.quote}&rdquo;
+                  &ldquo;{t.prefix}<strong className="text-white font-semibold">{t.bold}</strong>{t.suffix}&rdquo;
                 </p>
                 <p className="text-white font-bold text-base">{t.name}</p>
                 <p className="text-white/40 text-sm uppercase tracking-widest mt-1">
@@ -307,14 +242,14 @@ export default function HomePage() {
                 </p>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={t.logo}
+                  src={testimonialLogos[i].logo}
                   alt={t.company}
                   className="mt-6 md:mt-0 md:absolute md:bottom-8 md:right-8"
                   style={{
                     height: "32px",
                     width: "auto",
                     filter: "none",
-                    opacity: t.logoOpacity,
+                    opacity: testimonialLogos[i].logoOpacity,
                   }}
                 />
               </div>
@@ -328,14 +263,14 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-10 md:mb-14">
             <p className="text-[#fd008d] text-xl font-bold uppercase tracking-[0.25em] font-display mb-4">
-              FAQ
+              {home.faq.eyebrow}
             </p>
             <h2 className="font-display font-bold text-white text-4xl md:text-5xl">
-              Common Questions
+              {home.faq.heading}
             </h2>
           </div>
           <div>
-            <Faq />
+            <Faq items={home.faq.items} />
           </div>
         </div>
       </section>
@@ -350,18 +285,17 @@ export default function HomePage() {
         </span>
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
           <h2 className="font-display font-bold text-white text-5xl md:text-6xl mb-4">
-            Ready to Build?
+            {home.cta.heading}
           </h2>
           <p className="text-white/80 text-base md:text-lg mb-10 max-w-xl mx-auto">
-            Tell Us About Your Steel Project. We&apos;ll handle the steel — from
-            structural design through final erection.
+            {home.cta.body}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="tel:0508464851"
               className="bg-white text-[#fd008d] px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-gray-100 transition-colors"
             >
-              Call: 050-846-4851
+              {home.cta.call}
             </a>
             <a
               href="https://wa.me/972545367242"
@@ -369,7 +303,7 @@ export default function HomePage() {
               rel="noopener noreferrer"
               className="border-2 border-white text-white px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-white/10 transition-colors"
             >
-              WhatsApp Us
+              {home.cta.whatsapp}
             </a>
           </div>
         </div>
