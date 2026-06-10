@@ -6,11 +6,21 @@ type Service = {
 };
 
 /* Shared editorial row content — identical for all five rows (01–05) */
-function RowInner({ num, service }: { num: number; service: Service }) {
+function RowInner({
+  num,
+  service,
+  numTop = "-top-4",
+}: {
+  num: number;
+  service: Service;
+  numTop?: string;
+}) {
   return (
     <>
-      {/* Watermark number — absolute, bleeds behind the title */}
-      <span className="absolute -top-4 left-0 z-0 font-display font-bold text-white text-5xl md:text-8xl opacity-[0.12] md:opacity-[0.08] leading-none select-none pointer-events-none">
+      {/* Watermark number — absolute, bleeds behind the title. numTop lets the
+          downstream rows (04/05) drop lower on mobile so the pink separator
+          accent doesn't collide with the number (mirrors 01–03). */}
+      <span className={`absolute ${numTop} left-0 z-0 font-display font-bold text-white text-5xl md:text-8xl opacity-[0.12] md:opacity-[0.08] leading-none select-none pointer-events-none`}>
         {String(num).padStart(2, "0")}
       </span>
       <div className="relative z-10 flex-1 pl-6 md:pl-10">
@@ -143,7 +153,7 @@ export default function PlanningLoop({ services }: { services: Service[] }) {
             aria-hidden="true"
             className="md:hidden absolute top-0 left-0 z-10 h-[3px] w-12 bg-[#fd008d]"
           />
-          <RowInner num={i + 4} service={service} />
+          <RowInner num={i + 4} service={service} numTop="max-md:top-4 md:-top-4" />
         </div>
       ))}
     </div>
