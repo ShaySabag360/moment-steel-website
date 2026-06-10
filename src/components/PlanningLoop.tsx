@@ -10,7 +10,7 @@ function RowInner({ num, service }: { num: number; service: Service }) {
   return (
     <>
       {/* Watermark number — absolute, bleeds behind the title */}
-      <span className="absolute -top-4 left-0 z-0 font-display font-bold text-white text-5xl md:text-8xl opacity-[0.05] md:opacity-[0.08] leading-none select-none pointer-events-none">
+      <span className="absolute -top-4 left-0 z-0 font-display font-bold text-white text-5xl md:text-8xl opacity-[0.12] md:opacity-[0.08] leading-none select-none pointer-events-none">
         {String(num).padStart(2, "0")}
       </span>
       <div className="relative z-10 flex-1 pl-6 md:pl-10">
@@ -47,6 +47,10 @@ export default function PlanningLoop({ services }: { services: Service[] }) {
               key={service.title}
               className="loop-row relative border-t border-white/10"
             >
+              <span
+                aria-hidden="true"
+                className="md:hidden absolute top-0 left-0 z-10 h-[3px] w-12 bg-[#fd008d]"
+              />
               <div className="loop-card" data-pos={POS[i]}>
                 <div className="card-box">
                   <RowInner num={i + 1} service={service} />
@@ -135,6 +139,10 @@ export default function PlanningLoop({ services }: { services: Service[] }) {
           key={service.title}
           className="svc-row relative border-t border-white/10"
         >
+          <span
+            aria-hidden="true"
+            className="md:hidden absolute top-0 left-0 z-10 h-[3px] w-12 bg-[#fd008d]"
+          />
           <RowInner num={i + 4} service={service} />
         </div>
       ))}

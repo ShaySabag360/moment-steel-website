@@ -124,7 +124,7 @@ export default function HomePage() {
             alt="Moment Steel"
             width={260}
             height={70}
-            className="mx-auto mb-10 opacity-95"
+            className="mx-auto mb-10 opacity-95 max-md:hidden"
             priority
           />
           <h1 className="text-4xl md:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
