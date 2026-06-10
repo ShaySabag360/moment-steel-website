@@ -1,5 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getDictionary } from "@/content";
+
+const { nav, footer } = getDictionary();
 
 export default function Footer() {
   return (
@@ -9,28 +12,22 @@ export default function Footer() {
           <div>
             <Image
               src="/logo/moment-white.svg"
-              alt="Moment Steel"
+              alt={footer.logoAlt}
               width={160}
               height={43}
               className="mb-5"
             />
             <p className="text-gray-400 text-base leading-relaxed">
-              End-to-End Structural Steel Solutions — from engineering and
-              detailing to fabrication management and site erection.
+              {footer.tagline}
             </p>
           </div>
 
           <div>
             <h3 className="text-white font-semibold uppercase tracking-widest text-sm mb-5">
-              Navigation
+              {footer.navHeading}
             </h3>
             <ul className="space-y-3">
-              {[
-                { label: "Home", href: "/" },
-                { label: "About", href: "/about" },
-                { label: "Projects", href: "/projects" },
-                { label: "Contact", href: "/contact" },
-              ].map((item) => (
+              {nav.links.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
@@ -45,10 +42,10 @@ export default function Footer() {
 
           <div>
             <h3 className="text-white font-semibold uppercase tracking-widest text-sm mb-5">
-              Contact
+              {footer.contactHeading}
             </h3>
             <ul className="space-y-3 text-gray-400 text-base">
-              <li>Yoni Netanyahu 8, Petach Tikva</li>
+              <li>{footer.address}</li>
               <li>
                 <a href="tel:0508464851" className="hover:text-white transition-colors">
                   Shai: 050-846-4851
@@ -74,7 +71,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="text-[#fd008d] hover:text-[#e0007c] transition-colors font-medium"
                 >
-                  WhatsApp →
+                  {footer.whatsapp}
                 </a>
               </li>
             </ul>
@@ -82,7 +79,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-[#2d2d2d] text-center text-gray-500 text-sm">
-          © {new Date().getFullYear()} Moment Steel. All rights reserved.
+          © {new Date().getFullYear()} {footer.copyright}
         </div>
       </div>
     </footer>

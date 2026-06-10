@@ -3,13 +3,9 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { getDictionary } from "@/content";
 
-const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Projects", href: "/projects" },
-  { label: "Contact", href: "/contact" },
-];
+const { nav } = getDictionary();
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -31,7 +27,7 @@ export default function Navbar() {
         <Link href="/">
           <Image
             src="/logo/moment-white.svg"
-            alt="Moment Steel"
+            alt={nav.logoAlt}
             width={160}
             height={43}
             priority
@@ -39,7 +35,7 @@ export default function Navbar() {
         </Link>
 
         <ul className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
+          {nav.links.map((link) => (
             <li key={link.href}>
               <Link
                 href={link.href}
@@ -54,7 +50,7 @@ export default function Navbar() {
               href="/contact"
               className="bg-[#fd008d] text-white text-sm font-semibold px-5 py-2.5 uppercase tracking-widest hover:bg-[#e0007c] transition-colors"
             >
-              Get a Quote
+              {nav.cta}
             </Link>
           </li>
         </ul>
@@ -62,7 +58,7 @@ export default function Navbar() {
         <button
           className="md:hidden text-white p-2 flex flex-col items-center justify-center gap-1.5 min-h-11 min-w-11"
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
+          aria-label={nav.toggleMenu}
         >
           <span className="block w-6 h-0.5 bg-white" />
           <span className="block w-6 h-0.5 bg-white" />
@@ -72,7 +68,7 @@ export default function Navbar() {
 
       {menuOpen && (
         <div className="md:hidden bg-black/95 px-6 py-4 border-t border-[#2d2d2d]">
-          {navLinks.map((link) => (
+          {nav.links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -87,7 +83,7 @@ export default function Navbar() {
             className="mt-4 block text-center bg-[#fd008d] text-white text-sm font-semibold px-5 py-3 uppercase tracking-widest"
             onClick={() => setMenuOpen(false)}
           >
-            Get a Quote
+            {nav.cta}
           </Link>
         </div>
       )}
