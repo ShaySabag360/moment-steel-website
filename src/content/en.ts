@@ -226,4 +226,55 @@ export const en: Dictionary = {
       secondary: "See Our Work",
     },
   },
+  projects: {
+    header: {
+      eyebrow: "Our Work",
+      heading: "Projects",
+      intro:
+        "A selection of steel structures we've engineered, detailed, and erected — from excavation bracing to complex one-of-a-kind assemblies.",
+    },
+    items: [
+      {
+        title: "BarLev Center",
+        location: "Israel",
+        category: "Excavation Support",
+        description:
+          "A 120-ton, three-level retaining wall support system delivered as a full design-build project. Moment Steel performed the structural design, scanned the pile wall, and fabricated the steel to match real site deviations — all under a challenging project schedule.",
+      },
+      {
+        title: "Migrash 11",
+        location: "Beit Shemesh",
+        category: "Excavation Support",
+        description:
+          "A design-build retaining wall support system installed against the building core during staged construction. By rethinking the structural scheme, Moment Steel reduced the steel weight by more than 60% while maintaining the required support capacity throughout the works.",
+      },
+      {
+        title: "Composite Column Spiral",
+        location: "Israel",
+        category: "Complex Geometry",
+        description:
+          "Design and detailing of prestressed composite columns for a 91-story tower, including post-tensioning elements connected to the concrete core and steel columns fabricated at varying angles. The project was developed through advanced code-based parametric modeling.",
+      },
+      {
+        title: "Azrieli Columns Support",
+        location: "Israel",
+        category: "Structural Support",
+        description:
+          "Horizontal support system for existing round columns during foundation strengthening works at the Azrieli Towers in Tel Aviv, where slabs were cut down to level -4. Each floor was scanned separately, allowing Moment Steel to develop a repeatable collar system adapted to site deviations and suitable for fast fabrication.",
+      },
+      {
+        title: "Wall Support System",
+        location: "Israel",
+        category: "Structural Support",
+        description:
+          "A modular climbing wall support system designed for slab construction stages in double-height areas of the Spiral Tower. The system was engineered to support an 11-meter-high wall and be reused across multiple floors with controlled installation geometry.",
+      },
+    ],
+    cta: {
+      heading: "Have a Project in Mind?",
+      body: "From standard frames to one-off steel assemblies, we bring the engineering and execution control needed to get it built right.",
+      primary: "Start a Conversation",
+      whatsapp: "WhatsApp Us",
+    },
+  },
 };

@@ -165,9 +165,32 @@ export interface AboutDictionary {
   };
 }
 
+export interface ProjectItem {
+  title: string;
+  location: string;
+  category: string;
+  description: string;
+}
+
+export interface ProjectsDictionary {
+  header: {
+    eyebrow: string;
+    heading: string;
+    intro: string;
+  };
+  items: ProjectItem[];
+  cta: {
+    heading: string;
+    body: string;
+    primary: string;
+    whatsapp: string;
+  };
+}
+
 export interface Dictionary {
   nav: NavDictionary;
   footer: FooterDictionary;
   home: HomeDictionary;
   about: AboutDictionary;
+  projects: ProjectsDictionary;
 }

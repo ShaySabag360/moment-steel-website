@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import MobileReveal from "@/components/MobileReveal";
+import { getDictionary } from "@/content";
+
+const { projects } = getDictionary();
 
 export const metadata = {
   title: "Projects — Moment Steel",
@@ -8,60 +11,27 @@ export const metadata = {
     "Steel projects by Moment Steel — excavation support, complex-geometry assemblies, and structural support systems engineered and erected across Israel.",
 };
 
-const projects = [
-  {
-    title: "BarLev Center",
-    location: "Israel",
-    category: "Excavation Support",
-    description:
-      "A 120-ton, three-level retaining wall support system delivered as a full design-build project. Moment Steel performed the structural design, scanned the pile wall, and fabricated the steel to match real site deviations — all under a challenging project schedule.",
-    images: ["/images/barlev-center/barlev-1.jpg"],
-  },
-  {
-    title: "Migrash 11",
-    location: "Beit Shemesh",
-    category: "Excavation Support",
-    description:
-      "A design-build retaining wall support system installed against the building core during staged construction. By rethinking the structural scheme, Moment Steel reduced the steel weight by more than 60% while maintaining the required support capacity throughout the works.",
-    images: [
-      "/images/migrash-11/migrash-1.jpg",
-      "/images/migrash-11/migrash-2.jpg",
-    ],
-  },
-  {
-    title: "Composite Column Spiral",
-    location: "Israel",
-    category: "Complex Geometry",
-    description:
-      "Design and detailing of prestressed composite columns for a 91-story tower, including post-tensioning elements connected to the concrete core and steel columns fabricated at varying angles. The project was developed through advanced code-based parametric modeling.",
-    images: [
-      "/images/composite-spiral/spiral-1.jpg",
-      "/images/composite-spiral/spiral-2.jpg",
-      "/images/composite-spiral/spiral-3.jpg",
-    ],
-  },
-  {
-    title: "Azrieli Columns Support",
-    location: "Israel",
-    category: "Structural Support",
-    description:
-      "Horizontal support system for existing round columns during foundation strengthening works at the Azrieli Towers in Tel Aviv, where slabs were cut down to level -4. Each floor was scanned separately, allowing Moment Steel to develop a repeatable collar system adapted to site deviations and suitable for fast fabrication.",
-    images: [
-      "/images/azrieli-columns/azrieli-1.jpg",
-      "/images/azrieli-columns/azrieli-2.jpg",
-    ],
-  },
-  {
-    title: "Wall Support System",
-    location: "Israel",
-    category: "Structural Support",
-    description:
-      "A modular climbing wall support system designed for slab construction stages in double-height areas of the Spiral Tower. The system was engineered to support an 11-meter-high wall and be reused across multiple floors with controlled installation geometry.",
-    images: [
-      "/images/wall-support/wall-1.jpg",
-      "/images/wall-support/wall-2.jpg",
-    ],
-  },
+// Per-project images (visual data); titles/categories/locations/descriptions
+// are copy and live in the dictionary (projects.items), matched here by index.
+const projectImages = [
+  ["/images/barlev-center/barlev-1.jpg"],
+  [
+    "/images/migrash-11/migrash-1.jpg",
+    "/images/migrash-11/migrash-2.jpg",
+  ],
+  [
+    "/images/composite-spiral/spiral-1.jpg",
+    "/images/composite-spiral/spiral-2.jpg",
+    "/images/composite-spiral/spiral-3.jpg",
+  ],
+  [
+    "/images/azrieli-columns/azrieli-1.jpg",
+    "/images/azrieli-columns/azrieli-2.jpg",
+  ],
+  [
+    "/images/wall-support/wall-1.jpg",
+    "/images/wall-support/wall-2.jpg",
+  ],
 ];
 
 export default function ProjectsPage() {
@@ -72,15 +42,13 @@ export default function ProjectsPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="border-l-4 border-[#fd008d] pl-6">
             <p className="text-[#fd008d] text-xl font-bold uppercase tracking-[0.25em] font-display mb-4">
-              Our Work
+              {projects.header.eyebrow}
             </p>
             <h1 className="text-4xl md:text-7xl font-bold text-white leading-tight">
-              Projects
+              {projects.header.heading}
             </h1>
             <p className="text-gray-400 text-lg mt-5 max-w-xl leading-relaxed">
-              A selection of steel structures we&apos;ve engineered, detailed,
-              and erected — from excavation bracing to complex one-of-a-kind
-              assemblies.
+              {projects.header.intro}
             </p>
           </div>
         </div>
@@ -88,14 +56,15 @@ export default function ProjectsPage() {
 
       {/* ─── Projects (full-bleed editorial) ─── */}
       <section className="bg-[#111111]">
-        {projects.map((project) => {
-          const extra = project.images.slice(1);
+        {projects.items.map((project, idx) => {
+          const images = projectImages[idx];
+          const extra = images.slice(1);
           return (
             <article key={project.title} className="mb-12 md:mb-16">
               {/* Full-bleed hero photo with overlay */}
               <div className="relative w-full h-[60vh]">
                 <Image
-                  src={project.images[0]}
+                  src={images[0]}
                   alt={project.title}
                   fill
                   sizes="100vw"
@@ -210,18 +179,17 @@ export default function ProjectsPage() {
         </span>
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
           <h2 className="font-display font-bold text-white text-5xl md:text-6xl mb-4">
-            Have a Project in Mind?
+            {projects.cta.heading}
           </h2>
           <p className="text-white/80 text-base md:text-lg mb-10 max-w-xl mx-auto">
-            From standard frames to one-off steel assemblies, we bring the
-            engineering and execution control needed to get it built right.
+            {projects.cta.body}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
               className="bg-white text-[#fd008d] px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-gray-100 transition-colors"
             >
-              Start a Conversation
+              {projects.cta.primary}
             </Link>
             <a
               href="https://wa.me/972545367242"
@@ -229,7 +197,7 @@ export default function ProjectsPage() {
               rel="noopener noreferrer"
               className="border-2 border-white text-white px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-white/10 transition-colors"
             >
-              WhatsApp Us
+              {projects.cta.whatsapp}
             </a>
           </div>
         </div>
