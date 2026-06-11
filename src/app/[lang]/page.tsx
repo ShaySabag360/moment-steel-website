@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Faq from "@/components/Faq";
 import PlanningLoop from "@/components/PlanningLoop";
-import { getDictionary } from "@/content";
+import { getDictionary, type Lang } from "@/content";
+import { localizeHref } from "@/lib/localizeHref";
 
 const { home } = getDictionary();
 
@@ -42,7 +43,12 @@ const testimonialLogos = [
   { logo: "https://www.davideng.co.il/wp-content/uploads/2018/12/logo-white.png", logoOpacity: 0.65 },
 ];
 
-export default function HomePage() {
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const lang = (await params).lang as Lang;
   return (
     <>
       {/* ─── Hero ─── */}
@@ -78,13 +84,13 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/contact"
+              href={localizeHref("/contact", lang)}
               className="bg-[#fd008d] text-white px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-[#e0007c] transition-colors"
             >
               {home.hero.ctaContact}
             </Link>
             <Link
-              href="/projects"
+              href={localizeHref("/projects", lang)}
               className="border border-white/60 text-white px-8 py-4 text-sm font-bold uppercase tracking-widest hover:border-white hover:bg-white/10 transition-colors"
             >
               {home.hero.ctaProjects}
@@ -150,7 +156,7 @@ export default function HomePage() {
               </h2>
             </div>
             <Link
-              href="/projects"
+              href={localizeHref("/projects", lang)}
               className="hidden sm:flex items-center gap-2 text-gray-400 hover:text-white text-sm font-semibold uppercase tracking-widest transition-colors"
             >
               {home.featured.viewAll}
@@ -165,7 +171,7 @@ export default function HomePage() {
               <Link
                 key={featuredImages[i]}
                 data-animate
-                href="/projects"
+                href={localizeHref("/projects", lang)}
                 className="relative h-80 overflow-hidden group block"
               >
                 <Image
@@ -186,7 +192,7 @@ export default function HomePage() {
 
           <div className="mt-8 text-center sm:hidden">
             <Link
-              href="/projects"
+              href={localizeHref("/projects", lang)}
               className="text-[#fd008d] text-sm font-semibold uppercase tracking-widest"
             >
               {home.featured.viewAllMobile}

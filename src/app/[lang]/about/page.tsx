@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import MobileReveal from "@/components/MobileReveal";
-import { getDictionary } from "@/content";
+import { getDictionary, type Lang } from "@/content";
+import { localizeHref } from "@/lib/localizeHref";
 
 const { about } = getDictionary();
 
@@ -28,7 +29,12 @@ const differentiatorIcons = [
   </svg>,
 ];
 
-export default function AboutPage() {
+export default async function AboutPage({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const lang = (await params).lang as Lang;
   return (
     <>
       {/* ─── Page Hero ─── */}
@@ -205,13 +211,13 @@ export default function AboutPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/contact"
+              href={localizeHref("/contact", lang)}
               className="bg-white text-[#fd008d] px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-gray-100 transition-colors"
             >
               {about.cta.primary}
             </Link>
             <Link
-              href="/projects"
+              href={localizeHref("/projects", lang)}
               className="border-2 border-white text-white px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-white/10 transition-colors"
             >
               {about.cta.secondary}

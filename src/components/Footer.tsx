@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getDictionary } from "@/content";
+import { getDictionary, type Lang } from "@/content";
+import { localizeHref } from "@/lib/localizeHref";
 
 const { nav, footer } = getDictionary();
 
-export default function Footer() {
+export default function Footer({ lang }: { lang: Lang }) {
   return (
     <footer className="bg-[#0a0a0a] border-t border-[#2d2d2d]">
       <div className="max-w-7xl mx-auto px-6 py-12 md:py-16">
@@ -30,7 +31,7 @@ export default function Footer() {
               {nav.links.map((item) => (
                 <li key={item.href}>
                   <Link
-                    href={item.href}
+                    href={localizeHref(item.href, lang)}
                     className="text-gray-400 hover:text-white text-base transition-colors"
                   >
                     {item.label}

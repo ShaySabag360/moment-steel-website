@@ -3,11 +3,12 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { getDictionary } from "@/content";
+import { getDictionary, type Lang } from "@/content";
+import { localizeHref } from "@/lib/localizeHref";
 
 const { nav } = getDictionary();
 
-export default function Navbar() {
+export default function Navbar({ lang }: { lang: Lang }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -24,7 +25,7 @@ export default function Navbar() {
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <Link href="/">
+        <Link href={localizeHref("/", lang)}>
           <Image
             src="/logo/moment-white.svg"
             alt={nav.logoAlt}
@@ -38,7 +39,7 @@ export default function Navbar() {
           {nav.links.map((link) => (
             <li key={link.href}>
               <Link
-                href={link.href}
+                href={localizeHref(link.href, lang)}
                 className="text-sm font-medium text-gray-300 hover:text-white transition-colors uppercase tracking-widest"
               >
                 {link.label}
@@ -47,7 +48,7 @@ export default function Navbar() {
           ))}
           <li>
             <Link
-              href="/contact"
+              href={localizeHref("/contact", lang)}
               className="bg-[#fd008d] text-white text-sm font-semibold px-5 py-2.5 uppercase tracking-widest hover:bg-[#e0007c] transition-colors"
             >
               {nav.cta}
@@ -71,7 +72,7 @@ export default function Navbar() {
           {nav.links.map((link) => (
             <Link
               key={link.href}
-              href={link.href}
+              href={localizeHref(link.href, lang)}
               className="block py-3 text-gray-300 hover:text-white border-b border-[#2d2d2d] uppercase tracking-widest text-sm"
               onClick={() => setMenuOpen(false)}
             >
@@ -79,7 +80,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="/contact"
+            href={localizeHref("/contact", lang)}
             className="mt-4 block text-center bg-[#fd008d] text-white text-sm font-semibold px-5 py-3 uppercase tracking-widest"
             onClick={() => setMenuOpen(false)}
           >
