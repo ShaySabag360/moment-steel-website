@@ -115,7 +115,9 @@ export default async function HomePage({
                 className={`text-center px-4 ${i < 2 ? "sm:border-r border-white/10" : ""}`}
               >
                 <p className="font-display font-bold text-white text-5xl md:text-8xl leading-none">
-                  {stat.value}
+                  {/* Isolate the value (e.g. "50+") so the trailing sign doesn't
+                      reorder under RTL — renders "50+", not "+50". Inert in LTR. */}
+                  <bdi>{stat.value}</bdi>
                 </p>
                 <p className="font-body text-white/40 text-sm tracking-[0.15em] uppercase mt-4">
                   {stat.label}

@@ -64,13 +64,13 @@ export default async function ContactPage({
                         href="tel:0508464851"
                         className="block text-gray-300 hover:text-white text-base transition-colors max-md:py-2.5"
                       >
-                        {contact.people[0].phone}
+                        <bdi>{contact.people[0].phone}</bdi>
                       </a>
                       <a
                         href="mailto:Shay@moment-steel.com"
                         className="block text-gray-300 hover:text-white text-base transition-colors max-md:py-2.5"
                       >
-                        {contact.people[0].email}
+                        <bdi>{contact.people[0].email}</bdi>
                       </a>
                     </div>
                   </div>
@@ -86,13 +86,13 @@ export default async function ContactPage({
                         href="tel:0545367242"
                         className="block text-gray-300 hover:text-white text-base transition-colors max-md:py-2.5"
                       >
-                        {contact.people[1].phone}
+                        <bdi>{contact.people[1].phone}</bdi>
                       </a>
                       <a
                         href="mailto:Yoel@moment-steel.com"
                         className="block text-gray-300 hover:text-white text-base transition-colors max-md:py-2.5"
                       >
-                        {contact.people[1].email}
+                        <bdi>{contact.people[1].email}</bdi>
                       </a>
                     </div>
                   </div>
