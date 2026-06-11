@@ -106,6 +106,24 @@ html[lang="he"] .h-\[3px\].w-12 {
   right: 0;
 }
 
+/* ── Hebrew eyebrow/label typography (Hebrew only) ───────────────────────────
+   Eyebrows, small labels and buttons across the site use English's caps + wide
+   letter-spacing convention (uppercase tracking-[0.25em] / tracking-widest …).
+   Hebrew has no uppercase, and that wide tracking makes Hebrew read unnaturally
+   spaced-out, so on Hebrew routes we drop the letter-spacing back to normal on
+   exactly those tracking utility classes. We override letter-spacing ONLY —
+   font weight, colour and size are untouched. Width only shrinks, so this can
+   never introduce horizontal overflow. Every selector is html[lang="he"]-scoped
+   (matching the Tailwind utility class names, escaped) so English routes never
+   match and no React class string changes. These rules are unlayered, so they
+   outrank Tailwind's utility-layer declarations. */
+html[lang="he"] .tracking-\[0\.25em\],
+html[lang="he"] .tracking-\[0\.2em\],
+html[lang="he"] .tracking-\[0\.15em\],
+html[lang="he"] .tracking-widest {
+  letter-spacing: normal;
+}
+
 @layer base {
   h1,
   h2,
