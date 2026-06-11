@@ -21,6 +21,8 @@ export const he: Dictionary = {
     cta: "קבלת הצעת מחיר",
     logoAlt: "מומנט פלדה",
     toggleMenu: "תפריט",
+    switchLang: "EN",
+    switchLangAria: "מעבר לאנגלית",
   },
   footer: {
     logoAlt: "מומנט פלדה",

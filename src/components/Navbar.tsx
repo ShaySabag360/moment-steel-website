@@ -3,11 +3,15 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { getDictionary, type Lang } from "@/content";
-import { localizeHref } from "@/lib/localizeHref";
+import { localizeHref, getAlternateLocaleHref } from "@/lib/localizeHref";
 
 export default function Navbar({ lang }: { lang: Lang }) {
   const { nav } = getDictionary(lang);
+  const pathname = usePathname();
+  const otherLang: Lang = lang === "he" ? "en" : "he";
+  const altHref = getAlternateLocaleHref(pathname, lang);
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -47,6 +51,16 @@ export default function Navbar({ lang }: { lang: Lang }) {
           ))}
           <li>
             <Link
+              href={altHref}
+              hrefLang={otherLang}
+              aria-label={nav.switchLangAria}
+              className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+            >
+              <span lang={otherLang}>{nav.switchLang}</span>
+            </Link>
+          </li>
+          <li>
+            <Link
               href={localizeHref("/contact", lang)}
               className="bg-[#fd008d] text-white text-sm font-semibold px-5 py-2.5 uppercase tracking-widest hover:bg-[#e0007c] transition-colors"
             >
@@ -78,6 +92,15 @@ export default function Navbar({ lang }: { lang: Lang }) {
               {link.label}
             </Link>
           ))}
+          <Link
+            href={altHref}
+            hrefLang={otherLang}
+            aria-label={nav.switchLangAria}
+            className="block py-3 text-gray-300 hover:text-white border-b border-[#2d2d2d] text-sm"
+            onClick={() => setMenuOpen(false)}
+          >
+            <span lang={otherLang}>{nav.switchLang}</span>
+          </Link>
           <Link
             href={localizeHref("/contact", lang)}
             className="mt-4 block text-center bg-[#fd008d] text-white text-sm font-semibold px-5 py-3 uppercase tracking-widest"

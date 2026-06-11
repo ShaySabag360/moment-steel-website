@@ -15,6 +15,8 @@ export const en: Dictionary = {
     cta: "Get a Quote",
     logoAlt: "Moment Steel",
     toggleMenu: "Toggle menu",
+    switchLang: "עברית",
+    switchLangAria: "Switch to Hebrew",
   },
   footer: {
     logoAlt: "Moment Steel",

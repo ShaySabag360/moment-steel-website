@@ -22,6 +22,10 @@ export interface NavDictionary {
   logoAlt: string;
   /** Mobile menu toggle button aria-label. */
   toggleMenu: string;
+  /** Visible label on the language switcher (the OTHER locale's endonym: HE shows "EN", EN shows "עברית"). */
+  switchLang: string;
+  /** Accessible label for the language switcher, in the current page's language. */
+  switchLangAria: string;
 }
 
 export interface FooterDictionary {
