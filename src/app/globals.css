@@ -33,6 +33,44 @@ html[lang="he"] body {
   font-family: var(--font-assistant), "Assistant", sans-serif;
 }
 
+/* ── RTL directional accent mirroring (Hebrew only) ──────────────────────────
+   Flip physically left/right-anchored decorative accents to the correct RTL
+   side. Every selector is html[lang="he"]-scoped and matches by a multi-class
+   combination unique to the target element, so English never matches and no
+   React class string changes. PlanningLoop is intentionally NOT touched here. */
+
+/* About + Contact hero pink accent bar: left edge → right edge. */
+html[lang="he"] .top-0.left-0.w-1.h-full {
+  left: auto;
+  right: 0;
+}
+
+/* Projects page header: left border + left padding → right border + right padding. */
+html[lang="he"] .border-l-4.pl-6 {
+  border-left-width: 0;
+  border-right-width: 4px;
+  padding-left: 0;
+  padding-right: 1.5rem;
+}
+
+/* About story decorative square: bottom-right → bottom-left. */
+html[lang="he"] .-bottom-4.-right-4 {
+  right: auto;
+  left: -1rem;
+}
+
+/* Home testimonial logo (md:absolute ≥768): bottom-right → bottom-left.
+   Inert below 768 where the logo is static (left/right are ignored). */
+html[lang="he"] .md\:right-8 {
+  right: auto;
+  left: 2rem;
+}
+
+/* FAQ question button: text-align left → right. */
+html[lang="he"] .text-left {
+  text-align: right;
+}
+
 @layer base {
   h1,
   h2,
