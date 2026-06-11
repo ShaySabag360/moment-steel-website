@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import type { ContactFormDictionary } from "@/content/types";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mwvjljyp";
 
@@ -11,7 +12,7 @@ const inputClass =
 const labelClass =
   "block text-sm font-semibold uppercase tracking-widest text-gray-400 mb-2";
 
-export default function ContactForm() {
+export default function ContactForm({ dict }: { dict: ContactFormDictionary }) {
   const [values, setValues] = useState({
     name: "",
     company: "",
@@ -63,7 +64,7 @@ export default function ContactForm() {
           />
         </svg>
         <p className="text-white text-lg leading-relaxed max-w-sm">
-          Thanks! We&apos;ll be in touch within one business day.
+          {dict.success}
         </p>
       </div>
     );
@@ -76,7 +77,7 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
           <label htmlFor="name" className={labelClass}>
-            Full Name *
+            {dict.nameLabel}
           </label>
           <input
             id="name"
@@ -85,13 +86,13 @@ export default function ContactForm() {
             required
             value={values.name}
             onChange={handleChange}
-            placeholder="Your name"
+            placeholder={dict.namePlaceholder}
             className={inputClass}
           />
         </div>
         <div>
           <label htmlFor="company" className={labelClass}>
-            Company
+            {dict.companyLabel}
           </label>
           <input
             id="company"
@@ -99,7 +100,7 @@ export default function ContactForm() {
             type="text"
             value={values.company}
             onChange={handleChange}
-            placeholder="Your company (optional)"
+            placeholder={dict.companyPlaceholder}
             className={inputClass}
           />
         </div>
@@ -108,7 +109,7 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
           <label htmlFor="phone" className={labelClass}>
-            Phone *
+            {dict.phoneLabel}
           </label>
           <input
             id="phone"
@@ -117,13 +118,13 @@ export default function ContactForm() {
             required
             value={values.phone}
             onChange={handleChange}
-            placeholder="050-000-0000"
+            placeholder={dict.phonePlaceholder}
             className={inputClass}
           />
         </div>
         <div>
           <label htmlFor="email" className={labelClass}>
-            Email
+            {dict.emailLabel}
           </label>
           <input
             id="email"
@@ -131,7 +132,7 @@ export default function ContactForm() {
             type="email"
             value={values.email}
             onChange={handleChange}
-            placeholder="you@company.com"
+            placeholder={dict.emailPlaceholder}
             className={inputClass}
           />
         </div>
@@ -139,7 +140,7 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="message" className={labelClass}>
-          Project Description *
+          {dict.messageLabel}
         </label>
         <textarea
           id="message"
@@ -148,7 +149,7 @@ export default function ContactForm() {
           rows={6}
           value={values.message}
           onChange={handleChange}
-          placeholder="Tell us about your project — structure type, location, scope, timeline, any special requirements..."
+          placeholder={dict.messagePlaceholder}
           className={`${inputClass} resize-none`}
         />
       </div>
@@ -158,17 +159,17 @@ export default function ContactForm() {
         disabled={submitting}
         className="w-full bg-[#fd008d] text-white py-4 text-sm font-bold uppercase tracking-widest hover:bg-[#e0007c] transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
       >
-        {submitting ? "Sending..." : "Send Message"}
+        {submitting ? dict.submitting : dict.submit}
       </button>
 
       {status === "error" && (
         <p className="text-red-400 text-sm text-center">
-          Something went wrong. Please try again or call us directly.
+          {dict.error}
         </p>
       )}
 
       <p className="text-gray-600 text-sm text-center">
-        We respond within one business day. Or call us directly if it&apos;s urgent.
+        {dict.helper}
       </p>
     </form>
   );

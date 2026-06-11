@@ -187,10 +187,56 @@ export interface ProjectsDictionary {
   };
 }
 
+export interface ContactPerson {
+  /** Avatar initials (e.g. "SS"). */
+  initials: string;
+  name: string;
+  role: string;
+  /** Displayed phone number (the tel: href stays in the page). */
+  phone: string;
+  /** Displayed email address (the mailto: href stays in the page). */
+  email: string;
+}
+
+export interface ContactFormDictionary {
+  nameLabel: string;
+  namePlaceholder: string;
+  companyLabel: string;
+  companyPlaceholder: string;
+  phoneLabel: string;
+  phonePlaceholder: string;
+  emailLabel: string;
+  emailPlaceholder: string;
+  messageLabel: string;
+  messagePlaceholder: string;
+  submit: string;
+  submitting: string;
+  success: string;
+  error: string;
+  helper: string;
+}
+
+export interface ContactDictionary {
+  header: {
+    eyebrow: string;
+    headline: { line1: string; line2: string };
+    intro: string;
+  };
+  directHeading: string;
+  people: ContactPerson[];
+  whatsappHeading: string;
+  whatsappLink: string;
+  officeHeading: string;
+  address: { line1: string; line2: string };
+  note: string;
+  form: ContactFormDictionary;
+}
+
 export interface Dictionary {
   nav: NavDictionary;
   footer: FooterDictionary;
   home: HomeDictionary;
   about: AboutDictionary;
   projects: ProjectsDictionary;
+  contact: ContactDictionary;
 }

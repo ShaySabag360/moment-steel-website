@@ -277,4 +277,52 @@ export const en: Dictionary = {
       whatsapp: "WhatsApp Us",
     },
   },
+  contact: {
+    header: {
+      eyebrow: "Get in Touch",
+      headline: { line1: "Let's Talk About", line2: "Your Steel Project." },
+      intro:
+        "Send us your scope, drawings or site challenge, and we’ll get back to you within one business day. No commitment, no sales pitch — just a clear, practical conversation about your project.",
+    },
+    directHeading: "Direct Contact",
+    people: [
+      {
+        initials: "SS",
+        name: "Shay Sabag",
+        role: "Structural Engineering",
+        phone: "050-846-4851",
+        email: "Shay@moment-steel.com",
+      },
+      {
+        initials: "YG",
+        name: "Yoel Greiner",
+        role: "Project Management & Fabrication",
+        phone: "054-536-7242",
+        email: "Yoel@moment-steel.com",
+      },
+    ],
+    whatsappHeading: "Prefer WhatsApp?",
+    whatsappLink: "Message us on WhatsApp",
+    officeHeading: "Office",
+    address: { line1: "Yoni Netanyahu 8", line2: "Petach Tikva, Israel" },
+    note: "We work with developers, general contractors, and architects across Israel. If your project involves structural steel — at any stage — we're worth a call.",
+    form: {
+      nameLabel: "Full Name *",
+      namePlaceholder: "Your name",
+      companyLabel: "Company",
+      companyPlaceholder: "Your company (optional)",
+      phoneLabel: "Phone *",
+      phonePlaceholder: "050-000-0000",
+      emailLabel: "Email",
+      emailPlaceholder: "you@company.com",
+      messageLabel: "Project Description *",
+      messagePlaceholder:
+        "Tell us about your project — structure type, location, scope, timeline, any special requirements...",
+      submit: "Send Message",
+      submitting: "Sending...",
+      success: "Thanks! We'll be in touch within one business day.",
+      error: "Something went wrong. Please try again or call us directly.",
+      helper: "We respond within one business day. Or call us directly if it's urgent.",
+    },
+  },
 };
