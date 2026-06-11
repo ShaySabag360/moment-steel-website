@@ -118,8 +118,56 @@ export interface HomeDictionary {
   };
 }
 
+export interface DifferentiatorItem {
+  title: string;
+  description: string;
+}
+
+export interface TeamMember {
+  name: string;
+  role: string;
+  description: string;
+  tags: string[];
+  /** Avatar initials (e.g. "SS"); shown on the card, kept across locales. */
+  initials: string;
+}
+
+export interface AboutDictionary {
+  hero: {
+    eyebrow: string;
+    /** Three headline lines; line3 is the pink-accented line. */
+    headline: { line1: string; line2: string; line3: string };
+    paragraph: string;
+  };
+  story: {
+    eyebrow: string;
+    heading: string;
+    /** Paragraph 1 is always visible; 2 and 3 sit inside MobileReveal. */
+    paragraphs: [string, string, string];
+    tags: string[];
+  };
+  whyChooseUs: {
+    eyebrow: string;
+    heading: string;
+    items: DifferentiatorItem[];
+  };
+  team: {
+    eyebrow: string;
+    heading: string;
+    subhead: string;
+    members: TeamMember[];
+  };
+  cta: {
+    heading: string;
+    body: string;
+    primary: string;
+    secondary: string;
+  };
+}
+
 export interface Dictionary {
   nav: NavDictionary;
   footer: FooterDictionary;
   home: HomeDictionary;
+  about: AboutDictionary;
 }

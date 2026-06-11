@@ -140,4 +140,90 @@ export const en: Dictionary = {
       whatsapp: "WhatsApp Us",
     },
   },
+  about: {
+    hero: {
+      eyebrow: "About Moment Steel",
+      headline: {
+        line1: "Steel projects fail",
+        line2: "at handoffs.",
+        line3: "We eliminated them.",
+      },
+      paragraph:
+        "Moment Steel was built around one principle: one accountable team should carry a steel project from the first structural calculation to the last bolt on site. Not a relay race between separate firms — one controlled process with accountability at every stage.",
+    },
+    story: {
+      eyebrow: "Our Story",
+      heading: "One Steel Team. Full Project Control.",
+      paragraphs: [
+        "Most steel project failures are not caused by the steel itself. They happen in the gaps between engineering, fabrication and site — when design changes are not coordinated, or when the steel arrives to conditions that no longer match the drawings.",
+        "We built Moment Steel to close those gaps before they become project delays. By keeping structural engineering, shop drawings, 3D scanning, fabrication coordination and site erection under one roof, we reduce the coordination failures that derail projects on cost and schedule.",
+        "Today we deliver complex steel structures for developers, contractors and engineering teams across Israel — on schedule and to specification, from the first calculation to the final torque check.",
+      ],
+      tags: ["Warehouses", "Structural Additions", "Complex Geometry", "Logistics Facilities"],
+    },
+    whyChooseUs: {
+      eyebrow: "Why Choose Us",
+      heading: "Why Contractors Work With Moment Steel",
+      items: [
+        {
+          title: "Engineering, Detailing and Site Control In-House",
+          description:
+            "When engineering, detailing and fabrication management work as one team, issues are resolved before they reach the workshop or the site. One technical team owns the chain of responsibility, reducing handoff risks and keeping decisions clear.",
+        },
+        {
+          title: "One Team, Full Accountability",
+          description:
+            "We take responsibility for every phase: structural analysis, shop drawings, fabrication oversight and site erection. One team, one point of contact and clear accountability when the project needs to adapt.",
+        },
+        {
+          title: "Scan Early. Fabricate With Confidence.",
+          description:
+            "When site conditions are critical, we scan early and bring verified as-built geometry into the model — helping connections fit as planned and reducing field adjustments.",
+        },
+        {
+          title: "Built for Complex Steel Projects",
+          description:
+            "Spiral geometries. Additions onto occupied structures. Tight sites with no margin for error. Our workflows are built for projects that require tight coordination, precise detailing and controlled execution from start to finish.",
+        },
+      ],
+    },
+    team: {
+      eyebrow: "The Team",
+      heading: "Senior Steel Professionals. One Accountable Team.",
+      subhead:
+        "Every project is handled by a senior engineer — no project managers in the middle, no junior handoffs.",
+      members: [
+        {
+          name: "Shay Sabag",
+          role: "Structural Engineer & Execution Lead",
+          description:
+            "Shay is a licensed structural engineer with a master’s degree in structural engineering and broad experience in steel structures. He leads the engineering process from member design through connection coordination and final signed calculations, with a focus on practical, buildable and responsible design.",
+          tags: ["Dlubal", "IdeaStatica", "Strap", "Seismic Design"],
+          initials: "SS",
+        },
+        {
+          name: "Yoel Greiner",
+          role: "Project Manager & Survey Lead",
+          description:
+            "Yoel brings 12 years of experience managing production environments and coordinating steel projects from design intent to site execution. He leads fabrication coordination, delivery logistics and 3D scanning operations, helping align engineering requirements, workshop production and real site conditions throughout the project with clear responsibility for practical execution.",
+          tags: ["3D Laser Scanning", "Fabrication", "Logistics", "Geodesy"],
+          initials: "YG",
+        },
+        {
+          name: "Arthur Kocherov",
+          role: "Senior Steel Detailer & Mechanical Engineer",
+          description:
+            "Arthur brings advanced steel detailing experience and parametric modeling tools for complex and repetitive steel geometry. He develops clear, fabrication-ready shop drawing packages that translate engineering requirements into practical workshop information, supporting efficient production and reducing interpretation during fabrication.",
+          tags: ["Tekla Structures", "Grasshopper", "Parametric Modeling", "Detailing"],
+          initials: "AK",
+        },
+      ],
+    },
+    cta: {
+      heading: "Tell Us About Your Steel Project.",
+      body: "Share your project scope and we'll get back to you within one business day.",
+      primary: "Get in Touch",
+      secondary: "See Our Work",
+    },
+  },
 };
