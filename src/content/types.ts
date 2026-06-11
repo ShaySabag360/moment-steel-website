@@ -39,6 +39,10 @@ export interface FooterDictionary {
   whatsapp: string;
   /** Text rendered after "© {year} " in the copyright line. */
   copyright: string;
+  /** Inline label before Shai's phone number in the contact column (e.g. "Shai:"). */
+  contactShai: string;
+  /** Inline label before Yoel's phone number in the contact column (e.g. "Yoel:"). */
+  contactYoel: string;
 }
 
 export interface StatItem {
@@ -232,9 +236,22 @@ export interface ContactDictionary {
   form: ContactFormDictionary;
 }
 
+/** Shared UI control labels (progressive-disclosure toggles, etc.). */
+export interface UiDictionary {
+  /** MobileReveal expand label on the default reveals (services, story, team bios). */
+  readMore: string;
+  /** MobileReveal collapse label on the default reveals. */
+  showLess: string;
+  /** Projects description expand label. */
+  viewDetails: string;
+  /** Projects description collapse label. */
+  hideDetails: string;
+}
+
 export interface Dictionary {
   nav: NavDictionary;
   footer: FooterDictionary;
+  ui: UiDictionary;
   home: HomeDictionary;
   about: AboutDictionary;
   projects: ProjectsDictionary;

@@ -10,10 +10,12 @@ function RowInner({
   num,
   service,
   numTop = "-top-4",
+  revealLabels,
 }: {
   num: number;
   service: Service;
   numTop?: string;
+  revealLabels: { more: string; less: string };
 }) {
   return (
     <>
@@ -29,6 +31,8 @@ function RowInner({
         </h3>
         <MobileReveal
           lines={3}
+          moreLabel={revealLabels.more}
+          lessLabel={revealLabels.less}
           className="text-gray-400 text-sm md:text-base leading-relaxed mt-2 max-w-[400px]"
         >
           {service.description}
@@ -42,7 +46,13 @@ function RowInner({
 // 01 → upper-right, 02 → lower-right, 03 → left (same circle, same radius)
 const POS = ["ur", "lr", "left"] as const;
 
-export default function PlanningLoop({ services }: { services: Service[] }) {
+export default function PlanningLoop({
+  services,
+  revealLabels,
+}: {
+  services: Service[];
+  revealLabels: { more: string; less: string };
+}) {
   const loop = services.slice(0, 3);
   const rest = services.slice(3);
 
@@ -63,7 +73,7 @@ export default function PlanningLoop({ services }: { services: Service[] }) {
               />
               <div className="loop-card" data-pos={POS[i]}>
                 <div className="card-box">
-                  <RowInner num={i + 1} service={service} />
+                  <RowInner num={i + 1} service={service} revealLabels={revealLabels} />
                 </div>
               </div>
             </div>
@@ -153,7 +163,7 @@ export default function PlanningLoop({ services }: { services: Service[] }) {
             aria-hidden="true"
             className="md:hidden absolute top-0 left-0 z-10 h-[3px] w-12 bg-[#fd008d]"
           />
-          <RowInner num={i + 4} service={service} numTop="max-md:top-4 md:-top-4" />
+          <RowInner num={i + 4} service={service} numTop="max-md:top-4 md:-top-4" revealLabels={revealLabels} />
         </div>
       ))}
     </div>

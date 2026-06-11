@@ -47,7 +47,7 @@ export default async function HomePage({
   params: Promise<{ lang: string }>;
 }) {
   const lang = (await params).lang as Lang;
-  const { home } = getDictionary(lang);
+  const { home, ui } = getDictionary(lang);
   return (
     <>
       {/* ─── Hero ─── */}
@@ -140,7 +140,10 @@ export default async function HomePage({
             </h2>
           </div>
 
-          <PlanningLoop services={home.services.items} />
+          <PlanningLoop
+            services={home.services.items}
+            revealLabels={{ more: ui.readMore, less: ui.showLess }}
+          />
         </div>
       </section>
 

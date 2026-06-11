@@ -39,7 +39,7 @@ export default async function ProjectsPage({
   params: Promise<{ lang: string }>;
 }) {
   const lang = (await params).lang as Lang;
-  const { projects } = getDictionary(lang);
+  const { projects, ui } = getDictionary(lang);
   return (
     <>
       {/* ─── Page Header ─── */}
@@ -97,8 +97,8 @@ export default async function ProjectsPage({
                   <div data-animate className="max-w-2xl">
                     <MobileReveal
                       lines={2}
-                      moreLabel="View details"
-                      lessLabel="Hide details"
+                      moreLabel={ui.viewDetails}
+                      lessLabel={ui.hideDetails}
                       className="text-gray-400 text-base leading-relaxed"
                     >
                       {project.description}

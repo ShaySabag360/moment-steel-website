@@ -33,7 +33,7 @@ export default async function AboutPage({
   params: Promise<{ lang: string }>;
 }) {
   const lang = (await params).lang as Lang;
-  const { about } = getDictionary(lang);
+  const { about, ui } = getDictionary(lang);
   return (
     <>
       {/* ─── Page Hero ─── */}
@@ -69,7 +69,12 @@ export default async function AboutPage({
               </h2>
               <div className="space-y-4 text-gray-400 text-base leading-relaxed">
                 <p>{about.story.paragraphs[0]}</p>
-                <MobileReveal variant="collapse" className="space-y-4">
+                <MobileReveal
+                  variant="collapse"
+                  moreLabel={ui.readMore}
+                  lessLabel={ui.showLess}
+                  className="space-y-4"
+                >
                   <p>{about.story.paragraphs[1]}</p>
                   <p>{about.story.paragraphs[2]}</p>
                 </MobileReveal>
@@ -172,6 +177,8 @@ export default async function AboutPage({
                 </p>
                 <MobileReveal
                   lines={3}
+                  moreLabel={ui.readMore}
+                  lessLabel={ui.showLess}
                   className="text-gray-400 text-base leading-relaxed mb-6"
                 >
                   {member.description}

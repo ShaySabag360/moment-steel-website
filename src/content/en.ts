@@ -25,6 +25,14 @@ export const en: Dictionary = {
     address: "Yoni Netanyahu 8, Petach Tikva",
     whatsapp: "WhatsApp →",
     copyright: "Moment Steel. All rights reserved.",
+    contactShai: "Shai:",
+    contactYoel: "Yoel:",
+  },
+  ui: {
+    readMore: "Read more",
+    showLess: "Show less",
+    viewDetails: "View details",
+    hideDetails: "Hide details",
   },
   home: {
     hero: {

@@ -31,6 +31,14 @@ export const he: Dictionary = {
     address: "יוני נתניהו 8, פתח תקווה",
     whatsapp: "וואטסאפ ←",
     copyright: "מומנט הנדסת פלדה. כל הזכויות שמורות.",
+    contactShai: "שי:",
+    contactYoel: "יואל:",
+  },
+  ui: {
+    readMore: "קרא עוד",
+    showLess: "הצג פחות",
+    viewDetails: "פרטים נוספים",
+    hideDetails: "הסתר פרטים",
   },
   home: {
     hero: {
@@ -79,7 +87,7 @@ export const he: Dictionary = {
       eyebrow: "העבודות שלנו",
       heading: "פרויקטים נבחרים",
       viewAll: "לכל הפרויקטים",
-      viewAllMobile: "לכל הפרויקטים →",
+      viewAllMobile: "לכל הפרויקטים ←",
       items: [
         { title: "מרכז בר-לב", location: "מסחרי" },
         { title: "מכלול עמודי קומפוזיט ספירלי", location: "גאומטריה מורכבת" },

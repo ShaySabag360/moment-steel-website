@@ -48,7 +48,7 @@ export default function Footer({ lang }: { lang: Lang }) {
               <li>{footer.address}</li>
               <li>
                 <a href="tel:0508464851" className="hover:text-white transition-colors">
-                  Shai: 050-846-4851
+                  {footer.contactShai} <bdi>050-846-4851</bdi>
                 </a>
                 {" · "}
                 <a href="mailto:Shay@moment-steel.com" className="hover:text-white transition-colors">
@@ -57,7 +57,7 @@ export default function Footer({ lang }: { lang: Lang }) {
               </li>
               <li>
                 <a href="tel:0545367242" className="hover:text-white transition-colors">
-                  Yoel: 054-536-7242
+                  {footer.contactYoel} <bdi>054-536-7242</bdi>
                 </a>
                 {" · "}
                 <a href="mailto:Yoel@moment-steel.com" className="hover:text-white transition-colors">
