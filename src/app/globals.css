@@ -17,6 +17,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Hebrew routes: Barlow Condensed / DM Sans have no Hebrew glyphs, so swap the
+   font tokens to Assistant (loaded via next/font, attached to <html> only on
+   [lang="he"]). English routes never match these selectors, so they are visually
+   unchanged. `html[lang="he"]` (0,1,1) outranks the @theme `:root` defaults, and
+   `html[lang="he"] body` outranks the DM Sans class on <body>. RTL directional
+   polish (spacing/borders) is a later step. */
+html[lang="he"] {
+  --font-display: var(--font-assistant), "Assistant", sans-serif;
+  --font-body: var(--font-assistant), "Assistant", sans-serif;
+  --font-sans: var(--font-assistant), "Assistant", sans-serif;
+}
+
+html[lang="he"] body {
+  font-family: var(--font-assistant), "Assistant", sans-serif;
+}
+
 @layer base {
   h1,
   h2,
