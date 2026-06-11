@@ -5,8 +5,6 @@ import PlanningLoop from "@/components/PlanningLoop";
 import { getDictionary, type Lang } from "@/content";
 import { localizeHref } from "@/lib/localizeHref";
 
-const { home } = getDictionary();
-
 const clientLogos = [
   {
     alt: "Tidhar",
@@ -49,6 +47,7 @@ export default async function HomePage({
   params: Promise<{ lang: string }>;
 }) {
   const lang = (await params).lang as Lang;
+  const { home } = getDictionary(lang);
   return (
     <>
       {/* ─── Hero ─── */}

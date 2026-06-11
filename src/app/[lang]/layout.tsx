@@ -39,12 +39,10 @@ export default async function RootLayout({
   params: Promise<{ lang: string }>;
 }>) {
   const lang = (await params).lang as Lang;
-  // P1.2-c1: <html> stays hard-coded en/ltr for the cleanest English parity
-  // proof. Real lang/dir wiring (incl. dir="rtl" for Hebrew) lands in the next
-  // step alongside getDictionary(lang). `lang` is used here only to localize
-  // the chrome links (Navbar/Footer): English -> /en/*, Hebrew -> root.
+  // Hebrew is RTL, English is LTR. Visual RTL polish (flipped spacing, Assistant
+  // font) is a later step; here we only set the document direction + language.
   return (
-    <html lang="en" dir="ltr" className={`${barlowCondensed.variable} ${dmSans.variable}`}>
+    <html lang={lang} dir={lang === "he" ? "rtl" : "ltr"} className={`${barlowCondensed.variable} ${dmSans.variable}`}>
       <body className={`${dmSans.className} bg-[#111111] text-white antialiased`}>
         <Navbar lang={lang} />
         <main>{children}</main>

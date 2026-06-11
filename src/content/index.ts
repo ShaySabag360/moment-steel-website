@@ -1,14 +1,16 @@
-import type { Dictionary } from "./types";
+import type { Dictionary, Lang } from "./types";
 import { en } from "./en";
+import { he } from "./he";
 
-// Dictionary access point. Centralizing here means that when locale routing
-// is introduced (P1.2), only this helper changes to select by `lang` — call
-// sites stay the same.
+// Dictionary access point. Select the complete dictionary for a locale.
 //
-// P1.1 pilot: English is the only available locale, so this takes no argument
-// yet. A `lang` parameter + Hebrew dictionary are wired in a later phase.
-export function getDictionary(): Dictionary {
-  return en;
+// No fallback merge and no silent per-key fallback to English: each locale
+// returns its own full dictionary object. Structural parity between `en` and
+// `he` is enforced at compile time (both are typed `Dictionary`), so a missing
+// or renamed key fails the build rather than silently degrading to English at
+// runtime.
+export function getDictionary(lang: Lang): Dictionary {
+  return lang === "he" ? he : en;
 }
 
 export type { Dictionary, Lang, NavLink } from "./types";

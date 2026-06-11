@@ -4,8 +4,6 @@ import MobileReveal from "@/components/MobileReveal";
 import { getDictionary, type Lang } from "@/content";
 import { localizeHref } from "@/lib/localizeHref";
 
-const { about } = getDictionary();
-
 export const metadata = {
   title: "About — Moment Steel",
   description:
@@ -35,6 +33,7 @@ export default async function AboutPage({
   params: Promise<{ lang: string }>;
 }) {
   const lang = (await params).lang as Lang;
+  const { about } = getDictionary(lang);
   return (
     <>
       {/* ─── Page Hero ─── */}

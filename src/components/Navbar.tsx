@@ -6,9 +6,8 @@ import Link from "next/link";
 import { getDictionary, type Lang } from "@/content";
 import { localizeHref } from "@/lib/localizeHref";
 
-const { nav } = getDictionary();
-
 export default function Navbar({ lang }: { lang: Lang }) {
+  const { nav } = getDictionary(lang);
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 

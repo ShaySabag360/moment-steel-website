@@ -1,7 +1,5 @@
 import ContactForm from "@/components/ContactForm";
-import { getDictionary } from "@/content";
-
-const { contact } = getDictionary();
+import { getDictionary, type Lang } from "@/content";
 
 export const metadata = {
   title: "Contact — Moment Steel",
@@ -9,7 +7,13 @@ export const metadata = {
     "Get in touch with Moment Steel. Licensed structural engineers available for projects across Israel.",
 };
 
-export default function ContactPage() {
+export default async function ContactPage({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const lang = (await params).lang as Lang;
+  const { contact } = getDictionary(lang);
   return (
     <>
       {/* ─── Header ─── */}

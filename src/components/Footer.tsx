@@ -3,9 +3,8 @@ import Link from "next/link";
 import { getDictionary, type Lang } from "@/content";
 import { localizeHref } from "@/lib/localizeHref";
 
-const { nav, footer } = getDictionary();
-
 export default function Footer({ lang }: { lang: Lang }) {
+  const { nav, footer } = getDictionary(lang);
   return (
     <footer className="bg-[#0a0a0a] border-t border-[#2d2d2d]">
       <div className="max-w-7xl mx-auto px-6 py-12 md:py-16">
