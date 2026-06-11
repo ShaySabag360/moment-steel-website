@@ -71,6 +71,41 @@ html[lang="he"] .text-left {
   text-align: right;
 }
 
+/* ── PlanningLoop static-list RTL mirroring (Hebrew only) ─────────────────────
+   On Hebrew routes the service rows read RTL: the big background number moves to
+   the right (behind the right-aligned title), the content padding flips to the
+   right, and the mobile top pink separator starts from the right. These rules
+   only reposition row CONTENT; they never touch the morph geometry rules
+   (.loop-card[data-pos] transforms, .loop-arrows ring, .loop-hub), so the
+   >=1152px loop/ring/cards/hub/hover stays identical and direction-neutral. */
+
+/* Big background number: left edge -> right edge. Ancestor-scoped to the loop
+   rows so the CTA "MOMENT" watermark (which also has select-none /
+   pointer-events-none) is NOT affected. */
+html[lang="he"] .card-box .select-none.pointer-events-none,
+html[lang="he"] .svc-row .select-none.pointer-events-none {
+  left: auto;
+  right: 0;
+}
+
+/* Content column (title + description) padding: left -> right.
+   .flex-1 is unique to this column. */
+html[lang="he"] .flex-1.pl-6 {
+  padding-left: 0;
+  padding-right: 1.5rem; /* pl-6 */
+}
+@media (min-width: 768px) {
+  html[lang="he"] .flex-1.pl-6 {
+    padding-right: 2.5rem; /* md:pl-10 */
+  }
+}
+
+/* Mobile top pink separator: left -> right. .h-[3px] is unique to it. */
+html[lang="he"] .h-\[3px\].w-12 {
+  left: auto;
+  right: 0;
+}
+
 @layer base {
   h1,
   h2,
