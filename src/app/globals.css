@@ -319,6 +319,29 @@ html[lang="he"] .tracking-widest {
   .loop-group.is-active .loop-card[data-pos="left"] {
     transform: translate(calc(50% - 540px), -45px); /* card 03 (row 2) → left */
   }
+
+  /* RTL morph geometry (Hebrew only). The .card-box is right-anchored inside the
+     full-width .loop-card (justify-content:flex-start resolves to the RIGHT edge
+     under dir=rtl), so it starts (100% − 460px) further right than English's
+     left-anchored box. The ring/hub SVG is direction-neutral and lands identically
+     HE==EN, so to seat the boxes on the very same ring anchors we subtract that
+     same (100% − 460px = card-box width) from each card's translateX. It is
+     percentage-based, so it is exact at every desktop width; there is NO direction
+     flip, so the static desktop list, the RTL text inside the cards and the mobile
+     list are all untouched, and there is no hover re-anchor jump. Y is vertical and
+     stays identical. English never matches html[lang="he"], so it is unchanged. */
+  html[lang="he"] .loop-group:hover .loop-card[data-pos="ur"],
+  html[lang="he"] .loop-group.is-active .loop-card[data-pos="ur"] {
+    transform: translate(calc(-50% + 430px), 61px); /* (50% − 30) − (100% − 460) */
+  }
+  html[lang="he"] .loop-group:hover .loop-card[data-pos="lr"],
+  html[lang="he"] .loop-group.is-active .loop-card[data-pos="lr"] {
+    transform: translate(calc(-50% + 430px), 449px); /* (50% − 30) − (100% − 460) */
+  }
+  html[lang="he"] .loop-group:hover .loop-card[data-pos="left"],
+  html[lang="he"] .loop-group.is-active .loop-card[data-pos="left"] {
+    transform: translate(calc(-50% - 80px), -45px); /* (50% − 540) − (100% − 460) */
+  }
   /* Marching dashes — clockwise (01→02→03→01) */
   .loop-group:hover .loop-arc,
   .loop-group.is-active .loop-arc {
