@@ -256,6 +256,16 @@ html[lang="he"] .tracking-widest {
     transform: scale(0.9);
     opacity: 0.8;
   }
+  /* RTL (Hebrew only): rows 04/05 are right-anchored (number/title/description on
+     the right), but the rest-state 0.9 scale defaults to a LEFT origin, which
+     shrinks them toward the left and pulls their right edge ~120px in from the
+     right-anchored 01–03 cards above — making the list look like two layouts.
+     Anchoring the scale origin to the right keeps 04/05's right edge aligned with
+     01–03 (and the hover scale-up grows from the right too). English keeps
+     left-center, so it is unchanged. Only affects ≥1152 where the scale exists. */
+  html[lang="he"] .svc-row {
+    transform-origin: right center;
+  }
   .svc-row:hover,
   .svc-row.is-active {
     transform: scale(1);
