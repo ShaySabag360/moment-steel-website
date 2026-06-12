@@ -1,11 +1,16 @@
+import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 import { getDictionary, type Lang } from "@/content";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Contact — Moment Steel",
-  description:
-    "Get in touch with Moment Steel. Licensed structural engineers available for projects across Israel.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const lang = (await params).lang as Lang;
+  return buildPageMetadata(lang, "contact");
+}
 
 export default async function ContactPage({
   params,

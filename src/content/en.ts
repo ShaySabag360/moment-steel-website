@@ -36,6 +36,28 @@ export const en: Dictionary = {
     viewDetails: "View details",
     hideDetails: "Hide details",
   },
+  seo: {
+    home: {
+      title: "Moment Steel — End-to-End Steel Solutions",
+      description:
+        "Licensed structural engineering, shop drawings, 3D laser scanning, detailing, fabrication management, and site erection. Edge to Edge Steel Solutions.",
+    },
+    about: {
+      title: "About — Moment Steel",
+      description:
+        "Meet the in-house engineering team behind Moment Steel — structural design, detailing, fabrication management, and on-site erection under one roof.",
+    },
+    projects: {
+      title: "Projects — Moment Steel",
+      description:
+        "Steel projects by Moment Steel — excavation support, complex-geometry assemblies, and structural support systems engineered and erected across Israel.",
+    },
+    contact: {
+      title: "Contact — Moment Steel",
+      description:
+        "Get in touch with Moment Steel. Licensed structural engineers available for projects across Israel.",
+    },
+  },
   home: {
     hero: {
       headline: ["Steel Engineering.", "Fabrication Control.", "Site Execution."],

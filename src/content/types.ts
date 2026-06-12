@@ -252,10 +252,25 @@ export interface UiDictionary {
   hideDetails: string;
 }
 
+/** SEO title + meta description for a single page. */
+export interface SeoPage {
+  title: string;
+  description: string;
+}
+
+/** Per-page SEO copy (used by generateMetadata; not rendered in page body). */
+export interface SeoDictionary {
+  home: SeoPage;
+  about: SeoPage;
+  projects: SeoPage;
+  contact: SeoPage;
+}
+
 export interface Dictionary {
   nav: NavDictionary;
   footer: FooterDictionary;
   ui: UiDictionary;
+  seo: SeoDictionary;
   home: HomeDictionary;
   about: AboutDictionary;
   projects: ProjectsDictionary;

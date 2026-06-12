@@ -1,14 +1,19 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import MobileReveal from "@/components/MobileReveal";
 import { getDictionary, type Lang } from "@/content";
 import { localizeHref } from "@/lib/localizeHref";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "About — Moment Steel",
-  description:
-    "Meet the in-house engineering team behind Moment Steel — structural design, detailing, fabrication management, and on-site erection under one roof.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const lang = (await params).lang as Lang;
+  return buildPageMetadata(lang, "about");
+}
 
 // "Why Choose Us" card icons (visual data); titles/descriptions are copy and
 // live in the dictionary (about.whyChooseUs.items), matched here by index.

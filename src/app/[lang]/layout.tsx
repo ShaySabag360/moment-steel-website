@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollAnimator from "@/components/ScrollAnimator";
 import type { Lang } from "@/content";
+import { SITE_URL } from "@/lib/seo";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
@@ -28,7 +29,12 @@ const assistant = Assistant({
   variable: "--font-assistant",
 });
 
+// Base origin for resolving any relative metadata URLs. Per-page title,
+// description, canonical and hreflang alternates are set in each page's
+// generateMetadata (see src/lib/seo.ts); the title/description here are only a
+// fallback for routes that don't set their own.
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Moment Steel — End-to-End Steel Solutions",
   description:
     "Licensed structural engineering, shop drawings, 3D laser scanning, detailing, fabrication management, and site erection. Edge to Edge Steel Solutions.",

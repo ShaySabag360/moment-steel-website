@@ -1,9 +1,20 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Faq from "@/components/Faq";
 import PlanningLoop from "@/components/PlanningLoop";
 import { getDictionary, type Lang } from "@/content";
 import { localizeHref } from "@/lib/localizeHref";
+import { buildPageMetadata } from "@/lib/seo";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const lang = (await params).lang as Lang;
+  return buildPageMetadata(lang, "home");
+}
 
 const clientLogos = [
   {

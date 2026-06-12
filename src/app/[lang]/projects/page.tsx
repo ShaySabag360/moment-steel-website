@@ -1,14 +1,19 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import MobileReveal from "@/components/MobileReveal";
 import { getDictionary, type Lang } from "@/content";
 import { localizeHref } from "@/lib/localizeHref";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Projects — Moment Steel",
-  description:
-    "Steel projects by Moment Steel — excavation support, complex-geometry assemblies, and structural support systems engineered and erected across Israel.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const lang = (await params).lang as Lang;
+  return buildPageMetadata(lang, "projects");
+}
 
 // Per-project images (visual data); titles/categories/locations/descriptions
 // are copy and live in the dictionary (projects.items), matched here by index.
