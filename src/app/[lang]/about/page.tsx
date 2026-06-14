@@ -48,7 +48,9 @@ export default async function AboutPage({
           <p className="text-[#fd008d] text-xl font-bold uppercase tracking-[0.25em] font-display mb-5">
             {about.hero.eyebrow}
           </p>
-          <h1 className="text-4xl md:text-7xl font-bold text-white leading-tight max-w-3xl">
+          {/* HE copy pass: the Hebrew hero statement is reduced one step (text-3xl
+              md:text-5xl) so it reads less crowded; EN keeps text-4xl md:text-7xl. */}
+          <h1 className={`${lang === "he" ? "text-3xl md:text-5xl" : "text-4xl md:text-7xl"} font-bold text-white leading-tight max-w-3xl`}>
             {about.hero.headline.line1}
             <br />
             {about.hero.headline.line2}
@@ -158,9 +160,11 @@ export default async function AboutPage({
             <h2 className="text-3xl md:text-4xl font-bold text-white">
               {about.team.heading}
             </h2>
-            <p className="text-gray-400 mt-4 max-w-xl mx-auto text-base leading-relaxed">
-              {about.team.subhead}
-            </p>
+            {about.team.subhead && (
+              <p className="text-gray-400 mt-4 max-w-xl mx-auto text-base leading-relaxed">
+                {about.team.subhead}
+              </p>
+            )}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

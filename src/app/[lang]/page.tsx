@@ -82,16 +82,26 @@ export default async function HomePage({
             className="mx-auto mb-10 opacity-95 max-md:hidden"
             priority
           />
-          <h1 className="text-4xl md:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
-            {home.hero.headline[0]}
-            <br />
-            {home.hero.headline[1]}
-            <br />
-            {home.hero.headline[2]}
-          </h1>
-          <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-            {home.hero.tagline}
-          </p>
+          {lang === "he" ? (
+            // HE hero (copy pass): the 3-line headline is dropped and the tagline
+            // is promoted to the single main statement. EN keeps headline + tagline.
+            <h1 className="text-3xl md:text-5xl font-bold text-white mb-10 leading-tight tracking-tight max-w-3xl mx-auto">
+              {home.hero.tagline}
+            </h1>
+          ) : (
+            <>
+              <h1 className="text-4xl md:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
+                {home.hero.headline[0]}
+                <br />
+                {home.hero.headline[1]}
+                <br />
+                {home.hero.headline[2]}
+              </h1>
+              <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+                {home.hero.tagline}
+              </p>
+            </>
+          )}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href={localizeHref("/contact", lang)}
