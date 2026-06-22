@@ -102,8 +102,8 @@ export default async function AboutPage({
             <div data-animate className="relative">
               <div className="relative h-80 lg:h-[480px] overflow-hidden">
                 <Image
-                  src="/images/composite-spiral/spiral-2.jpg"
-                  alt="Composite Column Spiral steel project"
+                  src="/images/tel-hashomer/tel-hashomer-1.jpg"
+                  alt="Tel HaShomer excavation shoring steel project"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover"

@@ -18,6 +18,10 @@ export async function generateMetadata({
 // Per-project images (visual data); titles/categories/locations/descriptions
 // are copy and live in the dictionary (projects.items), matched here by index.
 const projectImages = [
+  [
+    "/images/tel-hashomer/tel-hashomer-1.jpg",
+    "/images/tel-hashomer/tel-hashomer-2.jpg",
+  ],
   ["/images/barlev-center/barlev-1.jpg"],
   [
     "/images/migrash-11/migrash-1.jpg",
