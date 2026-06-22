@@ -114,7 +114,7 @@ export const he: Dictionary = {
       viewAllMobile: "לכל הפרויקטים ←",
       items: [
         { title: "מרכז בר-לב", location: "מסחרי" },
-        { title: "עמודי קומפוזיט ספירלי", location: "גאומטריה מורכבת" },
+        { title: "עמודי קומפוזיט - ספירלה", location: "גאומטריה מורכבת" },
         { title: "מערכת תמיכה לעמודי עזריאלי", location: "תמיכה קונסטרוקטיבית" },
       ],
     },
