@@ -111,69 +111,69 @@ export default async function ProjectsPage({
                   </div>
                   <div className="hidden md:block w-px bg-[#fd008d] self-stretch shrink-0" />
                 </div>
+              </div>
 
-                {/* Supplementary photos */}
-                {extra.length === 1 && (
-                  <div className="relative w-full h-72 md:h-96 overflow-hidden mt-10">
+              {/* Supplementary photos — full-bleed editorial */}
+              {extra.length === 1 && (
+                <div className="relative w-full h-80 md:h-[58vh] overflow-hidden mt-8 md:mt-12">
+                  <Image
+                    src={extra[0]}
+                    alt={`${project.title} detail`}
+                    fill
+                    sizes="100vw"
+                    className="object-cover"
+                  />
+                </div>
+              )}
+
+              {extra.length === 2 && (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 mt-8 md:mt-12">
+                  {extra.map((img, i) => (
+                    <div
+                      key={i}
+                      className="relative h-80 md:h-[34rem] overflow-hidden"
+                    >
+                      <Image
+                        src={img}
+                        alt={`${project.title} detail ${i + 1}`}
+                        fill
+                        sizes="(min-width: 768px) 50vw, 100vw"
+                        className="object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {extra.length >= 3 && (
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3 mt-8 md:mt-12">
+                  <div className="col-span-2 relative h-80 md:h-[34rem] overflow-hidden">
                     <Image
                       src={extra[0]}
-                      alt={`${project.title} detail`}
+                      alt={`${project.title} detail 1`}
                       fill
-                      sizes="100vw"
+                      sizes="(min-width: 768px) 66vw, 100vw"
                       className="object-cover"
                     />
                   </div>
-                )}
-
-                {extra.length === 2 && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-10">
-                    {extra.map((img, i) => (
+                  <div className="col-span-2 md:col-span-1 grid grid-cols-2 md:grid-cols-1 gap-2 md:gap-3">
+                    {extra.slice(1).map((img, i) => (
                       <div
                         key={i}
-                        className="relative h-64 md:h-80 overflow-hidden"
+                        className="relative h-40 md:h-[16.6rem] overflow-hidden"
                       >
                         <Image
                           src={img}
-                          alt={`${project.title} detail ${i + 1}`}
+                          alt={`${project.title} detail ${i + 2}`}
                           fill
-                          sizes="50vw"
+                          sizes="(min-width: 768px) 22vw, 50vw"
                           className="object-cover"
                         />
                       </div>
                     ))}
                   </div>
-                )}
-
-                {extra.length >= 3 && (
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-10">
-                    <div className="col-span-2 relative h-64 md:h-96 overflow-hidden">
-                      <Image
-                        src={extra[0]}
-                        alt={`${project.title} detail 1`}
-                        fill
-                        sizes="(min-width: 768px) 66vw, 100vw"
-                        className="object-cover"
-                      />
-                    </div>
-                    <div className="col-span-2 md:col-span-1 grid grid-cols-2 md:grid-cols-1 gap-3">
-                      {extra.slice(1).map((img, i) => (
-                        <div
-                          key={i}
-                          className="relative h-32 md:h-[186px] overflow-hidden"
-                        >
-                          <Image
-                            src={img}
-                            alt={`${project.title} detail ${i + 2}`}
-                            fill
-                            sizes="(min-width: 768px) 22vw, 50vw"
-                            className="object-cover"
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
+                </div>
+              )}
             </article>
           );
         })}
