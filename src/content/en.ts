@@ -227,7 +227,7 @@ export const en: Dictionary = {
       members: [
         {
           name: "Shay Sabag",
-          role: "Structural Engineer & Execution Lead",
+          role: "Structural Engineer & Design Lead",
           description:
             "Shay is a licensed structural engineer with a master’s degree in structural engineering and broad experience in steel structures. He leads the engineering process from member design through connection coordination and final signed calculations, with a focus on practical, buildable and responsible design.",
           tags: ["Dlubal", "IdeaStatica", "Strap", "Seismic Design"],
