@@ -234,7 +234,7 @@ export const en: Dictionary = {
           initials: "SS",
         },
         {
-          name: "Yoel Greiner",
+          name: "Yoel Griner",
           role: "Project Manager & Survey Lead",
           description:
             "Yoel brings 12 years of experience managing production environments and coordinating steel projects from design intent to site execution. He leads fabrication coordination, delivery logistics and 3D scanning operations, helping align engineering requirements, workshop production and real site conditions throughout the project with clear responsibility for practical execution.",
@@ -242,12 +242,12 @@ export const en: Dictionary = {
           initials: "YG",
         },
         {
-          name: "Arthur Kocherov",
+          name: "Alex Yelishenko",
           role: "Senior Steel Detailer & Mechanical Engineer",
           description:
-            "Arthur brings advanced steel detailing experience and parametric modeling tools for complex and repetitive steel geometry. He develops clear, fabrication-ready shop drawing packages that translate engineering requirements into practical workshop information, supporting efficient production and reducing interpretation during fabrication.",
+            "Alex brings advanced steel detailing experience and parametric modeling tools for complex and repetitive steel geometry. He develops clear, fabrication-ready shop drawing packages that translate engineering requirements into practical workshop information, supporting efficient production and reducing interpretation during fabrication.",
           tags: ["Tekla Structures", "Grasshopper", "Parametric Modeling", "Detailing"],
-          initials: "AK",
+          initials: "AY",
         },
       ],
     },
@@ -334,7 +334,7 @@ export const en: Dictionary = {
       },
       {
         initials: "YG",
-        name: "Yoel Greiner",
+        name: "Yoel Griner",
         role: "Project Management & Fabrication",
         phone: "054-536-7242",
         email: "Yoel@moment-steel.com",
