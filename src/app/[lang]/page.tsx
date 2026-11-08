@@ -64,11 +64,11 @@ export default async function HomePage({
       {/* ─── Hero ─── */}
       <section className="relative min-h-[100svh] md:h-screen flex items-center justify-center overflow-hidden">
         <Image
-          src="/images/migrash-11/migrash-1.jpg"
+          src="/images/hero/givon-deck.jpg"
           alt="Steel construction project"
           fill
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-[50%_35%]"
           priority
         />
         <div className="absolute inset-0 bg-black/65" />
