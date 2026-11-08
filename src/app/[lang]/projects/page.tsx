@@ -19,10 +19,19 @@ export async function generateMetadata({
 // are copy and live in the dictionary (projects.items), matched here by index.
 const projectImages = [
   [
+    "/images/givon-school/givon-1.jpg",
+    "/images/givon-school/givon-2.jpg",
+    "/images/givon-school/givon-3.jpg",
+    "/images/givon-school/givon-4.jpg",
+  ],
+  [
     "/images/tel-hashomer/tel-hashomer-1.jpg",
     "/images/tel-hashomer/tel-hashomer-2.jpg",
   ],
-  ["/images/barlev-center/barlev-1.jpg"],
+  [
+    "/images/wall-support/wall-2.jpg",
+    "/images/wall-support/wall-1.jpg",
+  ],
   [
     "/images/migrash-11/migrash-1.jpg",
     "/images/migrash-11/migrash-2.jpg",
@@ -36,10 +45,7 @@ const projectImages = [
     "/images/azrieli-columns/azrieli-1.jpg",
     "/images/azrieli-columns/azrieli-2.jpg",
   ],
-  [
-    "/images/wall-support/wall-1.jpg",
-    "/images/wall-support/wall-2.jpg",
-  ],
+  ["/images/barlev-center/barlev-1.jpg"],
 ];
 
 export default async function ProjectsPage({
