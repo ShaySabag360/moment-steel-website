@@ -250,6 +250,8 @@ export interface UiDictionary {
   viewDetails: string;
   /** Projects description collapse label. */
   hideDetails: string;
+  /** Word for "photo" — Projects gallery thumbnail aria-label ("{photo} {n}"). */
+  photo: string;
 }
 
 /** SEO title + meta description for a single page. */

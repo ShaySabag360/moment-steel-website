@@ -35,6 +35,7 @@ export const en: Dictionary = {
     showLess: "Show less",
     viewDetails: "View details",
     hideDetails: "Hide details",
+    photo: "Photo",
   },
   seo: {
     home: {

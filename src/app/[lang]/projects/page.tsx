@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import MobileReveal from "@/components/MobileReveal";
+import ProjectGallery from "@/components/ProjectGallery";
 import { getDictionary, type Lang } from "@/content";
 import { localizeHref } from "@/lib/localizeHref";
 import { buildPageMetadata } from "@/lib/seo";
@@ -68,119 +68,52 @@ export default async function ProjectsPage({
         </div>
       </section>
 
-      {/* ─── Projects (full-bleed editorial) ─── */}
+      {/* ─── Projects (alternating editorial rows) ───
+          Each project is one row: a 3:2 photo frame with a thumbnail strip
+          (ProjectGallery) beside a text column (title / location /
+          description; the dictionary's `category` is intentionally not shown). Rows alternate sides on desktop (odd rows flip the
+          media column via md:order-2); on mobile they stack photo-first. The
+          grid is direction-agnostic, so RTL mirrors it with no globals.css
+          override. */}
       <section className="bg-[#111111]">
-        {projects.items.map((project, idx) => {
-          const images = projectImages[idx];
-          const extra = images.slice(1);
-          return (
-            <article key={project.title} className="mb-12 md:mb-16">
-              {/* Full-bleed hero photo with overlay */}
-              <div className="relative w-full h-[60vh]">
-                <Image
-                  src={images[0]}
-                  alt={project.title}
-                  fill
-                  sizes="100vw"
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
-                <div className="absolute bottom-0 inset-x-0 pb-10">
-                  <div data-animate className="max-w-7xl mx-auto px-6">
-                    <span className="text-[#fd008d] text-xl font-bold uppercase tracking-[0.2em] font-display">
-                      {project.category}
-                    </span>
-                    <h2 className="font-display font-bold text-white text-4xl md:text-5xl leading-none mt-3">
-                      {project.title}
-                    </h2>
-                    <p className="text-white/60 text-base mt-2">
-                      {project.location}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Description row with pink accent line */}
-              <div className="max-w-7xl mx-auto px-6 mt-8 md:mt-10">
-                <div className="flex items-stretch justify-between gap-8">
-                  <div data-animate className="max-w-2xl">
-                    <MobileReveal
-                      lines={2}
-                      moreLabel={ui.viewDetails}
-                      lessLabel={ui.hideDetails}
-                      className="text-gray-400 text-base leading-relaxed"
-                    >
-                      {project.description}
-                    </MobileReveal>
-                  </div>
-                  <div className="hidden md:block w-px bg-[#fd008d] self-stretch shrink-0" />
-                </div>
-              </div>
-
-              {/* Supplementary photos — full-bleed editorial */}
-              {extra.length === 1 && (
-                <div className="relative w-full h-80 md:h-[58vh] overflow-hidden mt-8 md:mt-12">
-                  <Image
-                    src={extra[0]}
-                    alt={`${project.title} detail`}
-                    fill
-                    sizes="100vw"
-                    className="object-cover"
+        <div className="max-w-7xl mx-auto px-6 pb-16 md:pb-24">
+          {projects.items.map((project, idx) => {
+            const images = projectImages[idx];
+            const flip = idx % 2 === 1;
+            return (
+              <article
+                key={project.title}
+                className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-14 md:items-start py-10 md:py-16 border-t border-white/10"
+              >
+                <div className={`md:col-span-7 ${flip ? "md:order-2" : ""}`}>
+                  <ProjectGallery
+                    images={images}
+                    title={project.title}
+                    thumbLabel={ui.photo}
+                    priority={idx === 0}
                   />
                 </div>
-              )}
 
-              {extra.length === 2 && (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 mt-8 md:mt-12">
-                  {extra.map((img, i) => (
-                    <div
-                      key={i}
-                      className="relative h-80 md:h-[34rem] overflow-hidden"
-                    >
-                      <Image
-                        src={img}
-                        alt={`${project.title} detail ${i + 1}`}
-                        fill
-                        sizes="(min-width: 768px) 50vw, 100vw"
-                        className="object-cover"
-                      />
-                    </div>
-                  ))}
+                <div data-animate className="md:col-span-5">
+                  <h2 className="font-display font-bold text-white text-4xl md:text-5xl leading-none">
+                    {project.title}
+                  </h2>
+                  <p className="text-white/60 text-base mt-2">
+                    {project.location}
+                  </p>
+                  <MobileReveal
+                    lines={3}
+                    moreLabel={ui.viewDetails}
+                    lessLabel={ui.hideDetails}
+                    className="text-gray-400 text-base md:text-lg leading-relaxed mt-5 max-w-[46ch]"
+                  >
+                    {project.description}
+                  </MobileReveal>
                 </div>
-              )}
-
-              {extra.length >= 3 && (
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3 mt-8 md:mt-12">
-                  <div className="col-span-2 relative h-80 md:h-[34rem] overflow-hidden">
-                    <Image
-                      src={extra[0]}
-                      alt={`${project.title} detail 1`}
-                      fill
-                      sizes="(min-width: 768px) 66vw, 100vw"
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="col-span-2 md:col-span-1 grid grid-cols-2 md:grid-cols-1 gap-2 md:gap-3">
-                    {extra.slice(1).map((img, i) => (
-                      <div
-                        key={i}
-                        className="relative h-40 md:h-[16.6rem] overflow-hidden"
-                      >
-                        <Image
-                          src={img}
-                          alt={`${project.title} detail ${i + 2}`}
-                          fill
-                          sizes="(min-width: 768px) 22vw, 50vw"
-                          className="object-cover"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </article>
-          );
-        })}
+              </article>
+            );
+          })}
+        </div>
       </section>
 
       {/* ─── CTA ─── */}
