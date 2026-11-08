@@ -75,7 +75,7 @@ export default async function HomePage({
 
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
           <Image
-            src="/logo/moment-white.svg"
+            src="/logo/moment-white-pink-e.svg"
             alt="Moment Steel"
             width={260}
             height={70}
