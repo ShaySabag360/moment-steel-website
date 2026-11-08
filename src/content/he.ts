@@ -68,7 +68,7 @@ export const he: Dictionary = {
   home: {
     hero: {
       headline: ["הנדסת פלדה.", "בקרת ייצור.", "הקמה באתר."],
-      tagline: "כל פרויקט מגיע לרגע האמת. זה ה-מומנט שלנו.",
+      tagline: "כל פרויקט מגיע לרגע האמת.",
       ctaContact: "צרו קשר",
       ctaProjects: "לצפייה בפרויקטים",
     },
