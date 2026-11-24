@@ -26,6 +26,8 @@ export interface NavDictionary {
   toggleMenu: string;
   /** Visible label on the language switcher (the OTHER locale's endonym: HE shows "EN", EN shows "עברית"). */
   switchLang: string;
+  /** Accessible label for the header phone link (calls Yoel). */
+  callAria: string;
   /** Accessible label for the language switcher, in the current page's language. */
   switchLangAria: string;
 }

@@ -12,7 +12,7 @@ export default function Footer({ lang }: { lang: Lang }) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
             <Image
-              src="/logo/moment-white.svg"
+              src="/logo/moment-white-pink-e.svg"
               alt={footer.logoAlt}
               width={160}
               height={43}

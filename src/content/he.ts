@@ -22,6 +22,7 @@ export const he: Dictionary = {
     logoAlt: "מומנט פלדה",
     toggleMenu: "תפריט",
     switchLang: "EN",
+    callAria: "התקשרו ליואל",
     switchLangAria: "מעבר לאנגלית",
   },
   footer: {

@@ -5,7 +5,30 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { getDictionary, type Lang } from "@/content";
+import { CONTACTS, telHref } from "@/lib/contact";
 import { localizeHref, getAlternateLocaleHref } from "@/lib/localizeHref";
+
+// The header phone link calls Yoel.
+const HEADER_PHONE = CONTACTS.yoel.phone;
+
+function PhoneIcon({ className }: { className: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.8}
+      aria-hidden="true"
+      className={className}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
+      />
+    </svg>
+  );
+}
 
 export default function Navbar({ lang }: { lang: Lang }) {
   const { nav } = getDictionary(lang);
@@ -30,7 +53,7 @@ export default function Navbar({ lang }: { lang: Lang }) {
       <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link href={localizeHref("/", lang)}>
           <Image
-            src="/logo/moment-white.svg"
+            src="/logo/moment-white-pink-e.svg"
             alt={nav.logoAlt}
             width={160}
             height={43}
@@ -59,6 +82,17 @@ export default function Navbar({ lang }: { lang: Lang }) {
               <span lang={otherLang}>{nav.switchLang}</span>
             </Link>
           </li>
+          {/* Shown from lg: at md (768–1023) the nav has no free width left. */}
+          <li className="hidden lg:block">
+            <a
+              href={telHref(HEADER_PHONE)}
+              aria-label={`${nav.callAria} ${HEADER_PHONE}`}
+              className="flex items-center gap-2 text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap"
+            >
+              <PhoneIcon className="w-4 h-4 text-[#fd008d] shrink-0" />
+              <bdi>{HEADER_PHONE}</bdi>
+            </a>
+          </li>
           <li>
             <Link
               href={localizeHref("/contact", lang)}
@@ -69,15 +103,25 @@ export default function Navbar({ lang }: { lang: Lang }) {
           </li>
         </ul>
 
-        <button
-          className="md:hidden text-white p-2 flex flex-col items-center justify-center gap-1.5 min-h-11 min-w-11"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label={nav.toggleMenu}
-        >
-          <span className="block w-6 h-0.5 bg-white" />
-          <span className="block w-6 h-0.5 bg-white" />
-          <span className="block w-6 h-0.5 bg-white" />
-        </button>
+        {/* Mobile: call button beside the hamburger (both 44×44 tap targets). */}
+        <div className="md:hidden flex items-center">
+          <a
+            href={telHref(HEADER_PHONE)}
+            aria-label={nav.callAria}
+            className="text-[#fd008d] flex items-center justify-center min-h-11 min-w-11"
+          >
+            <PhoneIcon className="w-6 h-6" />
+          </a>
+          <button
+            className="text-white p-2 flex flex-col items-center justify-center gap-1.5 min-h-11 min-w-11"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={nav.toggleMenu}
+          >
+            <span className="block w-6 h-0.5 bg-white" />
+            <span className="block w-6 h-0.5 bg-white" />
+            <span className="block w-6 h-0.5 bg-white" />
+          </button>
+        </div>
       </nav>
 
       {menuOpen && (
