@@ -39,11 +39,22 @@ export const CANONICAL_PATHS: string[] = [
 export const absoluteUrl = (path: string): string =>
   new URL(path, SITE_URL).toString();
 
+// Link-preview image per locale (WhatsApp / Facebook / LinkedIn / X): the home
+// hero photo under a dark overlay, the pink-E logo and the hero subheading.
+// Static files in public/og/. Change the file name whenever the image changes:
+// those platforms cache previews by image URL.
+const OG_IMAGE_PATH: Record<Lang, string> = {
+  he: "/og/og-he.jpg",
+  en: "/og/og-en.jpg",
+};
+const OG_IMAGE_SIZE = { width: 1200, height: 630 };
+
 /**
  * Build per-page, per-locale metadata: localized title/description, the
- * canonical URL for the active locale, and hreflang alternates
- * (he -> Hebrew root, en -> /en, x-default -> Hebrew root). All URLs are
- * emitted absolute so they never depend on request host or rewrite path.
+ * canonical URL for the active locale, hreflang alternates
+ * (he -> Hebrew root, en -> /en, x-default -> Hebrew root) and the locale's
+ * link-preview image (Open Graph + large Twitter card). All URLs are emitted
+ * absolute so they never depend on request host or rewrite path.
  */
 export function buildPageMetadata(lang: Lang, page: PageKey): Metadata {
   const dict = getDictionary(lang);
@@ -51,6 +62,11 @@ export function buildPageMetadata(lang: Lang, page: PageKey): Metadata {
   const hePath = HE_PATH[page];
   const enPath = EN_PATH[page];
   const canonical = lang === "he" ? hePath : enPath;
+  const ogImage = {
+    url: absoluteUrl(OG_IMAGE_PATH[lang]),
+    ...OG_IMAGE_SIZE,
+    alt: `${dict.nav.logoAlt} — ${dict.home.hero.subheading}`,
+  };
   return {
     title,
     description,
@@ -69,6 +85,13 @@ export function buildPageMetadata(lang: Lang, page: PageKey): Metadata {
       siteName: dict.nav.logoAlt,
       locale: lang === "he" ? "he_IL" : "en_US",
       type: "website",
+      images: [ogImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage],
     },
   };
 }
