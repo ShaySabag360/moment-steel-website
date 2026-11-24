@@ -88,11 +88,10 @@ export interface FaqItem {
 
 export interface HomeDictionary {
   hero: {
-    /** Three headline lines separated by <br/>. */
-    headline: [string, string, string];
-    tagline: string;
-    ctaContact: string;
-    ctaProjects: string;
+    /** Main statement (the page h1). */
+    heading: string;
+    /** Smaller line under the heading. */
+    subheading: string;
   };
   stats: StatItem[];
   services: {

@@ -67,10 +67,8 @@ export const he: Dictionary = {
   },
   home: {
     hero: {
-      headline: ["הנדסת פלדה.", "בקרת ייצור.", "הקמה באתר."],
-      tagline: "כל פרויקט מגיע לרגע האמת.",
-      ctaContact: "צרו קשר",
-      ctaProjects: "לצפייה בפרויקטים",
+      heading: "כל פרויקט מגיע לרגע האמת",
+      subheading: "תכנון, ייצור והתקנה למבני פלדה",
     },
     stats: [
       { value: "100%", label: "הנדסה פנים-ארגונית" },

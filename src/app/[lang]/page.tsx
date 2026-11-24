@@ -83,26 +83,12 @@ export default async function HomePage({
             className="mx-auto mb-10 opacity-95 max-md:hidden"
             priority
           />
-          {lang === "he" ? (
-            // HE hero (copy pass): the 3-line headline is dropped and the tagline
-            // is promoted to the single main statement. EN keeps headline + tagline.
-            <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight tracking-tight max-w-3xl mx-auto">
-              {home.hero.tagline}
-            </h1>
-          ) : (
-            <>
-              <h1 className="text-4xl md:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
-                {home.hero.headline[0]}
-                <br />
-                {home.hero.headline[1]}
-                <br />
-                {home.hero.headline[2]}
-              </h1>
-              <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-                {home.hero.tagline}
-              </p>
-            </>
-          )}
+          <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight tracking-tight max-w-3xl mx-auto">
+            {home.hero.heading}
+          </h1>
+          <p className="mt-4 md:mt-6 text-lg md:text-2xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+            {home.hero.subheading}
+          </p>
         </div>
 
         <div className="hidden md:block absolute bottom-8 left-1/2 -translate-x-1/2 text-white/40">

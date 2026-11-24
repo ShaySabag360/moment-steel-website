@@ -61,10 +61,8 @@ export const en: Dictionary = {
   },
   home: {
     hero: {
-      headline: ["Steel Engineering.", "Fabrication Control.", "Site Execution."],
-      tagline: "Every project reaches its moment of truth, this is our moment.",
-      ctaContact: "Get in Touch",
-      ctaProjects: "View Projects",
+      heading: "Every project reaches its moment of truth",
+      subheading: "Design, fabrication and installation of steel structures",
     },
     stats: [
       { value: "100%", label: "In-House Engineering" },
