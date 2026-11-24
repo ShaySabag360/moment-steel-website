@@ -36,6 +36,22 @@ const clientLogos = [
     alt: "Shikun & Binui",
     src: "/logos/clients/shikun-binui.webp",
   },
+  {
+    alt: "Denya Group",
+    src: "/logos/clients/denya.webp",
+  },
+  {
+    alt: "GeoDanya",
+    src: "/logos/clients/geodanya.webp",
+  },
+  {
+    alt: "Avisror Moshe & Sons",
+    src: "/logos/clients/avisror.webp",
+  },
+  {
+    alt: "Bar Hason",
+    src: "/logos/clients/bar-hason.webp",
+  },
 ];
 
 // Client logos are shown white on the dark strip.
@@ -215,7 +231,7 @@ export default async function HomePage({
           <p className="text-[#fd008d] text-xl font-bold uppercase tracking-[0.25em] font-display text-center mb-6">
             {home.clients.eyebrow}
           </p>
-          <div className="hidden md:flex flex-wrap items-center justify-between gap-x-10 gap-y-4">
+          <div className="hidden md:flex flex-wrap items-center justify-center xl:justify-between gap-x-10 gap-y-6">
             {clientLogos.map((logo) => (
               // eslint-disable-next-line @next/next/no-img-element
               <img key={logo.alt} src={logo.src} alt={logo.alt} style={clientLogoStyle} />
