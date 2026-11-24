@@ -97,21 +97,23 @@ export default async function HomePage({
       </section>
 
       {/* ─── Stats strip ─── */}
-      <section className="bg-[#0a0a0a] border-t border-b border-white/10 py-16">
+      {/* One row of three at every width. Dividers use the logical end edge
+          (border-e) so they sit between the stats in both LTR and RTL. */}
+      <section className="bg-[#0a0a0a] border-t border-b border-white/10 py-10 sm:py-16">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-y-10 sm:gap-y-0">
+          <div className="grid grid-cols-3">
             {home.stats.map((stat, i) => (
               <div
                 key={stat.label}
                 data-animate
-                className={`text-center px-4 ${i < 2 ? "sm:border-r border-white/10" : ""}`}
+                className={`text-center px-1 sm:px-4 ${i < 2 ? "border-e border-white/10" : ""}`}
               >
-                <p className="font-display font-bold text-white text-5xl md:text-8xl leading-none">
+                <p className="font-display font-bold text-white text-4xl sm:text-5xl md:text-8xl leading-none">
                   {/* Isolate the value (e.g. "50+") so the trailing sign doesn't
                       reorder under RTL — renders "50+", not "+50". Inert in LTR. */}
                   <bdi>{stat.value}</bdi>
                 </p>
-                <p className="font-body text-white/40 text-sm tracking-[0.15em] uppercase mt-4">
+                <p className="font-body text-white/40 text-xs sm:text-sm tracking-[0.15em] max-sm:tracking-[0.05em] uppercase mt-3 sm:mt-4">
                   {stat.label}
                 </p>
               </div>
