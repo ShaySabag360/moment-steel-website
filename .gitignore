@@ -41,3 +41,6 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+
+# raw team photos: only the processed public/images/team/*.webp are committed
+פרצופים/
