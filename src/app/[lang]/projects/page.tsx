@@ -5,6 +5,7 @@ import ProjectGallery from "@/components/ProjectGallery";
 import { getDictionary, type Lang } from "@/content";
 import { WHATSAPP_URL } from "@/lib/contact";
 import { localizeHref } from "@/lib/localizeHref";
+import { PROJECT_IMAGES } from "@/lib/projects";
 import { buildPageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -15,39 +16,6 @@ export async function generateMetadata({
   const lang = (await params).lang as Lang;
   return buildPageMetadata(lang, "projects");
 }
-
-// Per-project images (visual data); titles/categories/locations/descriptions
-// are copy and live in the dictionary (projects.items), matched here by index.
-const projectImages = [
-  [
-    "/images/givon-school/givon-1.jpg",
-    "/images/givon-school/givon-2.jpg",
-    "/images/givon-school/givon-3.jpg",
-    "/images/givon-school/givon-4.jpg",
-  ],
-  [
-    "/images/tel-hashomer/tel-hashomer-1.jpg",
-    "/images/tel-hashomer/tel-hashomer-2.jpg",
-  ],
-  [
-    "/images/wall-support/wall-2.jpg",
-    "/images/wall-support/wall-1.jpg",
-  ],
-  [
-    "/images/migrash-11/migrash-1.jpg",
-    "/images/migrash-11/migrash-2.jpg",
-  ],
-  [
-    "/images/composite-spiral/spiral-1.jpg",
-    "/images/composite-spiral/spiral-2.jpg",
-    "/images/composite-spiral/spiral-3.jpg",
-  ],
-  [
-    "/images/azrieli-columns/azrieli-1.jpg",
-    "/images/azrieli-columns/azrieli-2.jpg",
-  ],
-  ["/images/barlev-center/barlev-1.jpg"],
-];
 
 export default async function ProjectsPage({
   params,
@@ -77,19 +45,21 @@ export default async function ProjectsPage({
 
       {/* ─── Projects (alternating editorial rows) ───
           Each project is one row: a 3:2 photo frame with a thumbnail strip
-          (ProjectGallery) beside a text column (title / location /
-          description; the dictionary's `category` is intentionally not shown). Rows alternate sides on desktop (odd rows flip the
+          (ProjectGallery) beside a text column (title / optional location /
+          description; the dictionary's `category` is only used on the Home
+          featured cards). Photos are looked up by project id, never by
+          position. Rows alternate sides on desktop (odd rows flip the
           media column via md:order-2); on mobile they stack photo-first. The
           grid is direction-agnostic, so RTL mirrors it with no globals.css
           override. */}
       <section className="bg-[#111111]">
         <div className="max-w-7xl mx-auto px-6 pb-16 md:pb-24">
           {projects.items.map((project, idx) => {
-            const images = projectImages[idx];
+            const images = PROJECT_IMAGES[project.id];
             const flip = idx % 2 === 1;
             return (
               <article
-                key={project.title}
+                key={project.id}
                 className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-14 md:items-start py-10 md:py-16 border-t border-white/10"
               >
                 <div className={`md:col-span-7 ${flip ? "md:order-2" : ""}`}>

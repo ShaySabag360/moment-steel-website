@@ -7,6 +7,7 @@
 // guarantees both locales stay in sync (a missing key fails the build).
 
 import type { ContactId } from "@/lib/contact";
+import type { ProjectId } from "@/lib/projects";
 
 export type Lang = "en" | "he";
 
@@ -69,13 +70,6 @@ export interface ServiceItem {
   description: string;
 }
 
-export interface FeaturedItem {
-  /** Project card title. */
-  title: string;
-  /** Pink category/label shown above the title (e.g. "Complex Geometry"). */
-  location: string;
-}
-
 /**
  * A testimonial quote split into segments so the bold emphasis (rendered as
  * <strong>) is preserved without storing JSX in the dictionary:
@@ -107,12 +101,12 @@ export interface HomeDictionary {
     heading: string;
     items: ServiceItem[];
   };
+  /** Section chrome only: the cards come from projects.items (FEATURED_PROJECT_IDS). */
   featured: {
     eyebrow: string;
     heading: string;
     viewAll: string;
     viewAllMobile: string;
-    items: FeaturedItem[];
   };
   clients: {
     eyebrow: string;
@@ -184,9 +178,12 @@ export interface AboutDictionary {
 }
 
 export interface ProjectItem {
+  /** Stable key: matches the project's photos and the Home featured picks (src/lib/projects.ts). */
+  id: ProjectId;
   title: string;
   /** City / site location. Omit when there is no specific place to show. */
   location?: string;
+  /** Pink label on the Home "Featured Projects" card (not shown on the Projects page). */
   category: string;
   description: string;
 }

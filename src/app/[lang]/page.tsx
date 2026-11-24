@@ -6,6 +6,7 @@ import PlanningLoop from "@/components/PlanningLoop";
 import { getDictionary, type Lang } from "@/content";
 import { CONTACTS, WHATSAPP_URL, telHref } from "@/lib/contact";
 import { localizeHref } from "@/lib/localizeHref";
+import { FEATURED_PROJECT_IDS, PROJECT_IMAGES, findProject } from "@/lib/projects";
 import { buildPageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -36,14 +37,6 @@ const clientLogos = [
   },
 ];
 
-// Featured-project images (data); titles/locations are user-facing copy and
-// live in the dictionary (home.featured.items), matched here by index.
-const featuredImages = [
-  "/images/barlev-center/barlev-1.jpg",
-  "/images/composite-spiral/spiral-1.jpg",
-  "/images/azrieli-columns/azrieli-1.jpg",
-];
-
 const testimonialLogos = [
   { logo: "https://livnieng.com/wp-content/uploads/2021/03/livni-logo.png", logoOpacity: 0.7 },
   {
@@ -59,7 +52,12 @@ export default async function HomePage({
   params: Promise<{ lang: string }>;
 }) {
   const lang = (await params).lang as Lang;
-  const { home, ui } = getDictionary(lang);
+  const { home, projects, ui } = getDictionary(lang);
+  // Featured cards reuse each project's copy (title + category) and lead photo, by id.
+  const featured = FEATURED_PROJECT_IDS.map((id) => ({
+    ...findProject(projects.items, id),
+    image: PROJECT_IMAGES[id][0],
+  }));
   return (
     <>
       {/* ─── Hero ─── */}
@@ -165,15 +163,15 @@ export default async function HomePage({
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {home.featured.items.map((project, i) => (
+            {featured.map((project) => (
               <Link
-                key={featuredImages[i]}
+                key={project.id}
                 data-animate
                 href={localizeHref("/projects", lang)}
                 className="relative h-80 overflow-hidden group block"
               >
                 <Image
-                  src={featuredImages[i]}
+                  src={project.image}
                   alt={project.title}
                   fill
                   sizes="(min-width: 768px) 33vw, 100vw"
@@ -181,7 +179,7 @@ export default async function HomePage({
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent">
-                  <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display">{project.location}</p>
+                  <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display">{project.category}</p>
                   <p className="font-display font-bold text-white text-2xl leading-tight mt-1">{project.title}</p>
                 </div>
               </Link>
