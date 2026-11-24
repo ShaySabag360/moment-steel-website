@@ -20,8 +20,8 @@ export type ContactId = keyof typeof CONTACTS;
 /** WhatsApp chat link (Yoel's number). */
 export const WHATSAPP_URL = "https://wa.me/972545367242";
 
-/** Company Facebook page. The URL may change to a username, so keep it here only. */
-export const FACEBOOK_URL = "https://www.facebook.com/profile.php?id=61596729955820";
+/** Company Facebook page. */
+export const FACEBOOK_URL = "https://www.facebook.com/momentsteel";
 
 /** `tel:` href for a displayed phone number ("054-536-7242" -> "tel:0545367242"). */
 export const telHref = (phone: string): string => `tel:${phone.replace(/\D/g, "")}`;
