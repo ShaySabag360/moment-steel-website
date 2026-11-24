@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Faq from "@/components/Faq";
@@ -36,6 +37,14 @@ const clientLogos = [
     src: "/logos/clients/shikun-binui.webp",
   },
 ];
+
+// Client logos are shown white on the dark strip.
+const clientLogoStyle: CSSProperties = {
+  height: "36px",
+  width: "auto",
+  filter: "brightness(0) invert(1)",
+  opacity: 0.7,
+};
 
 const testimonialLogos = [
   { logo: "https://livnieng.com/wp-content/uploads/2021/03/livni-logo.png", logoOpacity: 0.7 },
@@ -196,21 +205,45 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ─── Client Logos ─── */}
+      {/* ─── Client Logos ───
+          md and up: one static row. Mobile: a slowly drifting full-width strip
+          (the set rendered twice; see .logo-marquee in globals.css) so every
+          logo passes by. Its duration grows with the number of logos, keeping
+          the speed constant as clients are added to `clientLogos`. */}
       <section className="bg-[#0a0a0a] border-t border-b border-white/10 py-8 md:py-10">
         <div className="max-w-7xl mx-auto px-6">
           <p className="text-[#fd008d] text-xl font-bold uppercase tracking-[0.25em] font-display text-center mb-6">
             {home.clients.eyebrow}
           </p>
-          <div className="flex flex-wrap items-center justify-center md:justify-between gap-x-10 gap-y-4">
+          <div className="hidden md:flex flex-wrap items-center justify-between gap-x-10 gap-y-4">
             {clientLogos.map((logo) => (
               // eslint-disable-next-line @next/next/no-img-element
-              <img
-                key={logo.alt}
-                src={logo.src}
-                alt={logo.alt}
-                style={{ height: "36px", width: "auto", filter: "brightness(0) invert(1)", opacity: 0.7 }}
-              />
+              <img key={logo.alt} src={logo.src} alt={logo.alt} style={clientLogoStyle} />
+            ))}
+          </div>
+        </div>
+        <div className="logo-marquee md:hidden overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
+          <div
+            dir="ltr"
+            className="logo-marquee-track flex w-max"
+            style={{ "--marquee-duration": `${clientLogos.length * 5}s` } as CSSProperties}
+          >
+            {[0, 1].map((copy) => (
+              <div
+                key={copy}
+                aria-hidden={copy === 1 || undefined}
+                className="flex shrink-0 items-center gap-x-10 pr-10"
+              >
+                {clientLogos.map((logo) => (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    key={logo.alt}
+                    src={logo.src}
+                    alt={copy === 0 ? logo.alt : ""}
+                    style={clientLogoStyle}
+                  />
+                ))}
+              </div>
             ))}
           </div>
         </div>

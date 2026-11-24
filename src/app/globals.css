@@ -168,6 +168,43 @@ html[lang="he"] .tracking-widest {
   animation: float 2s ease-in-out infinite;
 }
 
+/* ── Client logos strip (Home, mobile only) ──
+   The track holds the logo set twice; moving it by -50% brings the second copy
+   exactly to where the first started, so the loop has no seam. The track is
+   dir="ltr" so the math is the same in both languages; Hebrew runs it in
+   reverse (logos drift rightward, with the reading direction). Touching the
+   strip pauses it. With reduced motion it stands still, the duplicate set is
+   hidden and the row can be swiped instead. */
+@keyframes logo-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-marquee-track {
+  animation: logo-marquee var(--marquee-duration, 30s) linear infinite;
+}
+
+html[dir="rtl"] .logo-marquee-track {
+  animation-direction: reverse;
+}
+
+.logo-marquee:active .logo-marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-marquee {
+    overflow-x: auto;
+  }
+  .logo-marquee-track {
+    animation: none;
+  }
+  .logo-marquee-track > [aria-hidden="true"] {
+    display: none;
+  }
+}
+
 /* ── Scroll-entrance animations (data-animate system) ── */
 [data-animate] {
   opacity: 0;
