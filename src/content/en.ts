@@ -169,7 +169,7 @@ export const en: Dictionary = {
     cta: {
       heading: "Ready to Build?",
       body: "Tell Us About Your Steel Project. We'll handle the steel — from structural design through final erection.",
-      call: "Call: 050-846-4851",
+      call: "Call:",
       whatsapp: "WhatsApp Us",
     },
   },
@@ -334,18 +334,16 @@ export const en: Dictionary = {
     directHeading: "Direct Contact",
     people: [
       {
+        id: "shay",
         initials: "SS",
         name: "Shay Sabag",
         role: "Structural Engineering",
-        phone: "050-846-4851",
-        email: "Shay@moment-steel.com",
       },
       {
+        id: "yoel",
         initials: "YG",
         name: "Yoel Griner",
         role: "Project Management & Fabrication",
-        phone: "054-536-7242",
-        email: "Yoel@moment-steel.com",
       },
     ],
     whatsappHeading: "Prefer WhatsApp?",

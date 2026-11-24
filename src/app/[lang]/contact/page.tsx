@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 import { getDictionary, type Lang } from "@/content";
+import { CONTACTS, WHATSAPP_URL, mailtoHref, telHref } from "@/lib/contact";
 import { buildPageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -58,49 +59,32 @@ export default async function ContactPage({
                   {contact.directHeading}
                 </h3>
                 <div className="space-y-6">
-                  <div className="flex gap-4 items-start">
-                    <div className="w-10 h-10 bg-[#fd008d]/10 border border-[#fd008d]/30 flex items-center justify-center shrink-0">
-                      <span className="text-[#fd008d] font-bold text-xs">{contact.people[0].initials}</span>
-                    </div>
-                    <div>
-                      <p className="text-white font-semibold text-base">{contact.people[0].name}</p>
-                      <p className="text-gray-500 text-sm mb-2">{contact.people[0].role}</p>
-                      <a
-                        href="tel:0508464851"
-                        className="block text-gray-300 hover:text-white text-base transition-colors max-md:py-2.5"
-                      >
-                        <bdi>{contact.people[0].phone}</bdi>
-                      </a>
-                      <a
-                        href="mailto:Shay@moment-steel.com"
-                        className="block text-gray-300 hover:text-white text-base transition-colors max-md:py-2.5"
-                      >
-                        <bdi>{contact.people[0].email}</bdi>
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-4 items-start">
-                    <div className="w-10 h-10 bg-[#fd008d]/10 border border-[#fd008d]/30 flex items-center justify-center shrink-0">
-                      <span className="text-[#fd008d] font-bold text-xs">{contact.people[1].initials}</span>
-                    </div>
-                    <div>
-                      <p className="text-white font-semibold text-base">{contact.people[1].name}</p>
-                      <p className="text-gray-500 text-sm mb-2">{contact.people[1].role}</p>
-                      <a
-                        href="tel:0545367242"
-                        className="block text-gray-300 hover:text-white text-base transition-colors max-md:py-2.5"
-                      >
-                        <bdi>{contact.people[1].phone}</bdi>
-                      </a>
-                      <a
-                        href="mailto:Yoel@moment-steel.com"
-                        className="block text-gray-300 hover:text-white text-base transition-colors max-md:py-2.5"
-                      >
-                        <bdi>{contact.people[1].email}</bdi>
-                      </a>
-                    </div>
-                  </div>
+                  {contact.people.map((person) => {
+                    const { phone, email } = CONTACTS[person.id];
+                    return (
+                      <div key={person.id} className="flex gap-4 items-start">
+                        <div className="w-10 h-10 bg-[#fd008d]/10 border border-[#fd008d]/30 flex items-center justify-center shrink-0">
+                          <span className="text-[#fd008d] font-bold text-xs">{person.initials}</span>
+                        </div>
+                        <div>
+                          <p className="text-white font-semibold text-base">{person.name}</p>
+                          <p className="text-gray-500 text-sm mb-2">{person.role}</p>
+                          <a
+                            href={telHref(phone)}
+                            className="block text-gray-300 hover:text-white text-base transition-colors max-md:py-2.5"
+                          >
+                            <bdi>{phone}</bdi>
+                          </a>
+                          <a
+                            href={mailtoHref(email)}
+                            className="block text-gray-300 hover:text-white text-base transition-colors max-md:py-2.5"
+                          >
+                            <bdi>{email}</bdi>
+                          </a>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
 
@@ -110,7 +94,7 @@ export default async function ContactPage({
                   {contact.whatsappHeading}
                 </h3>
                 <a
-                  href="https://wa.me/972545367242"
+                  href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 bg-[#1a1a1a] border border-[#2d2d2d] px-5 py-4 hover:border-[#fd008d]/40 transition-colors group"

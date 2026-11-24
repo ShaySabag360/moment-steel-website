@@ -4,6 +4,7 @@ import Link from "next/link";
 import Faq from "@/components/Faq";
 import PlanningLoop from "@/components/PlanningLoop";
 import { getDictionary, type Lang } from "@/content";
+import { CONTACTS, WHATSAPP_URL, telHref } from "@/lib/contact";
 import { localizeHref } from "@/lib/localizeHref";
 import { buildPageMetadata } from "@/lib/seo";
 
@@ -309,13 +310,13 @@ export default async function HomePage({
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:0508464851"
+              href={telHref(CONTACTS.shay.phone)}
               className="bg-white text-[#fd008d] px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-gray-100 transition-colors"
             >
-              {home.cta.call}
+              {home.cta.call} <bdi>{CONTACTS.shay.phone}</bdi>
             </a>
             <a
-              href="https://wa.me/972545367242"
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="border-2 border-white text-white px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-white/10 transition-colors"

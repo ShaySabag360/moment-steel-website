@@ -3,6 +3,7 @@ import Link from "next/link";
 import MobileReveal from "@/components/MobileReveal";
 import ProjectGallery from "@/components/ProjectGallery";
 import { getDictionary, type Lang } from "@/content";
+import { WHATSAPP_URL } from "@/lib/contact";
 import { localizeHref } from "@/lib/localizeHref";
 import { buildPageMetadata } from "@/lib/seo";
 
@@ -145,7 +146,7 @@ export default async function ProjectsPage({
               {projects.cta.primary}
             </Link>
             <a
-              href="https://wa.me/972545367242"
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="border-2 border-white text-white px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-white/10 transition-colors"

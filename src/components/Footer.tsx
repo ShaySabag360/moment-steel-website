@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getDictionary, type Lang } from "@/content";
+import { CONTACTS, WHATSAPP_URL, mailtoHref, telHref } from "@/lib/contact";
 import { localizeHref } from "@/lib/localizeHref";
 
 export default function Footer({ lang }: { lang: Lang }) {
@@ -47,26 +48,26 @@ export default function Footer({ lang }: { lang: Lang }) {
             <ul className="space-y-3 text-gray-400 text-base">
               <li>{footer.address}</li>
               <li>
-                <a href="tel:0508464851" className="hover:text-white transition-colors">
-                  {footer.contactShai} <bdi>050-846-4851</bdi>
+                <a href={telHref(CONTACTS.shay.phone)} className="hover:text-white transition-colors">
+                  {footer.contactShai} <bdi>{CONTACTS.shay.phone}</bdi>
                 </a>
                 {" · "}
-                <a href="mailto:Shay@moment-steel.com" className="hover:text-white transition-colors">
-                  Shay@moment-steel.com
+                <a href={mailtoHref(CONTACTS.shay.email)} className="hover:text-white transition-colors">
+                  {CONTACTS.shay.email}
                 </a>
               </li>
               <li>
-                <a href="tel:0545367242" className="hover:text-white transition-colors">
-                  {footer.contactYoel} <bdi>054-536-7242</bdi>
+                <a href={telHref(CONTACTS.yoel.phone)} className="hover:text-white transition-colors">
+                  {footer.contactYoel} <bdi>{CONTACTS.yoel.phone}</bdi>
                 </a>
                 {" · "}
-                <a href="mailto:Yoel@moment-steel.com" className="hover:text-white transition-colors">
-                  Yoel@moment-steel.com
+                <a href={mailtoHref(CONTACTS.yoel.email)} className="hover:text-white transition-colors">
+                  {CONTACTS.yoel.email}
                 </a>
               </li>
               <li>
                 <a
-                  href="https://wa.me/972545367242"
+                  href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#fd008d] hover:text-[#e0007c] transition-colors font-medium"

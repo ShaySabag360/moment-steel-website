@@ -6,6 +6,8 @@
 // same shape is introduced in a later phase, at which point this interface
 // guarantees both locales stay in sync (a missing key fails the build).
 
+import type { ContactId } from "@/lib/contact";
+
 export type Lang = "en" | "he";
 
 export interface NavLink {
@@ -121,6 +123,7 @@ export interface HomeDictionary {
   cta: {
     heading: string;
     body: string;
+    /** Call-button label; the phone number itself comes from CONTACTS. */
     call: string;
     whatsapp: string;
   };
@@ -196,14 +199,12 @@ export interface ProjectsDictionary {
 }
 
 export interface ContactPerson {
+  /** Key into CONTACTS (src/lib/contact.ts), which holds this person's phone and email. */
+  id: ContactId;
   /** Avatar initials (e.g. "SS"). */
   initials: string;
   name: string;
   role: string;
-  /** Displayed phone number (the tel: href stays in the page). */
-  phone: string;
-  /** Displayed email address (the mailto: href stays in the page). */
-  email: string;
 }
 
 export interface ContactFormDictionary {

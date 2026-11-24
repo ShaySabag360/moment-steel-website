@@ -174,7 +174,7 @@ export const he: Dictionary = {
     cta: {
       heading: "הפרויקט הבא שלכם מתחיל בשיחה אחת.",
       body: "מתכנון ודיטיילינג ועד ייצור והקמה — אנחנו מחברים את שלבי הפלדה לתהליך אחד ברור.",
-      call: "התקשרו: 050-846-4851",
+      call: "התקשרו:",
       whatsapp: "וואטסאפ",
     },
   },
@@ -338,18 +338,16 @@ export const he: Dictionary = {
     directHeading: "יצירת קשר ישירה",
     people: [
       {
+        id: "shay",
         initials: "SS",
         name: "שי סבג",
         role: "הנדסת מבנים",
-        phone: "050-846-4851",
-        email: "Shay@moment-steel.com",
       },
       {
+        id: "yoel",
         initials: "YG",
         name: "יואל גרינר",
         role: "ניהול פרויקטים וייצור",
-        phone: "054-536-7242",
-        email: "Yoel@moment-steel.com",
       },
     ],
     whatsappHeading: "מעדיפים וואטסאפ?",
