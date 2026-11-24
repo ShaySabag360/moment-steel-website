@@ -250,14 +250,10 @@ export interface ContactDictionary {
 
 /** Shared UI control labels (progressive-disclosure toggles, etc.). */
 export interface UiDictionary {
-  /** MobileReveal expand label on the default reveals (services, story, team bios). */
+  /** MobileReveal expand label (About: story, team bios). */
   readMore: string;
   /** MobileReveal collapse label on the default reveals. */
   showLess: string;
-  /** Projects description expand label. */
-  viewDetails: string;
-  /** Projects description collapse label. */
-  hideDetails: string;
   /** Word for "photo" — Projects gallery thumbnail aria-label ("{photo} {n}"). */
   photo: string;
 }

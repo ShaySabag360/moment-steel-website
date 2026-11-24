@@ -37,8 +37,6 @@ export const en: Dictionary = {
   ui: {
     readMore: "Read more",
     showLess: "Show less",
-    viewDetails: "View details",
-    hideDetails: "Hide details",
     photo: "Photo",
   },
   seo: {

@@ -37,8 +37,6 @@ export const he: Dictionary = {
   ui: {
     readMore: "קרא עוד",
     showLess: "הצג פחות",
-    viewDetails: "פרטים נוספים",
-    hideDetails: "הסתר פרטים",
     photo: "תמונה",
   },
   seo: {

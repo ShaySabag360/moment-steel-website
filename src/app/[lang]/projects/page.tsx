@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import MobileReveal from "@/components/MobileReveal";
 import ProjectGallery from "@/components/ProjectGallery";
 import { getDictionary, type Lang } from "@/content";
 import { WHATSAPP_URL } from "@/lib/contact";
@@ -80,14 +79,9 @@ export default async function ProjectsPage({
                       {project.location}
                     </p>
                   )}
-                  <MobileReveal
-                    lines={3}
-                    moreLabel={ui.viewDetails}
-                    lessLabel={ui.hideDetails}
-                    className="text-gray-400 text-base md:text-lg leading-relaxed mt-5 max-w-[46ch]"
-                  >
+                  <p className="text-gray-400 text-base md:text-lg leading-relaxed mt-5 max-w-[46ch]">
                     {project.description}
-                  </MobileReveal>
+                  </p>
                 </div>
               </article>
             );

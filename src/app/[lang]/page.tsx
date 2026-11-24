@@ -52,7 +52,7 @@ export default async function HomePage({
   params: Promise<{ lang: string }>;
 }) {
   const lang = (await params).lang as Lang;
-  const { home, projects, ui } = getDictionary(lang);
+  const { home, projects } = getDictionary(lang);
   // Featured cards reuse each project's copy (title + category) and lead photo, by id.
   const featured = FEATURED_PROJECT_IDS.map((id) => ({
     ...findProject(projects.items, id),
@@ -132,10 +132,7 @@ export default async function HomePage({
             </h2>
           </div>
 
-          <PlanningLoop
-            services={home.services.items}
-            revealLabels={{ more: ui.readMore, less: ui.showLess }}
-          />
+          <PlanningLoop services={home.services.items} />
         </div>
       </section>
 
