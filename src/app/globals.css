@@ -170,15 +170,15 @@ html[lang="he"] .tracking-widest {
   animation: float 2s ease-in-out infinite;
 }
 
-/* ── Client logos strip (Home, mobile only) ──
+/* ── Client logos strip (Home, all widths) ──
    The track holds the logo set twice; moving it by -50% brings the second copy
    exactly to where the first started, so the loop has no seam. The strip is
    dir="ltr" (so the track starts at its left edge in both languages and the
    math is the same; in an RTL box the wide track would hang off the right and
    leave gaps); Hebrew runs it in
-   reverse (logos drift rightward, with the reading direction). Touching the
-   strip pauses it. With reduced motion it stands still, the duplicate set is
-   hidden and the row can be swiped instead. */
+   reverse (logos drift rightward, with the reading direction). Hovering or
+   touching the strip pauses it. With reduced motion it stands still, the
+   duplicate set is hidden and the row can be scrolled instead. */
 @keyframes logo-marquee {
   to {
     transform: translateX(-50%);
@@ -195,6 +195,13 @@ html[dir="rtl"] .logo-marquee-track {
 
 .logo-marquee:active .logo-marquee-track {
   animation-play-state: paused;
+}
+
+/* Hover-pause only with a real pointer (touch screens keep :hover after a tap). */
+@media (hover: hover) {
+  .logo-marquee:hover .logo-marquee-track {
+    animation-play-state: paused;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -226,47 +226,45 @@ export default async function HomePage({
       </section>
 
       {/* ─── Client Logos ───
-          md and up: one static row. Mobile: a slowly drifting full-width strip
-          (the set rendered twice; see .logo-marquee in globals.css) so every
-          logo passes by. Its duration grows with the number of logos, keeping
-          the speed constant as clients are added to `clientLogos`. */}
+          One slowly drifting row at every width (the set rendered twice; see
+          .logo-marquee in globals.css) so every logo passes by. Full-bleed on
+          mobile, inside the content column from md. Its duration grows with the
+          number of logos, keeping the speed constant as clients are added to
+          `clientLogos`. The loop is seamless only while one set is wider than
+          the visible strip (true from ~4 logos on mobile, ~6 on desktop). */}
       <section className="bg-[#0a0a0a] border-t border-b border-white/10 py-8 md:py-10">
         <div className="max-w-7xl mx-auto px-6">
           <p className="text-[#fd008d] text-xl font-bold uppercase tracking-[0.25em] font-display text-center mb-6">
             {home.clients.eyebrow}
           </p>
-          <div className="hidden md:flex flex-wrap items-center justify-center xl:justify-between gap-x-10 gap-y-6">
-            {clientLogos.map((logo) => (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img key={logo.alt} src={logo.src} alt={logo.alt} style={clientLogoStyle} />
-            ))}
-          </div>
         </div>
-        <div
-          dir="ltr"
-          className="logo-marquee md:hidden overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]"
-        >
+        <div className="md:max-w-7xl md:mx-auto md:px-6">
           <div
-            className="logo-marquee-track flex w-max"
-            style={{ "--marquee-duration": `${clientLogos.length * 5}s` } as CSSProperties}
+            dir="ltr"
+            className="logo-marquee overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]"
           >
-            {[0, 1].map((copy) => (
-              <div
-                key={copy}
-                aria-hidden={copy === 1 || undefined}
-                className="flex shrink-0 items-center gap-x-10 pr-10"
-              >
-                {clientLogos.map((logo) => (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    key={logo.alt}
-                    src={logo.src}
-                    alt={copy === 0 ? logo.alt : ""}
-                    style={clientLogoStyle}
-                  />
-                ))}
-              </div>
-            ))}
+            <div
+              className="logo-marquee-track flex w-max"
+              style={{ "--marquee-duration": `${clientLogos.length * 5}s` } as CSSProperties}
+            >
+              {[0, 1].map((copy) => (
+                <div
+                  key={copy}
+                  aria-hidden={copy === 1 || undefined}
+                  className="flex shrink-0 items-center gap-x-10 pr-10 md:gap-x-16 md:pr-16"
+                >
+                  {clientLogos.map((logo) => (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      key={logo.alt}
+                      src={logo.src}
+                      alt={copy === 0 ? logo.alt : ""}
+                      style={clientLogoStyle}
+                    />
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
