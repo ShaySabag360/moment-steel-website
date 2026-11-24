@@ -213,7 +213,6 @@ export interface ContactPerson {
   /** Square portrait (e.g. "/images/team/shay.webp"); without it the avatar shows the initials. */
   photo?: string;
   name: string;
-  role: string;
 }
 
 export interface ContactFormDictionary {
@@ -240,7 +239,6 @@ export interface ContactDictionary {
     headline: { line1: string; line2: string };
     intro: string;
   };
-  directHeading: string;
   people: ContactPerson[];
   whatsappHeading: string;
   whatsappLink: string;

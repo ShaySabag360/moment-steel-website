@@ -322,21 +322,18 @@ export const he: Dictionary = {
       intro:
         "שלחו לנו פרטים על הפרויקט, ונחזור אליכם כדי להבין את הצרכים, לוחות הזמנים והשלבים הבאים.",
     },
-    directHeading: "יצירת קשר ישירה",
     people: [
       {
         id: "shay",
         initials: "SS",
         photo: "/images/team/shay.webp",
         name: "שי סבג",
-        role: "הנדסת מבנים",
       },
       {
         id: "yoel",
         initials: "YG",
         photo: "/images/team/yoel.webp",
         name: "יואל גרינר",
-        role: "ניהול פרויקטים וייצור",
       },
     ],
     whatsappHeading: "מעדיפים וואטסאפ?",

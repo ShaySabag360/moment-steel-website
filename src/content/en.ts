@@ -324,21 +324,18 @@ export const en: Dictionary = {
       intro:
         "Send us your scope, drawings or site challenge, and we’ll get back to you within one business day. No commitment, no sales pitch — just a clear, practical conversation about your project.",
     },
-    directHeading: "Direct Contact",
     people: [
       {
         id: "shay",
         initials: "SS",
         photo: "/images/team/shay.webp",
         name: "Shay Sabag",
-        role: "Structural Engineering",
       },
       {
         id: "yoel",
         initials: "YG",
         photo: "/images/team/yoel.webp",
         name: "Yoel Griner",
-        role: "Project Management & Fabrication",
       },
     ],
     whatsappHeading: "Prefer WhatsApp?",

@@ -56,41 +56,35 @@ export default async function ContactPage({
             <div data-animate className="lg:col-span-2 space-y-10 max-md:order-1">
 
               {/* Direct contacts */}
-              <div>
-                <h3 className="text-white font-semibold uppercase tracking-widest text-sm mb-6">
-                  {contact.directHeading}
-                </h3>
-                <div className="space-y-6">
-                  {contact.people.map((person) => {
-                    const { phone, email } = CONTACTS[person.id];
-                    return (
-                      <div key={person.id} className="flex gap-4 items-start">
-                        <Avatar
-                          name={person.name}
-                          initials={person.initials}
-                          photo={person.photo}
-                          size="sm"
-                        />
-                        <div>
-                          <p className="text-white font-semibold text-base">{person.name}</p>
-                          <p className="text-gray-500 text-sm mb-2">{person.role}</p>
-                          <a
-                            href={telHref(phone)}
-                            className="block text-gray-300 hover:text-white text-base transition-colors max-md:py-2.5"
-                          >
-                            <bdi>{phone}</bdi>
-                          </a>
-                          <a
-                            href={mailtoHref(email)}
-                            className="block text-gray-300 hover:text-white text-base transition-colors max-md:py-2.5"
-                          >
-                            <bdi>{email}</bdi>
-                          </a>
-                        </div>
+              <div className="space-y-6">
+                {contact.people.map((person) => {
+                  const { phone, email } = CONTACTS[person.id];
+                  return (
+                    <div key={person.id} className="flex gap-4 items-start">
+                      <Avatar
+                        name={person.name}
+                        initials={person.initials}
+                        photo={person.photo}
+                        size="sm"
+                      />
+                      <div>
+                        <p className="text-white font-semibold text-base mb-2">{person.name}</p>
+                        <a
+                          href={telHref(phone)}
+                          className="block text-gray-300 hover:text-white text-base transition-colors max-md:py-2.5"
+                        >
+                          <bdi>{phone}</bdi>
+                        </a>
+                        <a
+                          href={mailtoHref(email)}
+                          className="block text-gray-300 hover:text-white text-base transition-colors max-md:py-2.5"
+                        >
+                          <bdi>{email}</bdi>
+                        </a>
                       </div>
-                    );
-                  })}
-                </div>
+                    </div>
+                  );
+                })}
               </div>
 
               {/* WhatsApp */}
