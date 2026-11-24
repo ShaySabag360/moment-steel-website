@@ -185,7 +185,8 @@ export interface AboutDictionary {
 
 export interface ProjectItem {
   title: string;
-  location: string;
+  /** City / site location. Omit when there is no specific place to show. */
+  location?: string;
   category: string;
   description: string;
 }

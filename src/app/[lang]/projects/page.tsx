@@ -105,9 +105,11 @@ export default async function ProjectsPage({
                   <h2 className="font-display font-bold text-white text-4xl md:text-5xl leading-none">
                     {project.title}
                   </h2>
-                  <p className="text-white/60 text-base mt-2">
-                    {project.location}
-                  </p>
+                  {project.location && (
+                    <p className="text-white/60 text-base mt-2">
+                      {project.location}
+                    </p>
+                  )}
                   <MobileReveal
                     lines={3}
                     moreLabel={ui.viewDetails}
