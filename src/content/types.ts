@@ -51,6 +51,12 @@ export interface FooterDictionary {
   contactShai: string;
   /** Inline label before Yoel's phone number in the contact column (e.g. "Yoel:"). */
   contactYoel: string;
+  /** Accessible label for the Facebook page icon link. */
+  facebookAria: string;
+  /** Accessible label for the share icon button. */
+  shareAria: string;
+  /** Short confirmation shown after the page link is copied. */
+  linkCopied: string;
 }
 
 export interface StatItem {

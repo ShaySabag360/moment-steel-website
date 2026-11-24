@@ -1,8 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FacebookIcon } from "@/components/icons";
+import ShareButton from "@/components/ShareButton";
 import { getDictionary, type Lang } from "@/content";
-import { CONTACTS, WHATSAPP_URL, mailtoHref, telHref } from "@/lib/contact";
+import { CONTACTS, FACEBOOK_URL, WHATSAPP_URL, mailtoHref, telHref } from "@/lib/contact";
 import { localizeHref } from "@/lib/localizeHref";
+
+// Square 44×44 icon buttons (Facebook, share) in the contact column.
+const socialButtonClass =
+  "w-11 h-11 flex items-center justify-center border border-[#2d2d2d] text-gray-400 hover:text-white hover:border-[#fd008d]/40 transition-colors";
 
 export default function Footer({ lang }: { lang: Lang }) {
   const { nav, footer } = getDictionary(lang);
@@ -75,6 +81,22 @@ export default function Footer({ lang }: { lang: Lang }) {
                 >
                   {footer.whatsapp}
                 </a>
+              </li>
+              <li className="flex gap-3 pt-2">
+                <a
+                  href={FACEBOOK_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={footer.facebookAria}
+                  className={socialButtonClass}
+                >
+                  <FacebookIcon className="w-5 h-5" />
+                </a>
+                <ShareButton
+                  label={footer.shareAria}
+                  copiedMessage={footer.linkCopied}
+                  className={socialButtonClass}
+                />
               </li>
             </ul>
           </div>

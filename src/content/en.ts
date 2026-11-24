@@ -30,6 +30,9 @@ export const en: Dictionary = {
     copyright: "Moment Steel. All rights reserved.",
     contactShai: "Shai:",
     contactYoel: "Yoel:",
+    facebookAria: "Facebook",
+    shareAria: "Share",
+    linkCopied: "Link copied",
   },
   ui: {
     readMore: "Read more",

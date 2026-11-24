@@ -36,6 +36,9 @@ export const he: Dictionary = {
     copyright: "מומנט הנדסת פלדה. כל הזכויות שמורות.",
     contactShai: "שי:",
     contactYoel: "יואל:",
+    facebookAria: "פייסבוק",
+    shareAria: "שיתוף",
+    linkCopied: "הקישור הועתק",
   },
   ui: {
     readMore: "קרא עוד",
