@@ -1,14 +1,8 @@
 import type { Dictionary } from "./types";
 
-// Hebrew copy — from the FINAL LOCKED P0 package. Typed as `Dictionary` so
+// Hebrew copy (the canonical site, served at the root). Typed as `Dictionary` so
 // TypeScript enforces structural parity with `en.ts` (any missing/extra/mistyped
-// key fails the build). NOTHING renders this yet — locale routing arrives in P1.2.
-//
-// Implementation notes for later phases (not applied here):
-// - Hebrew is the canonical root; `dir="rtl" lang="he"` + Assistant font land in P1.3/P1.4.
-// - Brand naming: "מומנט פלדה" in headings/copy; "מומנט הנדסת פלדה" in footer/legal.
-// - Some short UI strings + the Home/About CTA strips were not enumerated verbatim
-//   in the P0 lock and were translated to match the package's tone (see report).
+// key fails the build). The company name is "מומנט פלדה" everywhere.
 
 export const he: Dictionary = {
   nav: {
@@ -33,7 +27,7 @@ export const he: Dictionary = {
     contactHeading: "יצירת קשר",
     address: "יוני נתניהו 8, פתח תקווה",
     whatsapp: "וואטסאפ ←",
-    copyright: "מומנט הנדסת פלדה. כל הזכויות שמורות.",
+    copyright: "מומנט פלדה. כל הזכויות שמורות.",
     contactShai: "שי:",
     contactYoel: "יואל:",
     facebookAria: "פייסבוק",
