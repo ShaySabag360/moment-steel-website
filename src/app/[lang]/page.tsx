@@ -251,7 +251,7 @@ export default async function HomePage({
                 <div
                   key={copy}
                   aria-hidden={copy === 1 || undefined}
-                  className="flex shrink-0 items-center gap-x-10 pr-10 md:gap-x-16 md:pr-16"
+                  className="flex shrink-0 items-center gap-x-14 pr-14 md:gap-x-20 md:pr-20"
                 >
                   {clientLogos.map((logo) => (
                     // eslint-disable-next-line @next/next/no-img-element
