@@ -56,6 +56,10 @@ const clientLogos = [
     alt: "Raz Reshef Engineering",
     src: "/logos/clients/raz-reshef.webp",
   },
+  {
+    alt: "Haim Nizri",
+    src: "/logos/clients/haim-nizri.webp",
+  },
 ];
 
 // Client logos are shown white on the dark strip.
