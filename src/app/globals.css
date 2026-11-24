@@ -59,11 +59,13 @@ html[lang="he"] .-bottom-4.-right-4 {
   left: -1rem;
 }
 
-/* Home testimonial logo (md:absolute ≥768): bottom-right → bottom-left.
-   Inert below 768 where the logo is static (left/right are ignored). */
-html[lang="he"] .md\:right-8 {
-  right: auto;
-  left: 2rem;
+/* Home testimonial logo (≥768): bottom-right → bottom-left. Below 768 the logo
+   uses the logical max-md:end-6, which already resolves to the left in RTL. */
+@media (min-width: 768px) {
+  html[lang="he"] .md\:right-8 {
+    right: auto;
+    left: 2rem;
+  }
 }
 
 /* FAQ question button: text-align left → right. */

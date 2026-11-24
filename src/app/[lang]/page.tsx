@@ -278,7 +278,7 @@ export default async function HomePage({
                 <img
                   src={testimonialLogos[i].logo}
                   alt={t.company}
-                  className="mt-6 md:mt-0 md:absolute md:bottom-8 md:right-8"
+                  className="absolute max-md:bottom-6 max-md:end-6 md:bottom-8 md:right-8"
                   style={{
                     height: "32px",
                     width: "auto",
