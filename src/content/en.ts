@@ -278,7 +278,7 @@ export const en: Dictionary = {
         title: "Tel HaShomer",
         category: "Excavation Support",
         description:
-          "A two-level excavation-shoring system of roughly 110 tons at Tel HaShomer. Each level was erected in just three days — a tight schedule that demanded close coordination and precise on-site execution.",
+          "A two-level excavation-shoring system of roughly 120 tons at Tel HaShomer. Each level was erected in just three days — a tight schedule that demanded close coordination and precise on-site execution.",
       },
       {
         id: "wall-support",
