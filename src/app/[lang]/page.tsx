@@ -222,9 +222,11 @@ export default async function HomePage({
             ))}
           </div>
         </div>
-        <div className="logo-marquee md:hidden overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
+        <div
+          dir="ltr"
+          className="logo-marquee md:hidden overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]"
+        >
           <div
-            dir="ltr"
             className="logo-marquee-track flex w-max"
             style={{ "--marquee-duration": `${clientLogos.length * 5}s` } as CSSProperties}
           >
