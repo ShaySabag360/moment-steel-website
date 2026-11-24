@@ -140,8 +140,10 @@ export interface TeamMember {
   role: string;
   description: string;
   tags: string[];
-  /** Avatar initials (e.g. "SS"); shown on the card, kept across locales. */
+  /** Avatar initials (e.g. "SS"); shown when there is no photo, kept across locales. */
   initials: string;
+  /** Square portrait (e.g. "/images/team/shay.webp"); without it the avatar shows the initials. */
+  photo?: string;
 }
 
 export interface AboutDictionary {
@@ -206,8 +208,10 @@ export interface ProjectsDictionary {
 export interface ContactPerson {
   /** Key into CONTACTS (src/lib/contact.ts), which holds this person's phone and email. */
   id: ContactId;
-  /** Avatar initials (e.g. "SS"). */
+  /** Avatar initials (e.g. "SS"); shown when there is no photo. */
   initials: string;
+  /** Square portrait (e.g. "/images/team/shay.webp"); without it the avatar shows the initials. */
+  photo?: string;
   name: string;
   role: string;
 }

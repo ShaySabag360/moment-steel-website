@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Avatar from "@/components/Avatar";
 import MobileReveal from "@/components/MobileReveal";
 import { getDictionary, type Lang } from "@/content";
 import { localizeHref } from "@/lib/localizeHref";
@@ -174,11 +175,13 @@ export default async function AboutPage({
                 data-animate
                 className="bg-[#1a1a1a] border border-[#2d2d2d] p-8 hover:border-[#fd008d]/40 transition-colors group"
               >
-                <div className="w-16 h-16 bg-[#fd008d]/10 border border-[#fd008d]/30 flex items-center justify-center mb-6 group-hover:bg-[#fd008d]/20 transition-colors">
-                  <span className="text-[#fd008d] font-bold text-lg tracking-wider">
-                    {member.initials}
-                  </span>
-                </div>
+                <Avatar
+                  name={member.name}
+                  initials={member.initials}
+                  photo={member.photo}
+                  size="lg"
+                  className="mb-6 group-hover:bg-[#fd008d]/20 transition-colors"
+                />
 
                 <h3 className="text-white font-bold text-lg mb-1">{member.name}</h3>
                 <p className="text-[#fd008d] text-sm font-semibold uppercase tracking-[0.2em] mb-4 font-display">

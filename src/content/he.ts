@@ -234,6 +234,7 @@ export const he: Dictionary = {
             "שי הוא מהנדס מבנים וקונסטרוקטור רשוי, בעל תואר שני בהנדסת מבנים וניסיון רחב במבני פלדה. הוא מוביל את התהליך ההנדסי — מתכנון האלמנטים, דרך תיאום החיבורים ועד החישובים החתומים הסופיים — עם דגש על תכנון מעשי, בר-ביצוע ואחראי.",
           tags: ["Dlubal", "IdeaStatica", "Strap", "Seismic Design"],
           initials: "SS",
+          photo: "/images/team/shay.webp",
         },
         {
           name: "יואל גרינר",
@@ -242,6 +243,7 @@ export const he: Dictionary = {
             "ליואל 12 שנות ניסיון בניהול סביבות ייצור ובתיאום פרויקטי פלדה, משלב התכנון ועד הביצוע באתר. הוא מוביל את תיאום הייצור, לוגיסטיקת האספקה ופעילות המדידות והסריקה התלת-ממדית, ומסנכרן בין דרישות ההנדסה, ייצור בית המלאכה ותנאי השטח האמיתיים — באחריות ברורה לביצוע מעשי.",
           tags: ["3D Laser Scanning", "Fabrication", "Logistics", "Geodesy"],
           initials: "YG",
+          photo: "/images/team/yoel.webp",
         },
         {
           name: "אלכס ילישנקו",
@@ -331,12 +333,14 @@ export const he: Dictionary = {
       {
         id: "shay",
         initials: "SS",
+        photo: "/images/team/shay.webp",
         name: "שי סבג",
         role: "הנדסת מבנים",
       },
       {
         id: "yoel",
         initials: "YG",
+        photo: "/images/team/yoel.webp",
         name: "יואל גרינר",
         role: "ניהול פרויקטים וייצור",
       },

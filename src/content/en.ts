@@ -230,6 +230,7 @@ export const en: Dictionary = {
             "Shay is a licensed structural engineer with a master’s degree in structural engineering and broad experience in steel structures. He leads the engineering process from member design through connection coordination and final signed calculations, with a focus on practical, buildable and responsible design.",
           tags: ["Dlubal", "IdeaStatica", "Strap", "Seismic Design"],
           initials: "SS",
+          photo: "/images/team/shay.webp",
         },
         {
           name: "Yoel Griner",
@@ -238,6 +239,7 @@ export const en: Dictionary = {
             "Yoel brings 12 years of experience managing production environments and coordinating steel projects from design intent to site execution. He leads fabrication coordination, delivery logistics and 3D scanning operations, helping align engineering requirements, workshop production and real site conditions throughout the project with clear responsibility for practical execution.",
           tags: ["3D Laser Scanning", "Fabrication", "Logistics", "Geodesy"],
           initials: "YG",
+          photo: "/images/team/yoel.webp",
         },
         {
           name: "Alex Yelishenko",
@@ -327,12 +329,14 @@ export const en: Dictionary = {
       {
         id: "shay",
         initials: "SS",
+        photo: "/images/team/shay.webp",
         name: "Shay Sabag",
         role: "Structural Engineering",
       },
       {
         id: "yoel",
         initials: "YG",
+        photo: "/images/team/yoel.webp",
         name: "Yoel Griner",
         role: "Project Management & Fabrication",
       },

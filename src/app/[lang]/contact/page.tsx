@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Avatar from "@/components/Avatar";
 import ContactForm from "@/components/ContactForm";
 import { WhatsAppIcon } from "@/components/icons";
 import { getDictionary, type Lang } from "@/content";
@@ -64,9 +65,12 @@ export default async function ContactPage({
                     const { phone, email } = CONTACTS[person.id];
                     return (
                       <div key={person.id} className="flex gap-4 items-start">
-                        <div className="w-10 h-10 bg-[#fd008d]/10 border border-[#fd008d]/30 flex items-center justify-center shrink-0">
-                          <span className="text-[#fd008d] font-bold text-xs">{person.initials}</span>
-                        </div>
+                        <Avatar
+                          name={person.name}
+                          initials={person.initials}
+                          photo={person.photo}
+                          size="sm"
+                        />
                         <div>
                           <p className="text-white font-semibold text-base">{person.name}</p>
                           <p className="text-gray-500 text-sm mb-2">{person.role}</p>
