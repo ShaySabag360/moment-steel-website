@@ -1,10 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Barlow_Condensed, DM_Sans, Assistant } from "next/font/google";
 import "../globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollAnimator from "@/components/ScrollAnimator";
-import type { Lang } from "@/content";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import { getDictionary, type Lang } from "@/content";
 import { SITE_URL } from "@/lib/seo";
 
 const barlowCondensed = Barlow_Condensed({
@@ -40,6 +41,16 @@ export const metadata: Metadata = {
     "Licensed structural engineering, shop drawings, 3D laser scanning, detailing, fabrication management, and site erection. Edge to Edge Steel Solutions.",
 };
 
+// viewport-fit=cover exposes the iPhone safe-area insets (env(safe-area-inset-*)),
+// so the floating WhatsApp button can sit above the home indicator. Because the
+// page may then extend under the notch in landscape, <body> and the fixed header
+// are padded by the side insets (0 on every other device).
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
+
 // Both locales are prerendered; any other [lang] value 404s.
 export function generateStaticParams() {
   return [{ lang: "he" }, { lang: "en" }];
@@ -65,10 +76,13 @@ export default async function RootLayout({
       : `${barlowCondensed.variable} ${dmSans.variable}`;
   return (
     <html lang={lang} dir={lang === "he" ? "rtl" : "ltr"} className={fontClasses}>
-      <body className={`${dmSans.className} bg-[#111111] text-white antialiased`}>
+      <body
+        className={`${dmSans.className} bg-[#111111] text-white antialiased pl-[env(safe-area-inset-left)] pr-[env(safe-area-inset-right)]`}
+      >
         <Navbar lang={lang} />
         <main>{children}</main>
         <Footer lang={lang} />
+        <WhatsAppButton label={getDictionary(lang).contact.whatsappLink} />
         <ScrollAnimator />
       </body>
     </html>

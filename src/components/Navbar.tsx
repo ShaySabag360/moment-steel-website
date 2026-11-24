@@ -46,7 +46,7 @@ export default function Navbar({ lang }: { lang: Lang }) {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 pl-[env(safe-area-inset-left)] pr-[env(safe-area-inset-right)] transition-all duration-300 ${
         scrolled ? "bg-black/90 backdrop-blur-sm" : "bg-transparent"
       }`}
     >
