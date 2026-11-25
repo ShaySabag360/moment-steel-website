@@ -156,18 +156,19 @@ export interface AboutDictionary {
   story: {
     eyebrow: string;
     heading: string;
-    /** Paragraph 1 is always visible; 2 and 3 sit inside MobileReveal. */
-    paragraphs: [string, string, string];
+    /** Rendered in order, all visible at every width. */
+    paragraphs: string[];
     tags: string[];
   };
   whyChooseUs: {
-    eyebrow: string;
+    /** Section heading (the large pink h2). */
     heading: string;
     items: DifferentiatorItem[];
   };
   team: {
-    eyebrow: string;
+    /** Section heading (the large pink h2). */
     heading: string;
+    /** Optional line under the heading; "" hides it. */
     subhead: string;
     members: TeamMember[];
   };
@@ -248,12 +249,8 @@ export interface ContactDictionary {
   form: ContactFormDictionary;
 }
 
-/** Shared UI control labels (progressive-disclosure toggles, etc.). */
+/** Shared UI control labels. */
 export interface UiDictionary {
-  /** MobileReveal expand label (About: story, team bios). */
-  readMore: string;
-  /** MobileReveal collapse label on the default reveals. */
-  showLess: string;
   /** Word for "photo" — Projects gallery thumbnail aria-label ("{photo} {n}"). */
   photo: string;
 }

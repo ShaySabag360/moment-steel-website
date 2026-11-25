@@ -35,8 +35,6 @@ export const en: Dictionary = {
     linkCopied: "Link copied",
   },
   ui: {
-    readMore: "Read more",
-    showLess: "Show less",
     photo: "Photo",
   },
   seo: {
@@ -190,8 +188,7 @@ export const en: Dictionary = {
       tags: ["Warehouses", "Structural Additions", "Complex Geometry", "Logistics Facilities"],
     },
     whyChooseUs: {
-      eyebrow: "Why Choose Us",
-      heading: "Why Contractors Work With Moment Steel",
+      heading: "Why Choose Us",
       items: [
         {
           title: "Engineering, Detailing and Site Control In-House",
@@ -216,8 +213,7 @@ export const en: Dictionary = {
       ],
     },
     team: {
-      eyebrow: "The Team",
-      heading: "Senior Steel Professionals. One Accountable Team.",
+      heading: "The Team",
       subhead:
         "Every project is handled by a senior engineer — no project managers in the middle, no junior handoffs.",
       members: [

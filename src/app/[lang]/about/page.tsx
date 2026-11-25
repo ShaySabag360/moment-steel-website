@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Avatar from "@/components/Avatar";
-import MobileReveal from "@/components/MobileReveal";
 import { getDictionary, type Lang } from "@/content";
 import { localizeHref } from "@/lib/localizeHref";
 import { buildPageMetadata } from "@/lib/seo";
@@ -39,7 +38,7 @@ export default async function AboutPage({
   params: Promise<{ lang: string }>;
 }) {
   const lang = (await params).lang as Lang;
-  const { about, ui } = getDictionary(lang);
+  const { about } = getDictionary(lang);
   return (
     <>
       {/* ─── Page Hero ─── */}
@@ -58,7 +57,7 @@ export default async function AboutPage({
             <br />
             <span className="text-[#fd008d]">{about.hero.headline.line3}</span>
           </h1>
-          <p className="text-gray-400 text-lg mt-8 max-w-2xl leading-relaxed">
+          <p className="text-gray-400 text-lg md:text-xl mt-8 max-w-2xl leading-relaxed">
             {about.hero.paragraph}
           </p>
         </div>
@@ -75,17 +74,10 @@ export default async function AboutPage({
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 {about.story.heading}
               </h2>
-              <div className="space-y-4 text-gray-400 text-base leading-relaxed">
-                <p>{about.story.paragraphs[0]}</p>
-                <MobileReveal
-                  variant="collapse"
-                  moreLabel={ui.readMore}
-                  lessLabel={ui.showLess}
-                  className="space-y-4"
-                >
-                  <p>{about.story.paragraphs[1]}</p>
-                  <p>{about.story.paragraphs[2]}</p>
-                </MobileReveal>
+              <div className="space-y-4 text-gray-400 text-lg leading-relaxed">
+                {about.story.paragraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
               </div>
 
               <div className="mt-8 flex flex-wrap gap-3">
@@ -121,10 +113,7 @@ export default async function AboutPage({
       <section className="py-14 md:py-20 bg-[#0f0f0f]">
         <div className="max-w-7xl mx-auto px-6">
           <div data-animate className="text-center mb-10 md:mb-14">
-            <p className="text-[#fd008d] text-xl font-bold uppercase tracking-[0.25em] font-display mb-4">
-              {about.whyChooseUs.eyebrow}
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
+            <h2 className="text-[#fd008d] text-3xl md:text-4xl font-bold uppercase tracking-[0.15em] font-display">
               {about.whyChooseUs.heading}
             </h2>
           </div>
@@ -138,10 +127,10 @@ export default async function AboutPage({
               >
                 <div className="text-[#fd008d] shrink-0 mt-1">{differentiatorIcons[i]}</div>
                 <div>
-                  <h3 className="text-white font-semibold text-base mb-2 group-hover:text-[#fd008d] transition-colors">
+                  <h3 className="text-white font-semibold text-lg md:text-xl mb-2 group-hover:text-[#fd008d] transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-gray-400 text-base leading-relaxed">
+                  <p className="text-gray-400 text-lg leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -155,14 +144,11 @@ export default async function AboutPage({
       <section className="py-14 md:py-20 bg-[#111111]">
         <div className="max-w-7xl mx-auto px-6">
           <div data-animate className="text-center mb-10 md:mb-14">
-            <p className="text-[#fd008d] text-xl font-bold uppercase tracking-[0.25em] font-display mb-4">
-              {about.team.eyebrow}
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
+            <h2 className="text-[#fd008d] text-3xl md:text-4xl font-bold uppercase tracking-[0.15em] font-display">
               {about.team.heading}
             </h2>
             {about.team.subhead && (
-              <p className="text-gray-400 mt-4 max-w-xl mx-auto text-base leading-relaxed">
+              <p className="text-gray-400 mt-4 max-w-xl mx-auto text-lg leading-relaxed">
                 {about.team.subhead}
               </p>
             )}
@@ -183,18 +169,13 @@ export default async function AboutPage({
                   className="mb-6 group-hover:bg-[#fd008d]/20 transition-colors"
                 />
 
-                <h3 className="text-white font-bold text-lg mb-1">{member.name}</h3>
-                <p className="text-[#fd008d] text-sm font-semibold uppercase tracking-[0.2em] mb-4 font-display">
+                <h3 className="text-white font-bold text-xl mb-1">{member.name}</h3>
+                <p className="text-[#fd008d] text-base font-semibold uppercase tracking-[0.2em] mb-4 font-display">
                   {member.role}
                 </p>
-                <MobileReveal
-                  lines={3}
-                  moreLabel={ui.readMore}
-                  lessLabel={ui.showLess}
-                  className="text-gray-400 text-base leading-relaxed mb-6"
-                >
+                <p className="text-gray-400 text-lg leading-relaxed mb-6">
                   {member.description}
-                </MobileReveal>
+                </p>
 
                 <div className="flex flex-wrap gap-2">
                   {member.tags.map((tag) => (
