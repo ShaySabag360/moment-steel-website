@@ -47,8 +47,12 @@ export default function ProjectGallery({
         ))}
       </div>
 
+      {/* Thumbnails: at most 4 per row below lg (basis 22% leaves no room for
+          a 5th), so a long gallery wraps into rows of usable size on phones
+          and tablets; from lg up to 8 fit in one row. With 4 or fewer photos
+          every thumb grows to the same width as a plain flex-1 row. */}
       {images.length > 1 && (
-        <div className="flex gap-2 mt-2">
+        <div className="flex flex-wrap gap-2 mt-2">
           {images.map((src, i) => {
             const isActive = i === active;
             return (
@@ -58,7 +62,7 @@ export default function ProjectGallery({
                 onClick={() => setActive(i)}
                 aria-pressed={isActive}
                 aria-label={`${thumbLabel} ${i + 1}`}
-                className={`relative flex-1 max-w-44 aspect-[4/3] overflow-hidden border-2 transition-opacity duration-200 ${
+                className={`relative grow basis-[22%] lg:basis-[11%] max-w-44 aspect-[4/3] overflow-hidden border-2 transition-opacity duration-200 ${
                   isActive
                     ? "border-[#fd008d] opacity-100"
                     : "border-transparent opacity-60 hover:opacity-100"
