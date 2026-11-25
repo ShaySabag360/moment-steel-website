@@ -261,6 +261,13 @@ export const en: Dictionary = {
     clientLabel: "Client",
     items: [
       {
+        id: "dira-lehaskir",
+        title: "Pergolas — Dira Lehaskir",
+        client: "Shikun & Binui",
+        description:
+          "A covering and protection pergola for kindergartens, together with landscape pergolas, at the Dira Lehaskir project in Ben Shemen. The roofing combines gratings and shade membranes with concealed connection details, keeping the clean lines the architects required. In the landscaped areas, pergolas with decorative roofing and concealed connections were installed. Designed, fabricated and erected by Moment Steel, meeting all architectural requirements and site constraints.",
+      },
+      {
         id: "givon-school",
         title: "Givon School",
         client: "Tel Aviv-Yafo Municipality",

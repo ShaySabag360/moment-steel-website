@@ -7,6 +7,16 @@ import type { ProjectItem } from "@/content/types";
  * project's lead image (Projects page gallery + Home featured card).
  */
 export const PROJECT_IMAGES = {
+  "dira-lehaskir": [
+    "/images/dira-lehaskir/dira-lehaskir-1.jpg",
+    "/images/dira-lehaskir/dira-lehaskir-2.jpg",
+    "/images/dira-lehaskir/dira-lehaskir-3.jpg",
+    "/images/dira-lehaskir/dira-lehaskir-4.jpg",
+    "/images/dira-lehaskir/dira-lehaskir-5.jpg",
+    "/images/dira-lehaskir/dira-lehaskir-6.jpg",
+    "/images/dira-lehaskir/dira-lehaskir-7.jpg",
+    "/images/dira-lehaskir/dira-lehaskir-8.jpg",
+  ],
   "givon-school": [
     "/images/givon-school/givon-1.jpg",
     "/images/givon-school/givon-2.jpg",
