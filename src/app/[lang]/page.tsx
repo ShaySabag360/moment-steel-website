@@ -86,7 +86,7 @@ export default async function HomePage({
 }) {
   const lang = (await params).lang as Lang;
   const { home, projects } = getDictionary(lang);
-  // Featured cards reuse each project's copy (title + category) and lead photo, by id.
+  // Featured cards reuse each project's title and lead photo, by id.
   const featured = FEATURED_PROJECT_IDS.map((id) => ({
     ...findProject(projects.items, id),
     image: PROJECT_IMAGES[id][0],
@@ -211,8 +211,7 @@ export default async function HomePage({
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent">
-                  <p className="text-[#fd008d] text-xs font-bold uppercase tracking-[0.2em] font-display">{project.category}</p>
-                  <p className="font-display font-bold text-white text-2xl leading-tight mt-1">{project.title}</p>
+                  <p className="font-display font-bold text-white text-2xl leading-tight">{project.title}</p>
                 </div>
               </Link>
             ))}

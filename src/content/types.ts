@@ -184,10 +184,6 @@ export interface ProjectItem {
   /** Stable key: matches the project's photos and the Home featured picks (src/lib/projects.ts). */
   id: ProjectId;
   title: string;
-  /** City / site location. Omit when there is no specific place to show. */
-  location?: string;
-  /** Pink label on the Home "Featured Projects" card (not shown on the Projects page). */
-  category: string;
   description: string;
 }
 

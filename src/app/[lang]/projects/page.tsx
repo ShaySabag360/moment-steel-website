@@ -44,9 +44,8 @@ export default async function ProjectsPage({
 
       {/* ─── Projects (alternating editorial rows) ───
           Each project is one row: a 3:2 photo frame with a thumbnail strip
-          (ProjectGallery) beside a text column (title / optional location /
-          description; the dictionary's `category` is only used on the Home
-          featured cards). Photos are looked up by project id, never by
+          (ProjectGallery) beside a text column (title / description).
+          Photos are looked up by project id, never by
           position. Rows alternate sides on desktop (odd rows flip the
           media column via md:order-2); on mobile they stack photo-first. The
           grid is direction-agnostic, so RTL mirrors it with no globals.css
@@ -74,11 +73,6 @@ export default async function ProjectsPage({
                   <h2 className="font-display font-bold text-white text-4xl md:text-5xl leading-none">
                     {project.title}
                   </h2>
-                  {project.location && (
-                    <p className="text-white/60 text-base mt-2">
-                      {project.location}
-                    </p>
-                  )}
                   <p className="text-gray-400 text-base md:text-lg leading-relaxed mt-5 max-w-[46ch]">
                     {project.description}
                   </p>

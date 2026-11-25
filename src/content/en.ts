@@ -262,43 +262,36 @@ export const en: Dictionary = {
       {
         id: "givon-school",
         title: "Givon School",
-        category: "Addition to Existing Structure",
         description:
           "An elevated sports court for the Givon School — a composite deck connected to an existing building.",
       },
       {
         id: "tel-hashomer",
         title: "Tel HaShomer",
-        category: "Excavation Support",
         description:
           "A two-level excavation-shoring system of roughly 120 tons at Tel HaShomer. Each level was erected in just three days — a tight schedule that demanded close coordination and precise on-site execution.",
       },
       {
         id: "wall-support",
         title: "Climbing Wall Support System",
-        category: "Structural Support",
         description:
           "A modular climbing wall support system designed for slab construction stages in double-height areas of the Spiral Tower. The system was engineered to support an 11-meter-high wall and be reused across multiple floors with controlled installation geometry.",
       },
       {
         id: "migrash-11",
         title: "Migrash 11",
-        location: "Beit Shemesh",
-        category: "Excavation Support",
         description:
           "A design-build retaining wall support system installed against the building core during staged construction. By rethinking the structural scheme, Moment Steel reduced the steel weight by more than 60% while maintaining the required support capacity throughout the works.",
       },
       {
         id: "composite-spiral",
         title: "Composite Column Spiral",
-        category: "Complex Geometry",
         description:
           "Design and detailing of prestressed composite columns for a 91-story tower, including post-tensioning elements connected to the concrete core and steel columns fabricated at varying angles. The project was developed through advanced code-based parametric modeling.",
       },
       {
         id: "azrieli-columns",
         title: "Azrieli Columns Support",
-        category: "Structural Support",
         description:
           "Horizontal support system for existing round columns during foundation strengthening works at the Azrieli Towers in Tel Aviv, where slabs were cut down to level -4. Each floor was scanned separately, allowing Moment Steel to develop a repeatable collar system adapted to site deviations and suitable for fast fabrication.",
       },
