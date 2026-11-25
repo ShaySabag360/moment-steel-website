@@ -184,6 +184,8 @@ export interface ProjectItem {
   /** Stable key: matches the project's photos and the Home featured picks (src/lib/projects.ts). */
   id: ProjectId;
   title: string;
+  /** Client name only (no architects or structural engineers). Shown under the description. */
+  client: string;
   description: string;
 }
 
@@ -193,6 +195,8 @@ export interface ProjectsDictionary {
     heading: string;
     intro: string;
   };
+  /** Label before each project's client ("{clientLabel}: {client}"). */
+  clientLabel: string;
   items: ProjectItem[];
   cta: {
     heading: string;

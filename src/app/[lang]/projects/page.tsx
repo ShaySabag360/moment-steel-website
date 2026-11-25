@@ -44,7 +44,8 @@ export default async function ProjectsPage({
 
       {/* ─── Projects (alternating editorial rows) ───
           Each project is one row: a 3:2 photo frame with a thumbnail strip
-          (ProjectGallery) beside a text column (title / description).
+          (ProjectGallery) beside a text column (title / description /
+          "{clientLabel}: {client}").
           Photos are looked up by project id, never by
           position. Rows alternate sides on desktop (odd rows flip the
           media column via md:order-2); on mobile they stack photo-first. The
@@ -75,6 +76,10 @@ export default async function ProjectsPage({
                   </h2>
                   <p className="text-gray-400 text-base md:text-lg leading-relaxed mt-5 max-w-[46ch]">
                     {project.description}
+                  </p>
+                  <p className="text-gray-500 text-base md:text-lg mt-5">
+                    {projects.clientLabel}:{" "}
+                    <span className="text-white font-semibold">{project.client}</span>
                   </p>
                 </div>
               </article>
