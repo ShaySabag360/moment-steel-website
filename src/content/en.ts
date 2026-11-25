@@ -277,7 +277,7 @@ export const en: Dictionary = {
       {
         id: "tel-hashomer",
         title: "Tel HaShomer",
-        client: "Geodenia",
+        client: "GeoDanya",
         description:
           "A two-level excavation-shoring system of roughly 120 tons at Tel HaShomer. Each level was erected in just three days — a tight schedule that demanded close coordination and precise on-site execution.",
       },
