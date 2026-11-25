@@ -175,15 +175,15 @@ export const en: Dictionary = {
         line3: "We eliminated them.",
       },
       paragraph:
-        "Moment Steel was built around one principle: one accountable team should carry a steel project from the first structural calculation to the last bolt on site. Not a relay race between separate firms — one controlled process with accountability at every stage.",
+        "Moment Steel was founded on a simple idea: the same team carries the project from the first calculation to the last bolt on site. No relay race between separate firms.",
     },
     story: {
       eyebrow: "Our Story",
       heading: "One Steel Team. Full Project Control.",
       paragraphs: [
-        "Most steel project failures are not caused by the steel itself. They happen in the gaps between engineering, fabrication and site — when design changes are not coordinated, or when the steel arrives to conditions that no longer match the drawings.",
-        "We built Moment Steel to close those gaps before they become project delays. By keeping structural engineering, shop drawings, 3D scanning, fabrication coordination and site erection under one roof, we reduce the coordination failures that derail projects on cost and schedule.",
-        "Today we deliver complex steel structures for developers, contractors and engineering teams across Israel — on schedule and to specification, from the first calculation to the final torque check.",
+        "The trouble usually starts between design, fabrication and site: a change that never reached the workshop, or steel arriving at a site that no longer matches the drawings.",
+        "Structural design, shop drawings, 3D scanning, fabrication coordination and site erection all happen in-house. That means fewer coordination mistakes, and fewer budget and schedule overruns.",
+        "Today we deliver complex steel structures for developers, contractors and engineering teams across Israel.",
       ],
       tags: ["Warehouses", "Structural Additions", "Complex Geometry", "Logistics Facilities"],
     },
@@ -193,35 +193,34 @@ export const en: Dictionary = {
         {
           title: "Engineering, Detailing and Site Control In-House",
           description:
-            "When engineering, detailing and fabrication management work as one team, issues are resolved before they reach the workshop or the site. One technical team owns the chain of responsibility, reducing handoff risks and keeping decisions clear.",
+            "The engineer, the detailer and the fabrication manager work side by side. Problems get solved before they reach the workshop or the site.",
         },
         {
           title: "One Team, Full Accountability",
           description:
-            "We take responsibility for every phase: structural analysis, shop drawings, fabrication oversight and site erection. One team, one point of contact and clear accountability when the project needs to adapt.",
+            "We own every phase of the project, with one point of contact. When something changes, you know who's on it.",
         },
         {
           title: "Scan Early. Fabricate With Confidence.",
           description:
-            "When site conditions are critical, we scan early and bring verified as-built geometry into the model — helping connections fit as planned and reducing field adjustments.",
+            "When site conditions are critical, we scan before fabrication and model what's actually there. Connections fit, with less rework on site.",
         },
         {
           title: "Built for Complex Steel Projects",
           description:
-            "Spiral geometries. Additions onto occupied structures. Tight sites with no margin for error. Our workflows are built for projects that require tight coordination, precise detailing and controlled execution from start to finish.",
+            "Complex geometry, additions over occupied buildings, tight sites with no room for error. That's the kind of project we built our process around.",
         },
       ],
     },
     team: {
       heading: "The Team",
-      subhead:
-        "Every project is handled by a senior engineer — no project managers in the middle, no junior handoffs.",
+      subhead: "",
       members: [
         {
           name: "Shay Sabag",
           role: "Structural Engineer & Design Lead",
           description:
-            "Shay is a licensed structural engineer with a master’s degree in structural engineering and broad experience in steel structures. He leads the engineering process from member design through connection coordination and final signed calculations, with a focus on practical, buildable and responsible design.",
+            "Licensed structural engineer with a master’s degree in structural engineering and broad experience in steel structures. Leads the engineering, from member and connection design to the final signed calculations.",
           tags: ["Dlubal", "IdeaStatica", "Strap", "Seismic Design"],
           initials: "SS",
           photo: "/images/team/shay.webp",
@@ -230,7 +229,7 @@ export const en: Dictionary = {
           name: "Yoel Griner",
           role: "Project Manager & Survey Lead",
           description:
-            "Yoel brings 12 years of experience managing production environments and coordinating steel projects from design intent to site execution. He leads fabrication coordination, delivery logistics and 3D scanning operations, helping align engineering requirements, workshop production and real site conditions throughout the project with clear responsibility for practical execution.",
+            "12 years of experience in production management and steel project coordination. Leads fabrication coordination, site deliveries, surveying and 3D scanning, making sure what was designed matches what's on site.",
           tags: ["3D Laser Scanning", "Fabrication", "Logistics", "Geodesy"],
           initials: "YG",
           photo: "/images/team/yoel.webp",
@@ -239,7 +238,7 @@ export const en: Dictionary = {
           name: "Alex Yelishenko",
           role: "Senior Steel Detailer & Mechanical Engineer",
           description:
-            "Alex brings advanced steel detailing experience and parametric modeling tools for complex and repetitive steel geometry. He develops clear, fabrication-ready shop drawing packages that translate engineering requirements into practical workshop information, supporting efficient production and reducing interpretation during fabrication.",
+            "Specializes in steel detailing and parametric modeling for complex and repetitive geometry. Produces clear shop drawing packages the workshop can build from without guessing.",
           tags: ["Tekla Structures", "Grasshopper", "Parametric Modeling", "Detailing"],
           initials: "AY",
         },
